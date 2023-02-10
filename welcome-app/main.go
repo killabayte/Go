@@ -1,7 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 func main() {
-	fmt.Println("Wellcome to the Golang for DevOps cource!")
+	name := os.Args
+	fmt.Printf("Hi %v! You are pretty mutch wellcome to that awesome Golang for DevOps cource!", name[1:])
 }
