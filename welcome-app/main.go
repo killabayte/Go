@@ -14,5 +14,5 @@ func main() {
 		os.Exit(1)
 	}
 
-	fmt.Printf("Hi %v! You are pretty mutch wellcome to that awesome Golang for DevOps cource!", name[1:])
+	fmt.Printf("Hi %v, you are pretty much wellcome to this Golang cource for DevOps", name[1:])
 }
