@@ -10,6 +10,16 @@ import (
 	"strings"
 )
 
+type RequestsError struct {
+	HTTPCode int
+	Body     string
+	Err      string
+}
+
+func (r RequestsError) Error() string {
+	return r.Err
+}
+
 type Responce interface {
 	GetResponce() string
 }
@@ -49,8 +59,10 @@ func main() {
 
 	res, err := doRequest(args[1])
 	if err != nil {
-		fmt.Printf("Error: %s\n", err)
-		os.Exit(1)
+		if requestError, ok := err.(RequestsError); ok {
+			fmt.Printf("Error: %s, (HTTP Code: %d, Body: %s)\n", requestError.Err, requestError.HTTPCode, requestError.Body)
+			os.Exit(1)
+		}
 	}
 
 	if res == nil {
@@ -86,11 +98,23 @@ func doRequest(requestURL string) (Responce, error) {
 		return nil, fmt.Errorf("Invalid output (HTTP Code %d): %s\n", response.StatusCode, string(body))
 	}
 
+	if !json.Valid(body) {
+		return nil, RequestsError{
+			HTTPCode: response.StatusCode,
+			Body:     string(body),
+			Err:      fmt.Sprintf("No valid JSON returned"),
+		}
+	}
+
 	var page Page
 
 	err = json.Unmarshal(body, &page)
 	if err != nil {
-		return nil, fmt.Errorf("Unmarshal error: %s", err)
+		return nil, RequestsError{
+			HTTPCode: response.StatusCode,
+			Body:     string(body),
+			Err:      fmt.Sprintf("Page unmarshal error: %s", err),
+		}
 	}
 
 	switch page.Name {
@@ -99,7 +123,11 @@ func doRequest(requestURL string) (Responce, error) {
 
 		err = json.Unmarshal(body, &words)
 		if err != nil {
-			return nil, fmt.Errorf("Unmarshal error: %s", err)
+			return nil, RequestsError{
+				HTTPCode: response.StatusCode,
+				Body:     string(body),
+				Err:      fmt.Sprintf("Words unmarshal error: %s", err),
+			}
 		}
 		return words, nil
 	case "occurrence":
@@ -107,7 +135,11 @@ func doRequest(requestURL string) (Responce, error) {
 
 		err = json.Unmarshal(body, &occurrence)
 		if err != nil {
-			return nil, fmt.Errorf("Unmarshal error: %s", err)
+			return nil, RequestsError{
+				HTTPCode: response.StatusCode,
+				Body:     string(body),
+				Err:      fmt.Sprintf("Occurrence unmarshal error: %s", err),
+			}
 		}
 		return occurrence, nil
 	}
