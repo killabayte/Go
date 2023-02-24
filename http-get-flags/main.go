@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"flag"
 	"fmt"
 	"io"
 	"net/http"
@@ -50,14 +51,25 @@ func (o Occurrence) GetResponce() string {
 }
 
 func main() {
-	args := os.Args
+	var (
+		requestURL string
+		password   string
+		parsedURL  *url.URL
+		err        error
+	)
 
-	if len(args) < 2 {
-		fmt.Printf("Usage: ./http-get <url>\n")
+	flag.StringVar(&requestURL, "url", "", "url to access")
+	flag.StringVar(&password, "password", "", "password to use api")
+
+	flag.Parse()
+
+	if parsedURL, err = url.ParseRequestURI(requestURL); err != nil {
+		fmt.Printf("Validation error: URL is not valid %s\n", err)
+		flag.Usage()
 		os.Exit(1)
 	}
 
-	res, err := doRequest(args[1])
+	res, err := doRequest(parsedURL.String())
 	if err != nil {
 		if requestError, ok := err.(RequestsError); ok {
 			fmt.Printf("Error: %s, (HTTP Code: %d, Body: %s)\n", requestError.Err, requestError.HTTPCode, requestError.Body)
