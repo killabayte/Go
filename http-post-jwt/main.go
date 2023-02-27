@@ -22,8 +22,8 @@ func (r RequestsError) Error() string {
 	return r.Err
 }
 
-type Responce interface {
-	GetResponce() string
+type response interface {
+	Getresponse() string
 }
 
 type Page struct {
@@ -35,7 +35,7 @@ type Words struct {
 	Words []string `json:"words"`
 }
 
-func (w Words) GetResponce() string {
+func (w Words) Getresponse() string {
 	return fmt.Sprintf("%s", strings.Join(w.Words, ", "))
 }
 
@@ -43,7 +43,7 @@ type Occurrence struct {
 	Words map[string]int `json:"words"`
 }
 
-func (o Occurrence) GetResponce() string {
+func (o Occurrence) Getresponse() string {
 	out := []string{}
 	for word, occurrence := range o.Words {
 		out = append(out, fmt.Sprintf("%s (%d)", word, occurrence))
@@ -69,9 +69,44 @@ func doLoginRequest(requestURL string, password string) (string, error) {
 		return "", fmt.Errorf("Marshal error: %s", err)
 	}
 
-	http.Post(requestURL, "application/json", bytes.NewBuffer(body))
+	response, err := http.Post(requestURL, "application/json", bytes.NewBuffer(body))
 
-	return "", nil
+	if err != nil {
+		return "", fmt.Errorf("httpPOST error: %s", err)
+	}
+
+	defer response.Body.Close()
+
+	resBody, err := io.ReadAll(response.Body)
+
+	if err != nil {
+		return "", fmt.Errorf("ReadAll error: %s", err)
+	}
+
+	if response.StatusCode != 200 {
+		return "", fmt.Errorf("Invalid output (HTTP Code %d): %s\n", response.StatusCode, string(body))
+	}
+
+	if !json.Valid(resBody) {
+		return "", RequestsError{
+			HTTPCode: response.StatusCode,
+			Body:     string(body),
+			Err:      fmt.Sprintf("No valid JSON returned"),
+		}
+	}
+
+	var loginResponse LoginResponse
+
+	err = json.Unmarshal(body, &loginResponse)
+	if err != nil {
+		return "", RequestsError{
+			HTTPCode: response.StatusCode,
+			Body:     string(body),
+			Err:      fmt.Sprintf("Page unmarshal error: %s", err),
+		}
+	}
+
+	return loginResponse.Token, nil
 }
 
 func main() {
@@ -114,19 +149,15 @@ func main() {
 	}
 
 	if res == nil {
-		fmt.Printf("No responce")
+		fmt.Printf("No response")
 		os.Exit(1)
 	}
 
-	fmt.Printf("Responce: %s", res.GetResponce())
+	fmt.Printf("response: %s", res.Getresponse())
 
 }
 
-func doRequest(requestURL string) (Responce, error) {
-
-	if _, err := url.ParseRequestURI(requestURL); err != nil {
-		return nil, fmt.Errorf("Validation error: URL is not valid %s", err)
-	}
+func doRequest(requestURL string) (response, error) {
 
 	response, err := http.Get(requestURL)
 
