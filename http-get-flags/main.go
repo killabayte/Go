@@ -50,6 +50,10 @@ func (o Occurrence) GetResponce() string {
 	return fmt.Sprintf("%s", strings.Join(out, ", "))
 }
 
+func doLoginRequest(loginUrl string, password string) (string, error) {
+	return "", nil
+}
+
 func main() {
 	var (
 		requestURL string
@@ -66,6 +70,18 @@ func main() {
 	if parsedURL, err = url.ParseRequestURI(requestURL); err != nil {
 		fmt.Printf("Validation error: URL is not valid %s\n", err)
 		flag.Usage()
+		os.Exit(1)
+	}
+
+	if password != "" {
+		token, err := doLoginRequest(parsedURL.Scheme+"://"+parsedURL.Host+"login", password)
+		if err != nil {
+			if requestError, ok := err.(RequestsError); ok {
+				fmt.Printf("Error: %s, (HTTP Code: %d, Body: %s)\n", requestError.Err, requestError.HTTPCode, requestError.Body)
+				os.Exit(1)
+			}
+		}
+		fmt.Printf("Token: %s", token)
 		os.Exit(1)
 	}
 
