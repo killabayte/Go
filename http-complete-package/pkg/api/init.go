@@ -8,6 +8,7 @@ type Options struct {
 }
 
 type APIIface interface {
+	DoGetRequest(requestURL string) (Responce, error)
 }
 
 type API struct {
