@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"encoding/json"
 	"flag"
 	"fmt"
@@ -50,7 +51,26 @@ func (o Occurrence) GetResponce() string {
 	return fmt.Sprintf("%s", strings.Join(out, ", "))
 }
 
-func doLoginRequest(loginUrl string, password string) (string, error) {
+type LoginRequest struct {
+	Password string `json:password`
+}
+
+type LoginResponse struct {
+	Token string `json:token`
+}
+
+func doLoginRequest(requestURL string, password string) (string, error) {
+	loginRequest := LoginRequest{
+		Password: password,
+	}
+
+	body, err := json.Marshal(loginRequest)
+	if err != nil {
+		return "", fmt.Errorf("Marshal error: %s", err)
+	}
+
+	http.Post(requestURL, "application/json", bytes.NewBuffer(body))
+
 	return "", nil
 }
 
