@@ -59,7 +59,19 @@ type LoginResponse struct {
 	Token string `json:token`
 }
 
-func doLoginRequest(requestURL string, password string) (string, error) {
+type MyJWTTransport struct {
+	transport http.RoundTripper
+	token     string
+}
+
+func (m MyJWTTransport) RoundTrip(req *http.Request) (*http.Response, error) {
+	if m.token != "" {
+		req.Header.Add("Authorization", "Bearer "+m.token)
+	}
+	return m.transport.RoundTrip(req)
+}
+
+func doLoginRequest(client http.Client, requestURL string, password string) (string, error) {
 	loginRequest := LoginRequest{
 		Password: password,
 	}
@@ -69,7 +81,7 @@ func doLoginRequest(requestURL string, password string) (string, error) {
 		return "", fmt.Errorf("Marshal error: %s", err)
 	}
 
-	response, err := http.Post(requestURL, "application/json", bytes.NewBuffer(body))
+	response, err := client.Post(requestURL, "application/json", bytes.NewBuffer(body))
 
 	if err != nil {
 		return "", fmt.Errorf("httpPOST error: %s", err)
@@ -84,24 +96,24 @@ func doLoginRequest(requestURL string, password string) (string, error) {
 	}
 
 	if response.StatusCode != 200 {
-		return "", fmt.Errorf("Invalid output (HTTP Code %d): %s\n", response.StatusCode, string(body))
+		return "", fmt.Errorf("Invalid output (HTTP Code %d): %s\n", response.StatusCode, string(resBody))
 	}
 
 	if !json.Valid(resBody) {
 		return "", RequestsError{
 			HTTPCode: response.StatusCode,
-			Body:     string(body),
+			Body:     string(resBody),
 			Err:      fmt.Sprintf("No valid JSON returned"),
 		}
 	}
 
 	var loginResponse LoginResponse
 
-	err = json.Unmarshal(body, &loginResponse)
+	err = json.Unmarshal(resBody, &loginResponse)
 	if err != nil {
 		return "", RequestsError{
 			HTTPCode: response.StatusCode,
-			Body:     string(body),
+			Body:     string(resBody),
 			Err:      fmt.Sprintf("Page unmarshal error: %s", err),
 		}
 	}
@@ -128,19 +140,23 @@ func main() {
 		os.Exit(1)
 	}
 
+	client := http.Client{}
+
 	if password != "" {
-		token, err := doLoginRequest(parsedURL.Scheme+"://"+parsedURL.Host+"/login", password)
+		token, err := doLoginRequest(client, parsedURL.Scheme+"://"+parsedURL.Host+"/login", password)
 		if err != nil {
 			if requestError, ok := err.(RequestsError); ok {
 				fmt.Printf("Error: %s, (HTTP Code: %d, Body: %s)\n", requestError.Err, requestError.HTTPCode, requestError.Body)
 				os.Exit(1)
 			}
 		}
-		fmt.Printf("Token: %s", token)
-		os.Exit(1)
+		client.Transport = MyJWTTransport{
+			transport: http.DefaultTransport,
+			token:     token,
+		}
 	}
 
-	res, err := doRequest(parsedURL.String())
+	res, err := doRequest(client, parsedURL.String())
 	if err != nil {
 		if requestError, ok := err.(RequestsError); ok {
 			fmt.Printf("Error: %s, (HTTP Code: %d, Body: %s)\n", requestError.Err, requestError.HTTPCode, requestError.Body)
@@ -157,9 +173,9 @@ func main() {
 
 }
 
-func doRequest(requestURL string) (response, error) {
+func doRequest(client http.Client, requestURL string) (response, error) {
 
-	response, err := http.Get(requestURL)
+	response, err := client.Get(requestURL)
 
 	if err != nil {
 		return nil, fmt.Errorf("httpGet error: %s", err)
