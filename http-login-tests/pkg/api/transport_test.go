@@ -36,8 +36,11 @@ func TestRoundTrip(t *testing.T) {
 				Body:       io.NopCloser(bytes.NewReader(loginResponeBytes)),
 			},
 		},
+		password: "xyz",
 	}
-	req := &http.Request{}
+	req := &http.Request{
+		Header: make(http.Header),
+	}
 	res, err := myJWTTransport.RoundTrip(req)
 	if err != nil {
 		t.Fatalf("RoundTrip error: %s", err)
