@@ -46,6 +46,6 @@ func main() {
 		os.Exit(1)
 	}
 
-	fmt.Printf("response: %s", res.Getresponse())
+	fmt.Printf("response: %s", res.GetResponse())
 
 }

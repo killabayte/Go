@@ -8,7 +8,7 @@ import (
 )
 
 type Response interface {
-	Getresponse() string
+	GetResponse() string
 }
 
 type Page struct {
@@ -20,7 +20,7 @@ type Words struct {
 	Words []string `json:"words"`
 }
 
-func (w Words) Getresponse() string {
+func (w Words) GetResponse() string {
 	return fmt.Sprintf("%s", strings.Join(w.Words, ", "))
 }
 
@@ -28,7 +28,7 @@ type Occurrence struct {
 	Words map[string]int `json:"words"`
 }
 
-func (o Occurrence) Getresponse() string {
+func (o Occurrence) GetResponse() string {
 	out := []string{}
 	for word, occurrence := range o.Words {
 		out = append(out, fmt.Sprintf("%s (%d)", word, occurrence))

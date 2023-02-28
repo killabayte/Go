@@ -8,7 +8,7 @@ type Options struct {
 }
 
 type APIIface interface {
-	DoGetRequest(requestURL string) (Responce, error)
+	DoGetRequest(requestURL string) (Response, error)
 }
 
 type API struct {
@@ -20,7 +20,7 @@ func New(options Options) APIIface {
 	return API{
 		Options: options,
 		Client: http.Client{
-			Transport: MyJWTTransport{
+			Transport: &MyJWTTransport{
 				transport: http.DefaultTransport,
 				password:  options.Password,
 				loginURL:  options.LoginURL,
