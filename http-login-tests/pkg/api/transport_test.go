@@ -3,6 +3,7 @@ package api
 import (
 	"bytes"
 	"encoding/json"
+	"fmt"
 	"io"
 	"net/http"
 	"testing"
@@ -13,6 +14,9 @@ type MockRoundTripper struct {
 }
 
 func (m MockRoundTripper) RoundTrip(req *http.Request) (*http.Response, error) {
+	if req.Header.Get("Authorization") != "Bearer abc" {
+		return nil, fmt.Errorf("Wrong authorization header: %s", req.Header.Get("Authorization"))
+	}
 	return m.RoundTripperOutput, nil
 }
 
