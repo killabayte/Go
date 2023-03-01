@@ -20,26 +20,6 @@ type Words struct {
 	Words []string `json:"words"`
 }
 
-type Percentages struct {
-	Name []float64 `json:"percentages"`
-}
-
-func (p Percentages) GetResponse() string {
-	out := []string{}
-	for percentage := range p.Name {
-		out = append(out, fmt.Sprintf("%d", percentage))
-	}
-	return fmt.Sprintf("%s", strings.Join(out, ", "))
-}
-
-type Special struct {
-	Name []string `json:"special"`
-}
-
-type ExtraSpecial struct {
-	Name []string `json:"extraSpecial"`
-}
-
 type WordsPage struct {
 	Page
 	Words
@@ -58,6 +38,24 @@ func (o Occurrence) GetResponse() string {
 	for word, occurrence := range o.Words {
 		out = append(out, fmt.Sprintf("%s (%d)", word, occurrence))
 	}
+	return fmt.Sprintf("%s", strings.Join(out, ", "))
+}
+
+type Assignment struct {
+	Percentages map[string]float64 `json:"percentages"`
+	Words       []string           `json:"words"`
+	Special     []string           `json:"special"`
+	Extra       []string           `json:"extraSpecial"`
+}
+
+func (a Assignment) GetResponse() string {
+	out := []string{}
+	for k, v := range a.Percentages {
+		out = append(out, fmt.Sprintf("%s (%d)", k, v))
+	}
+	out = append(out, fmt.Sprintf("%s", strings.Join(a.Words, ", ")))
+	out = append(out, fmt.Sprintf("%s", strings.Join(a.Special, ", ")))
+	out = append(out, fmt.Sprintf("%s", strings.Join(a.Extra, ", ")))
 	return fmt.Sprintf("%s", strings.Join(out, ", "))
 }
 
@@ -125,18 +123,18 @@ func (a api) DoGetRequest(requestURL string) (Response, error) {
 			}
 		}
 		return occurrence, nil
-	case "percentages":
-		var percentages Percentages
+	case "assignment1":
+		var assignment Assignment
 
-		err = json.Unmarshal(body, &percentages)
+		err = json.Unmarshal(body, &assignment)
 		if err != nil {
 			return nil, RequestsError{
 				HTTPCode: response.StatusCode,
 				Body:     string(body),
-				Err:      fmt.Sprintf("Percentages unmarshal error: %s", err),
+				Err:      fmt.Sprintf("Assignment unmarshal error: %s", err),
 			}
 		}
-		return percentages, nil
+		return assignment, nil
 	}
 	return nil, nil
 }
