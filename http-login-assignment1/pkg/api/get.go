@@ -45,17 +45,19 @@ type Assignment struct {
 	Percentages map[string]float64 `json:"percentages"`
 	Words       []string           `json:"words"`
 	Special     []string           `json:"special"`
-	Extra       []string           `json:"extraSpecial"`
+	Extra       []any              `json:"extraSpecial"`
 }
 
 func (a Assignment) GetResponse() string {
 	out := []string{}
 	for k, v := range a.Percentages {
-		out = append(out, fmt.Sprintf("%s (%d)", k, v))
+		out = append(out, fmt.Sprintf("%s (%.2f)", k, v))
 	}
 	out = append(out, fmt.Sprintf("%s", strings.Join(a.Words, ", ")))
 	out = append(out, fmt.Sprintf("%s", strings.Join(a.Special, ", ")))
-	out = append(out, fmt.Sprintf("%s", strings.Join(a.Extra, ", ")))
+	for _, v := range a.Extra {
+		out = append(out, fmt.Sprintf("%v", v))
+	}
 	return fmt.Sprintf("%s", strings.Join(out, ", "))
 }
 
