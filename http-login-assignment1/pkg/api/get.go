@@ -20,6 +20,26 @@ type Words struct {
 	Words []string `json:"words"`
 }
 
+type Percentages struct {
+	Name []float64 `json:"percentages"`
+}
+
+func (p Percentages) GetResponse() string {
+	out := []string{}
+	for percentage := range p.Name {
+		out = append(out, fmt.Sprintf("%d", percentage))
+	}
+	return fmt.Sprintf("%s", strings.Join(out, ", "))
+}
+
+type Special struct {
+	Name []string `json:"special"`
+}
+
+type ExtraSpecial struct {
+	Name []string `json:"extraSpecial"`
+}
+
 type WordsPage struct {
 	Page
 	Words
@@ -105,7 +125,18 @@ func (a api) DoGetRequest(requestURL string) (Response, error) {
 			}
 		}
 		return occurrence, nil
-	}
+	case "percentages":
+		var percentages Percentages
 
+		err = json.Unmarshal(body, &percentages)
+		if err != nil {
+			return nil, RequestsError{
+				HTTPCode: response.StatusCode,
+				Body:     string(body),
+				Err:      fmt.Sprintf("Percentages unmarshal error: %s", err),
+			}
+		}
+		return percentages, nil
+	}
 	return nil, nil
 }
