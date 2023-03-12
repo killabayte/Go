@@ -4,10 +4,10 @@ import "fmt"
 
 func main() {
 	a := "string"
-	testPointer(&a)
-	fmt.Printf("a: %s\n", a)
+	testPointer(a)
+	fmt.Printf("a: %v\n", &a)
 }
 
-func testPointer(a *string) {
-	*a = "another string"
+func testPointer(a string) {
+	a = "another string"
 }
