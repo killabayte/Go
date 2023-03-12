@@ -3,11 +3,11 @@ package main
 import "fmt"
 
 func main() {
-	a := "string"
+	a := []string{"string"}
 	testPointer(a)
-	fmt.Printf("a: %v\n", &a)
+	fmt.Printf("a: %v\n", a)
 }
 
-func testPointer(a string) {
-	a = "another string"
+func testPointer(a []string) {
+	a[0] = "another string"
 }
