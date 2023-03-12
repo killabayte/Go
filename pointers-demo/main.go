@@ -9,5 +9,6 @@ func main() {
 }
 
 func testPointer(a []string) {
-	a[0] = "another string"
+	a[0] = "changed element"
+	a = append(a, "another string")
 }
