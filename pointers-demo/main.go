@@ -3,11 +3,13 @@ package main
 import "fmt"
 
 func main() {
-	a := []string{"string"}
-	testPointer(&a)
+	a := make(map[string]string)
+	a["test"] = "value"
+	testPointer(a)
 	fmt.Printf("a: %v\n", a)
 }
 
-func testPointer(a *[]string) {
-	*a = append(*a, "another string")
+func testPointer(a map[string]string) {
+	a["testOne"] = "1"
+	a["testTwo"] = "2"
 }
