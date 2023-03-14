@@ -22,4 +22,7 @@ func main() {
 	var arr3 []int
 	fmt.Println(arr3)
 	fmt.Printf("%d %d\n", len(arr3), cap(arr3))
+	arr3 = append(arr3, 5)
+	fmt.Println(arr3)
+	fmt.Printf("%d %d\n", len(arr3), cap(arr3))
 }
