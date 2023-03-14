@@ -18,4 +18,8 @@ func main() {
 	fmt.Println(arr2)
 	fmt.Printf("%d %d\n", len(arr2), cap(arr2))
 	fmt.Println(arr1)
+
+	var arr3 []int
+	fmt.Println(arr3)
+	fmt.Printf("%d %d\n", len(arr3), cap(arr3))
 }
