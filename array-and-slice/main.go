@@ -12,4 +12,10 @@ func main() {
 	arr2 = arr2[0 : len(arr2)+2]
 	fmt.Println(arr2)
 	fmt.Printf("%d %d\n", len(arr2), cap(arr2))
+	for k := range arr2 {
+		arr2[k] += 1
+	}
+	fmt.Println(arr2)
+	fmt.Printf("%d %d\n", len(arr2), cap(arr2))
+	fmt.Println(arr1)
 }
