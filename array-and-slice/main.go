@@ -31,4 +31,9 @@ func main() {
 	fmt.Println(arr4)
 	fmt.Printf("%d %d\n", len(arr4), cap(arr4))
 
+	//Array2
+	arr5 := make([]int, 9)
+	fmt.Println(arr5)
+	fmt.Printf("%d %d\n", len(arr4), cap(arr5))
+
 }
