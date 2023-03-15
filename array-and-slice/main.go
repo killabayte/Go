@@ -36,4 +36,6 @@ func main() {
 	fmt.Println(arr5)
 	fmt.Printf("%d %d\n", len(arr4), cap(arr5))
 
+	//Conclusion: Slice are more popular structure in Go
+	//But arrays can be used for optimize resources usage and so on...
 }
