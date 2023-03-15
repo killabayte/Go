@@ -25,4 +25,10 @@ func main() {
 	arr3 = append(arr3, 5)
 	fmt.Println(arr3)
 	fmt.Printf("%d %d\n", len(arr3), cap(arr3))
+
+	//Arrayarr1
+	arr4 := make([]int, 3)
+	fmt.Println(arr4)
+	fmt.Printf("%d %d\n", len(arr4), cap(arr4))
+
 }
