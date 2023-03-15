@@ -32,7 +32,7 @@ func main() {
 	fmt.Printf("%d %d\n", len(arr4), cap(arr4))
 
 	//Array2
-	arr5 := make([]int, 9)
+	arr5 := make([]int, 11)
 	fmt.Println(arr5)
 	fmt.Printf("%d %d\n", len(arr4), cap(arr5))
 
