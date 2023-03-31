@@ -8,5 +8,4 @@ func main() {
 	fmt.Println("type-switch representation")
 
 	//Blue-print: end comment seesion
-
 }
