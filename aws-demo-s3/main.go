@@ -1,10 +1,11 @@
 package main
 
 import (
+	"bytes"
 	"context"
 	"fmt"
+	"io/ioutil"
 	"os"
-	"strings"
 
 	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/config"
@@ -72,12 +73,29 @@ func createS3Bucket(ctx context.Context, s3Client *s3.Client) error {
 	return nil
 }
 
+// func uploadToS3Bucket(ctx context.Context, s3Client *s3.Client) error {
+// 	uploader := manager.NewUploader(s3Client)
+// 	_, err := uploader.Upload(ctx, &s3.PutObjectInput{
+// 		Bucket: aws.String(bucketName),
+// 		Key:    aws.String("upload.test"),
+// 		Body:   strings.NewReader("This is upload test from golang sdk"),
+// 	})
+// 	if err != nil {
+// 		return fmt.Errorf("Upload error: %s", err)
+// 	}
+// 	return nil
+// }
+
 func uploadToS3Bucket(ctx context.Context, s3Client *s3.Client) error {
+	testFile, err := ioutil.ReadFile("test.txt")
+	if err != nil {
+		return fmt.Errorf("Readfile error: %s", err)
+	}
 	uploader := manager.NewUploader(s3Client)
-	_, err := uploader.Upload(ctx, &s3.PutObjectInput{
+	_, err = uploader.Upload(ctx, &s3.PutObjectInput{
 		Bucket: aws.String(bucketName),
 		Key:    aws.String("upload.test"),
-		Body:   strings.NewReader("This is upload test from golang sdk"),
+		Body:   bytes.NewReader(testFile),
 	})
 	if err != nil {
 		return fmt.Errorf("Upload error: %s", err)
