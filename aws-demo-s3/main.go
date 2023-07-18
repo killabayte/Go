@@ -102,3 +102,20 @@ func uploadToS3Bucket(ctx context.Context, s3Client *s3.Client) error {
 	}
 	return nil
 }
+
+func downloadFromS3(ctx context.Context, s3Client *s3.Client) ([]byte, error) {
+	downloader := manager.NewDownloader(s3Client)
+	buffer := manager.NewWriteAtBuffer([]byte{})
+
+	numBytes, err := downloader.Download(ctx, buffer, &s3.GetObjectInput{
+		Bucket: aws.String(bucketName),
+		Key:    aws.String("upload.test"),
+	})
+	if err != nil {
+		return nil, fmt.Errorf("Download error: %s", err)
+	}
+	if numBytesReceived := len(buffer.Bytes()); numBytes != int64(numBytesReceived) {
+		return nil, fmt.Errorf("Numbers received dosen't match: %d vs %d", numBytes, numBytesReceived)
+	}
+	return buffer.Bytes(), nil
+}
