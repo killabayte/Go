@@ -17,6 +17,11 @@ import (
 const bucketName = "aws-golang-sdk-test-20231707"
 const regionName = "eu-central-1"
 
+type S3Client interface {
+	ListBuckets(ctx context.Context, params *s3.ListBucketsInput, optFns ...func(*s3.Options)) (*s3.ListBucketsOutput, error)
+	CreateBucket(ctx context.Context, params *s3.CreateBucketInput, optFns ...func(*s3.Options)) (*s3.CreateBucketOutput, error)
+}
+
 func main() {
 	var (
 		s3Client *s3.Client
@@ -47,7 +52,7 @@ func initS3Client(ctx context.Context) (*s3.Client, error) {
 	return s3.NewFromConfig(cfg), nil
 }
 
-func createS3Bucket(ctx context.Context, s3Client *s3.Client) error {
+func createS3Bucket(ctx context.Context, s3Client S3Client) error {
 	allBuckets, err := s3Client.ListBuckets(ctx, &s3.ListBucketsInput{})
 	if err != nil {
 		return fmt.Errorf("ListBuckets error: %s", err)
