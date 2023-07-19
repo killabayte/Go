@@ -13,7 +13,7 @@ import (
 
 func main() {
 	brocken := "G# r#cks!"
-	replacer := strings.NewReplacer("#", "o")
-	fixed := replacer.Replace(brocken)
-	fmt.Println(fixed)
+	// replacer := strings.NewReplacer("#", "o")
+	// fixed := replacer.Replace(brocken)
+	fmt.Println(strings.NewReplacer("#", "o").Replace(brocken))
 }
