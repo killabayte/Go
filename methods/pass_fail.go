@@ -5,6 +5,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"log"
 	"os"
 )
 
@@ -15,6 +16,10 @@ func main() {
 	// if err != nil {
 	// 	fmt.Printf("Read error: %s", err)
 	// }
-	input, _ := reader.ReadString('\n')
+	// input, _ := reader.ReadString('\n')
+	input, err := reader.ReadString('\n')
+	if err != nil {
+		log.Fatal(err)
+	}
 	fmt.Println(input)
 }
