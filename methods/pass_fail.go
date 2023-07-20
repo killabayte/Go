@@ -28,10 +28,11 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	var status string
 	if grade >= 60 {
-		status := "passing"
+		status = "passing"
 	} else {
-		status := "failing"
+		status = "failing"
 	}
-	fmt.Println(input)
+	fmt.Println("A garde of", grade, "is", status)
 }
