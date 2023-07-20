@@ -21,5 +21,10 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	if input >= 60 {
+		status := "passing"
+	} else {
+		status := "failing"
+	}
 	fmt.Println(input)
 }
