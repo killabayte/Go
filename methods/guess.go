@@ -20,6 +20,7 @@ func main() {
 
 	reader := bufio.NewReader(os.Stdin)
 
+	success := false
 	for guesses := 0; guesses < 10; guesses++ {
 		fmt.Println("You have", 10-guesses, "guesses left.")
 
