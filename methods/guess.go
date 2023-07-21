@@ -16,7 +16,6 @@ func main() {
 	rand.Seed(seconds)
 	target := rand.Intn(100) + 1
 	fmt.Println("I've chosen a random number between 1 and 100.\nCan you guess it?")
-	fmt.Println(target)
 
 	reader := bufio.NewReader(os.Stdin)
 
@@ -39,8 +38,12 @@ func main() {
 		} else if guess > target {
 			fmt.Println("Oops. Your guess was HIGH.")
 		} else {
+			success = true
 			fmt.Println("Good job! You guess it!")
 			break
 		}
+	}
+	if !success {
+		fmt.Println("Sorry, you didn't guess my number. It was:", target)
 	}
 }
