@@ -1,3 +1,4 @@
+// guess - the game where player must guess random number from 1 - 100 which was riddled by the AI
 package main
 
 import (
