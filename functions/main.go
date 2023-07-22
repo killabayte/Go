@@ -7,7 +7,7 @@ func main() {
 }
 
 func repeatLine(line string, times int) {
-	for i := 0; i <= times; i++ {
+	for i := 0; i < times; i++ {
 		fmt.Println(line)
 	}
 }
