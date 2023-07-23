@@ -2,7 +2,10 @@ package main
 
 import "fmt"
 
-func paintNeeded(width float64, height float64) float64 {
+func paintNeeded(width float64, height float64) (float64, error) {
+	if width < 0 {
+		return 0, fmt.Errorf("a width of %0.2f is invalid", width)
+	}
 	area := width * height
 	return area / 10.0
 }
