@@ -16,5 +16,4 @@ func main() {
 	fmt.Printf("%0.2f liters needed\n", amount)
 	total += amount
 	fmt.Printf("Total: %0.2f liters\n", total)
-
 }
