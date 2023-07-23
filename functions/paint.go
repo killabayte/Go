@@ -21,7 +21,7 @@ func main() {
 	}
 	fmt.Printf("%0.2f liters needed\n", amount)
 	total += amount
-	amount, err = paintNeeded(5.2, 3.5)
+	amount, err = paintNeeded(0, -3.5)
 	if err != nil {
 		fmt.Println(err)
 	}
