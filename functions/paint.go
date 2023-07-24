@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+)
 
 func paintNeeded(width float64, height float64) (float64, error) {
 	if width < 0 {
@@ -17,13 +20,13 @@ func main() {
 	var amount, total float64
 	amount, err := paintNeeded(4.2, 3.0)
 	if err != nil {
-		fmt.Println(err)
+		log.Fatal(err)
 	}
 	fmt.Printf("%0.2f liters needed\n", amount)
 	total += amount
 	amount, err = paintNeeded(0, -3.5)
 	if err != nil {
-		fmt.Println(err)
+		log.Fatal(err)
 	}
 	fmt.Printf("%0.2f liters needed\n", amount)
 	total += amount
