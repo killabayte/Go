@@ -2,6 +2,8 @@ package main
 
 import (
 	"bufio"
+	"fmt"
+	"log"
 	"os"
 	"strconv"
 	"strings"
@@ -19,4 +21,14 @@ func getFloat() (float64, error) {
 		return 0, err
 	}
 	return number, nil
+}
+
+func main() {
+	fmt.Println("Enter a tempreture in Fahrenheit: ")
+	fahrenheit, err := getFloat()
+	if err != nil {
+		log.Fatal(err)
+	}
+	celsius := (fahrenheit - 32) * 5 / 9
+	fmt.Printf("%0.2f degrees Celsius\n", celsius)
 }
