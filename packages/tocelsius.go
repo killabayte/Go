@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	"keyboard"
 	"log"
+
+	"github.com/killabayte/keyboard"
 )
 
 func main() {
