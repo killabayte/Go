@@ -19,7 +19,7 @@ func main() {
 	fmt.Println("Name:", kia.name)
 	fmt.Println("Top speed:", kia.topSpeed)
 
-	var bolts parts
+	var bolts part
 	bolts.description = "hex bolts"
 	bolts.count = 42
 	fmt.Println("Description:", bolts.description)
