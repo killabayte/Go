@@ -1,14 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/headfirstgo/magazine"
+)
 
 func main() {
-	var pet struct {
-		name string
-		age  int
-	}
-	pet.name = "Max"
-	pet.age = 5
-	fmt.Println("Name:", pet.name)
-	fmt.Println("Age:", pet.age)
+	var s magazine.Subscriber
+	s.Rate = 4.99
+	fmt.Println(s.Rate)
 }
