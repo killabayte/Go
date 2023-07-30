@@ -18,3 +18,10 @@ type Employee struct {
 	State      string
 	PostalCode string
 }
+
+type Address struct {
+	Street     string
+	City       string
+	State      string
+	PostalCode string
+}
