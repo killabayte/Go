@@ -7,7 +7,9 @@ import (
 )
 
 func main() {
-	var s magazine.Subscriber
-	s.Rate = 4.99
-	fmt.Println(s.Rate)
+	var employee magazine.Employee
+	employee.Name = "John Week"
+	employee.Salary = 999999
+	fmt.Println(employee.Name)
+	fmt.Println(employee.Salary)
 }
