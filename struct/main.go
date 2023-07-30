@@ -7,9 +7,10 @@ import (
 )
 
 func main() {
-	var employee magazine.Employee
-	employee.Name = "John Week"
-	employee.Salary = 999999
-	fmt.Println(employee.Name)
-	fmt.Println(employee.Salary)
+	var address magazine.Address
+	address.Street = "1357 Odd st"
+	address.City = "Omaha"
+	address.State = "NE"
+	address.PostalCode = "68111"
+	fmt.Println(address)
 }
