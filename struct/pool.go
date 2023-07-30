@@ -1,9 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/headfirstgo/geo"
+)
 
 func main() {
-	location := geo.Coordinates{Latitude: 37.42, longitude: -122.08}
+	location := geo.Coordinates{Latitude: 37.42, Longitude: -122.08}
 	fmt.Println("Latitude:", location.Latitude)
-	fmt.Println("longitude:", location.longitude)
+	fmt.Println("Longitude:", location.Longitude)
 }
