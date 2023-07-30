@@ -1,7 +1,20 @@
 package magazine
 
 type Subscriber struct {
-	Name   string
-	Rate   float64
-	Active bool
+	Name       string
+	Rate       float64
+	Active     bool
+	Street     string
+	City       string
+	State      string
+	PostalCode string
+}
+
+type Employee struct {
+	Name       string
+	Salary     float64
+	Street     string
+	City       string
+	State      string
+	PostalCode string
 }
