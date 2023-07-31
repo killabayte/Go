@@ -22,8 +22,8 @@ func (d *Date) SetDay(day int) {
 
 func main() {
 	date := Date{}
-	date.SetYear(2019)
-	date.SetMonth(07)
-	date.SetDay(31)
+	date.SetYear(-2019)
+	date.SetMonth(70)
+	date.SetDay(42)
 	fmt.Println(date)
 }
