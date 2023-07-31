@@ -9,6 +9,6 @@ func main() {
 	var carFuel Gallons
 	var busFuel Liters
 	carFuel = Gallons(10.0)
-	busFule = Liters(240.0)
+	busFuel = Liters(240.0)
 	fmt.Println(carFuel, busFuel)
 }
