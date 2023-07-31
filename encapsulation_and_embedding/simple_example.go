@@ -33,6 +33,7 @@ func (d *Date) SetDay(day int) error {
 		return errors.New("Invalid day")
 	}
 	d.Day = day
+	return nil
 }
 
 func main() {
