@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type Liters float64
 type Gallons float64
 type Milliliters float64
@@ -21,5 +23,9 @@ func (m Milliliters) ToLiters() Liters {
 }
 
 func main() {
+	l := Liters(3)
+	fmt.Printf("%0.1f liters is %0.1f milliliters\n", l, l.ToMilliliters())
+	ml := Milliliters(500)
+	fmt.Printf("%0.1f milliliters is %0.1f liters\n", ml, ml.ToLiters())
 
 }
