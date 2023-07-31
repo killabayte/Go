@@ -2,16 +2,24 @@ package main
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/headfirstgo/calendar"
 )
 
 func main() {
 	date := calendar.Date{}
-	date.Year = 2019
-	date.Month = 14
-	date.Day = 50
-	fmt.Println(date)
-	date = calendar.Date{Year: 0, Month: 0, Day: -2}
+	err := date.SetYear(2019)
+	if err != nil {
+		log.Fatal(err)
+	}
+	err = date.SetMonth(07)
+	if err != nil {
+		log.Fatal(err)
+	}
+	err = date.SetDay(31)
+	if err != nil {
+		log.Fatal(err)
+	}
 	fmt.Println(date)
 }
