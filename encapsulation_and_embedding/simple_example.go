@@ -42,7 +42,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	date.SetMonth(70)
-	date.SetDay(42)
+	err = date.SetMonth(07)
+	if err != nil {
+		log.Fatal(err)
+	}
+	err = date.SetDay(31)
+	if err != nil {
+		log.Fatal(err)
+	}
 	fmt.Println(date)
 }
