@@ -4,6 +4,11 @@ import (
 	"errors"
 )
 
+type Event struct {
+	Title string
+	Date
+}
+
 type Date struct {
 	year  int
 	month int
