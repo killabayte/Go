@@ -9,6 +9,8 @@ import (
 
 func main() {
 	event := calendar.Event{}
+	event.Title = "Independence day"
+	fmt.Println(event.Title)
 	err := event.SetYear(2019)
 	if err != nil {
 		log.Fatal(err)
