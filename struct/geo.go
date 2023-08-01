@@ -1,12 +1,12 @@
 package geo
 
 type Coordinates struct {
-	Latitude  float64
-	Longitude float64
+	latitude  float64
+	longitude float64
 }
 
 type Landmark struct {
-	Name string
+	name string
 	Coordinates
 }
 
