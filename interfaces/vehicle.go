@@ -34,3 +34,14 @@ type Vehicle interface {
 	Brake()
 	Steer()
 }
+
+func main() {
+	var vehicle Vehicle = Car("Toyoda Yarvic")
+	vehicle.Accelerate()
+	vehicle.Steer("left")
+
+	vehicle = Truck("Fnord F180")
+	vehicle.Brake()
+	vehicle.Steer("right")
+
+}
