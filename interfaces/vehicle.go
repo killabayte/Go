@@ -48,4 +48,5 @@ func TryVehicle(vehicle Vehicle) {
 
 func main() {
 	TryVehicle(Truck("Fnord F180"))
+	TryVehicle(Car("Tonyota Bravis42"))
 }
