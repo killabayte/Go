@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	files, err := os.ReadDir("my_directory")
+	files, err := os.ReadDir("go_directory")
 	if err != nil {
 		log.Fatal(err)
 	}
