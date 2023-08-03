@@ -24,12 +24,13 @@ func (r Refrigerator) Close() {
 }
 func (r Refrigerator) Findfood(food string) error {
 	r.Open()
+	defer r.Close()
 	if find(food, r) {
 		fmt.Println("Found", food)
 	} else {
 		return fmt.Errorf("%s not found", food)
 	}
-	r.Close()
+
 	return nil
 }
 
