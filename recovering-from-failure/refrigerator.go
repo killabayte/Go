@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+)
 
 func find(item string, slice []string) bool {
 	for _, sliceItem := range slice {
@@ -28,4 +31,15 @@ func (r Refrigerator) Findfood(food string) error {
 	}
 	r.Close()
 	return nil
+}
+
+func main() {
+	frige := Refrigerator{"Milk", "Pizza", "Salsa"}
+	for _, food := range []string{"Milk", "Bananas"} {
+		err := frige.Findfood(food)
+		if err != nil {
+			log.Fatal(err)
+		}
+	}
+
 }
