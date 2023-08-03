@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"math/rand"
-	"time"
 )
 
 func awardPrize() {
@@ -20,6 +19,5 @@ func awardPrize() {
 }
 
 func main() {
-	rand.Seed(time.Now().Unix())
 	awardPrize()
 }
