@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func takoHunt() {
-	recover()
+	fmt.Println(recover())
 }
 func snack() {
 	defer takoHunt()
