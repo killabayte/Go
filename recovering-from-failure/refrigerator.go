@@ -30,7 +30,6 @@ func (r Refrigerator) Findfood(food string) error {
 	} else {
 		return fmt.Errorf("%s not found", food)
 	}
-
 	return nil
 }
 
