@@ -6,7 +6,7 @@ import (
 )
 
 func awardPrize() {
-	doorNumber := rand.Intn(3) + 1
+	doorNumber := rand.Intn(4) + 1
 	if doorNumber == 1 {
 		fmt.Println("You win a cruise!")
 	} else if doorNumber == 2 {
