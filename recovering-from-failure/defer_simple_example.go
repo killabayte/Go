@@ -1,13 +1,21 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+)
 
-func Socialize() {
+func Socialize() error {
 	defer fmt.Println("Goodbye!")
 	fmt.Println("Hello!")
+	return fmt.Errorf("I don't want to talk.")
 	fmt.Println("Nice weather, eh?")
+	return nil
 }
 
 func main() {
-	Socialize()
+	err := Socialize()
+	if err != nil {
+		log.Fatal(err)
+	}
 }
