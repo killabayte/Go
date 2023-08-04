@@ -6,6 +6,17 @@ import (
 	"path/filepath"
 )
 
+func reportPanic() {
+	p := recover()
+	if p == nil {
+		return
+	}
+	err, ok := p.(error)
+	if ok {
+		fmt.Println(err)
+	}
+}
+
 func scanDirectory(path string) {
 	fmt.Println(path)
 	files, err := os.ReadDir(path)
