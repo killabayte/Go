@@ -35,5 +35,6 @@ func scanDirectory(path string) {
 }
 
 func main() {
+	defer reportPanic()
 	scanDirectory("go_directory")
 }
