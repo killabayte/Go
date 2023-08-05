@@ -26,5 +26,5 @@ func main() {
 	go responseSize("https://example.com/")
 	go responseSize("https://golang.org/")
 	go responseSize("https://golang.org/doc")
-	time.Sleep(5 * time.Second)
+	time.Sleep(1 * time.Second)
 }
