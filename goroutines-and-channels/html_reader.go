@@ -25,5 +25,4 @@ func main() {
 	responseSize("https://example.com/")
 	responseSize("https://golang.org/")
 	responseSize("https://golang.org/doc")
-
 }
