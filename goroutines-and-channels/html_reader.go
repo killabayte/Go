@@ -37,5 +37,4 @@ func main() {
 		page := <-pages
 		fmt.Printf("%s: %d\n", page.URL, page.Size)
 	}
-
 }
