@@ -7,7 +7,7 @@ func TestTwoElements(t *testing.T) {
 	want := "apple and oragne"
 	got := JoinWithCommas(list)
 	if got != want {
-		t.Errorf("JoinWithCommas(%#v) = \"%s\", want \"%s\"", list, got, want)
+		t.Error(errorString(list, got, want))
 	}
 }
 
@@ -16,6 +16,6 @@ func TestThreeElements(t *testing.T) {
 	want := "apple, orange, and pear"
 	got := JoinWithCommas(list)
 	if got != want {
-		t.Errorf("JoinWithCommas(%#v) = \"%s\", want \"%s\"", list, got, want)
+		t.Error(errorString(list, got, want))
 	}
 }
