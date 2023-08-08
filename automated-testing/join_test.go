@@ -7,7 +7,7 @@ import (
 
 func TestTwoElements(t *testing.T) {
 	list := []string{"apple", "orange"}
-	want := "apple and oragne"
+	want := "apple and orange"
 	got := JoinWithCommas(list)
 	if got != want {
 		t.Error(errorString(list, got, want))
