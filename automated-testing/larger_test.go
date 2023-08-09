@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestFirstLarger(t *testinf.T) {
+func TestFirstLarger(t *testing.T) {
 	want := 2
 	got := Larger(2, 1)
 	if got != want {
