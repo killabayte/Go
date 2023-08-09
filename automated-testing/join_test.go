@@ -5,6 +5,7 @@ import (
 	"testing"
 )
 
+// Run all: go test ~/go/src/github.com/headfirstgo/prose -v
 func TestOneElements(t *testing.T) {
 	list := []string{"apple"}
 	want := "apple"
@@ -14,6 +15,7 @@ func TestOneElements(t *testing.T) {
 	}
 }
 
+// Run only one: go test ~/go/src/github.com/headfirstgo/prose -v -run Two
 func TestTwoElements(t *testing.T) {
 	list := []string{"apple", "orange"}
 	want := "apple and orange"
@@ -23,6 +25,7 @@ func TestTwoElements(t *testing.T) {
 	}
 }
 
+// Run all Elements: go test ~/go/src/github.com/headfirstgo/prose -v -run Elements
 func TestThreeElements(t *testing.T) {
 	list := []string{"apple", "orange", "pear"}
 	want := "apple, orange, and pear"
