@@ -21,6 +21,6 @@ func TestSecondLarger(t *testing.T) {
 	}
 }
 
-func errorString(a int, b int, want int, got int) string {
+func errorString(a int, b int, got int, want int) string {
 	return fmt.Sprintf("Larger(%d, %d) = %d, want %d", a, b, got, want)
 }
