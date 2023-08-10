@@ -5,6 +5,11 @@ import (
 	"testing"
 )
 
+type testData struct {
+	list []string
+	want string
+}
+
 // Run all: go test ~/go/src/github.com/headfirstgo/prose -v
 func TestOneElements(t *testing.T) {
 	list := []string{"apple"}
