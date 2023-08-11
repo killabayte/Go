@@ -5,9 +5,8 @@ import (
 	"net/http"
 )
 
-func viewHandler(writer http.ResponseWriter, request *http.Request) {
-	message := []byte("Hello, web!")
-	_, err := writer.Write(message)
+func write(writer http.ResponseWriter, message string) {
+	_, err := writer.Write([]byte(message))
 	if err != nil {
 		log.Fatal(err)
 	}
