@@ -12,13 +12,13 @@ func write(writer http.ResponseWriter, message string) {
 	}
 }
 
-func englishHandler(write http.ResponseWriter, request *http.Request) {
+func englishHandler(writer http.ResponseWriter, request *http.Request) {
 	write(writer, "Hello, web!")
 }
-func frenchHandler(write http.ResponseWriter, request *http.Request) {
+func frenchHandler(writer http.ResponseWriter, request *http.Request) {
 	write(writer, "Salute web!")
 }
-func yogaHandler(write http.ResponseWriter, request *http.Request) {
+func yogaHandler(writer http.ResponseWriter, request *http.Request) {
 	write(writer, "Namaste, web!")
 }
 
