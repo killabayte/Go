@@ -12,6 +12,10 @@ func write(writer http.ResponseWriter, message string) {
 	}
 }
 
+func englishHandler(write http.ResponseWriter, request *http.Request) {
+	write(writer, "Hello, web!")
+}
+
 func main() {
 	http.HandleFunc("/hello", viewHandler)
 	err := http.ListenAndServe("localhost:8080", nil)
