@@ -23,7 +23,9 @@ func yogaHandler(write http.ResponseWriter, request *http.Request) {
 }
 
 func main() {
-	http.HandleFunc("/hello", viewHandler)
+	http.HandleFunc("/hello", englishHandler)
+	http.HandleFunc("/salut", frenchHandler)
+	http.HandleFunc("/namaste", yogaHandler)
 	err := http.ListenAndServe("localhost:8080", nil)
 	log.Fatal(err)
 }
