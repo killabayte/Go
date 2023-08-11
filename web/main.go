@@ -12,3 +12,8 @@ func viewHandler(writer http.ResponseWriter, request *http.Request) {
 		log.Fatal(err)
 	}
 }
+
+func main() {
+	http.HandleFunc("/hello", viewHandler)
+	err := http.ListenAndServe("localhost:8080", nil)
+}
