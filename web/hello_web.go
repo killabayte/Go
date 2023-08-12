@@ -28,5 +28,4 @@ func main() {
 	http.HandleFunc("/namaste", yogaHandler)
 	err := http.ListenAndServe("localhost:8080", nil)
 	log.Fatal(err)
-
 }
