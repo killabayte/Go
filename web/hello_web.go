@@ -10,7 +10,6 @@ func write(writer http.ResponseWriter, message string) {
 	if err != nil {
 		log.Fatal(err)
 	}
-
 }
 
 func englishHandler(writer http.ResponseWriter, request *http.Request) {
