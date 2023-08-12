@@ -14,7 +14,6 @@ func write(writer http.ResponseWriter, message string) {
 
 func englishHandler(writer http.ResponseWriter, request *http.Request) {
 	write(writer, "Hello, web!")
-
 }
 func frenchHandler(writer http.ResponseWriter, request *http.Request) {
 	write(writer, "Salute web!")
