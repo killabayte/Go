@@ -17,7 +17,6 @@ func englishHandler(writer http.ResponseWriter, request *http.Request) {
 }
 func frenchHandler(writer http.ResponseWriter, request *http.Request) {
 	write(writer, "Salute web!")
-
 }
 func yogaHandler(writer http.ResponseWriter, request *http.Request) {
 	write(writer, "Namaste, web!")
