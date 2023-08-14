@@ -15,7 +15,5 @@ func twice(theFunction func()) {
 }
 
 func main() {
-	var myFunction func()
-	myFunction = sayHi
-	myFunction()
+
 }
