@@ -14,6 +14,10 @@ func twice(theFunction func()) {
 	theFunction()
 }
 
+func divide(a int, b int) float64 {
+	return float64(a) / float64(b)
+}
+
 func main() {
 	twice(sayHi)
 	twice(sayBye)
