@@ -29,5 +29,8 @@ func funcionC(a string, b bool) {
 }
 
 func main() {
-
+	callFunction(functionA)
+	callTwice(functionA)
+	callWithArguments(funcionC)
+	printReturnValue(functionB)
 }
