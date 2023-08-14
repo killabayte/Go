@@ -21,4 +21,6 @@ func divide(a int, b int) float64 {
 func main() {
 	twice(sayHi)
 	twice(sayBye)
+	var mathFunction func(int, int) float64
+	fmt.Println(mathFunction(5, 2))
 }
