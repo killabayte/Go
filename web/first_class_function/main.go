@@ -15,5 +15,6 @@ func twice(theFunction func()) {
 }
 
 func main() {
-
+	twice(sayHi)
+	twice(sayBye)
 }
