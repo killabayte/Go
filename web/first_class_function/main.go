@@ -22,5 +22,6 @@ func main() {
 	twice(sayHi)
 	twice(sayBye)
 	var mathFunction func(int, int) float64
+	mathFunction = divide
 	fmt.Println(mathFunction(5, 2))
 }
