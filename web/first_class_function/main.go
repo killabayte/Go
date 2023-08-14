@@ -9,4 +9,5 @@ func sayHi() {
 func main() {
 	var myFunction func()
 	myFunction = sayHi
+	myFunction()
 }
