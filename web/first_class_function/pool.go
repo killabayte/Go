@@ -15,3 +15,7 @@ func callWithArguments(passedFunction func(string, bool)) {
 func printReturnValue(passedFunction func() string) {
 	fmt.Println(passedFunction())
 }
+
+func functionA() {
+	fmt.Println("function called")
+}
