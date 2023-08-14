@@ -19,3 +19,15 @@ func printReturnValue(passedFunction func() string) {
 func functionA() {
 	fmt.Println("function called")
 }
+func functionB() string {
+	fmt.Println("function called")
+	return "Returning from function"
+}
+func funcionC(a string, b bool) {
+	fmt.Println("function called")
+	fmt.Println(a, b)
+}
+
+func main() {
+
+}
