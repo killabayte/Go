@@ -13,7 +13,7 @@ func check(err error) {
 }
 
 func main() {
-	text := "Here's my template!"
+	text := "Here's my template!\n"
 	tmpl, err := template.New("test").Parse(text)
 	check(err)
 	err = tmpl.Execute(os.Stdout, nil)
