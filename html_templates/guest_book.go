@@ -17,7 +17,6 @@ func viewHandler(writer http.ResponseWriter, request *http.Request) {
 	check(err)
 	err = html.Execute(writer, nil)
 	check(err)
-
 }
 
 func main() {
