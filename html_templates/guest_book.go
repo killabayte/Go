@@ -10,6 +10,7 @@ func check(err error) {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 }
 
 func viewHandler(writer http.ResponseWriter, request *http.Request) {
