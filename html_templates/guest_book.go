@@ -14,7 +14,7 @@ func check(err error) {
 
 func viewHandler(writer http.ResponseWriter, request *http.Request) {
 	html, err := template.ParseFiles("html_templates/guest_book.html")
-
+	check(err)
 	check(err)
 }
 
