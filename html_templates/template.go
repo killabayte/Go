@@ -18,5 +18,4 @@ func main() {
 	check(err)
 	err = tmpl.Execute(os.Stdout, nil)
 	check(err)
-
 }
