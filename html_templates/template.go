@@ -2,9 +2,12 @@ package main
 
 import (
 	"log"
-	"os"
-	"text/template"
 )
+
+type Part struct {
+	Name  string
+	Count int
+}
 
 func check(err error) {
 	if err != nil {
@@ -13,9 +16,6 @@ func check(err error) {
 }
 
 func main() {
-	text := "Here's my template!\n"
-	tmpl, err := template.New("test").Parse(text)
-	check(err)
-	err = tmpl.Execute(os.Stdout, nil)
-	check(err)
+	templateText := "Name: {{.Name}}\nCount: {{.Count}}\n"
+
 }
