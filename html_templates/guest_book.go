@@ -9,6 +9,11 @@ import (
 	"os"
 )
 
+type GuestBook struct {
+	SignatureCount int
+	Signatures     []string
+}
+
 func check(err error) {
 	if err != nil {
 		log.Fatal(err)
