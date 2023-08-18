@@ -2,12 +2,19 @@ package main
 
 import (
 	"html/template"
+	"log"
 	"os"
 )
 
 type Part struct {
 	Name  string
 	Count int
+}
+
+func check(err error) {
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 func executeTemplate(text string, data interface{}) {
