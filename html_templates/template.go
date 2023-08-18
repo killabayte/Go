@@ -1,8 +1,20 @@
 package main
 
+import (
+	"html/template"
+	"os"
+)
+
 type Part struct {
 	Name  string
 	Count int
+}
+
+func executeTemplate(text string, data interface{}) {
+	tmpl, err := template.New("test").Parse(text)
+	check(err)
+	err = tmpl.Execute(os.Stdout, data)
+	check(err)
 }
 
 func main() {
