@@ -56,6 +56,7 @@ func newHandler(writer http.ResponseWriter, request *http.Request) {
 
 func main() {
 	http.HandleFunc("/guestbook", viewHandler)
+	http.HandleFunc("/guestbook/new", newHandler)
 	err := http.ListenAndServe("localhost:8080", nil)
 	log.Fatal(err)
 }
