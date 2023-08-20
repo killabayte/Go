@@ -38,6 +38,7 @@ func getStrings(fileName string) []string {
 	return lines
 }
 
+// viewHandler read records of the guest book and print it with records count
 func viewHandler(writer http.ResponseWriter, request *http.Request) {
 	signatures := getStrings("signatures.txt")
 	html, err := template.ParseFiles("view.html")
