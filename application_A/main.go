@@ -1,15 +1,23 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"log"
 	"os"
 )
 
+func check(err error) {
+	if err != nil {
+		log.Fatal(err)
+	}
+}
+
 func main() {
-	file, err := os.Openfile("aardvark.txt", os.O_RDONLY, os.FileMode(0600))
+	file, err := os.OpenFile("aardvark.txt", os.O_RDONLY, os.FileMode(0600))
 	check(err)
 	defer file.Close()
-	scanner := bufio.NewScaner(file)
+	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
 		fmt.Println(scanner.Text())
 	}
