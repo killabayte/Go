@@ -22,6 +22,7 @@ func check(err error) {
 	}
 }
 
+// getStrings return slice of string, what was read from fileName, by one stirng for the each string in a file
 func getStrings(fileName string) []string {
 	var lines []string
 	file, err := os.Open(fileName)
