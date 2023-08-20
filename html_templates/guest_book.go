@@ -59,6 +59,7 @@ func newHandler(writer http.ResponseWriter, request *http.Request) {
 	check(err)
 }
 
+// createHandler receive POST request with new record and write it in to the file signatures
 func createHandler(writer http.ResponseWriter, request *http.Request) {
 	signature := request.FormValue("signature")
 	options := os.O_WRONLY | os.O_APPEND | os.O_CREATE
