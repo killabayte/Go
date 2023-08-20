@@ -9,6 +9,7 @@ import (
 	"os"
 )
 
+// Guestbook - structure that used for the representation of the view.html
 type GuestBook struct {
 	SignatureCount int
 	Signatures     []string
