@@ -15,6 +15,7 @@ type GuestBook struct {
 	Signatures     []string
 }
 
+// check - calls log.Fatal for the any errors which differ from the nil
 func check(err error) {
 	if err != nil {
 		log.Fatal(err)
