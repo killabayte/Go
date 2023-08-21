@@ -20,7 +20,6 @@ func check(err error) {
 // 		fmt.Println(scanner.Text())
 // 	}
 // 	check(scanner.Err())
-
 // }
 
 func main() {
