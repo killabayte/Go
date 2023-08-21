@@ -30,5 +30,4 @@ func main() {
 	check(err)
 	err = file.Close()
 	check(err)
-
 }
