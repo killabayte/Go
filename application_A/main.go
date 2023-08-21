@@ -12,6 +12,7 @@ func check(err error) {
 }
 
 // func main() {
+
 // 	file, err := os.OpenFile("aardvark.txt", os.O_RDONLY, os.FileMode(0600))
 // 	check(err)
 // 	defer file.Close()
@@ -20,6 +21,7 @@ func check(err error) {
 // 		fmt.Println(scanner.Text())
 // 	}
 // 	check(scanner.Err())
+
 // }
 
 func main() {
@@ -30,4 +32,5 @@ func main() {
 	check(err)
 	err = file.Close()
 	check(err)
+
 }
