@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"time"
 )
 
 func awardPrize() {
@@ -16,4 +17,9 @@ func awardPrize() {
 	default:
 		panic("invalid door number")
 	}
+}
+
+func main() {
+	rand.Seed(time.Now().Unix())
+	awardPrize()
 }
