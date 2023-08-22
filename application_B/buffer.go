@@ -18,7 +18,7 @@ func sendLetters(channel chan string) {
 
 func main() {
 	fmt.Println(time.Now())
-	channel := make(chan string, 1)
+	channel := make(chan string, 3)
 	go sendLetters(channel)
 	time.Sleep(5 * time.Second)
 	fmt.Println(<-channel, time.Now())
