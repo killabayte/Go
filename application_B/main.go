@@ -11,5 +11,9 @@ func awardPrize() {
 		fmt.Println("You win a cruise!")
 	case 2:
 		fmt.Println("You win a car")
+	case 3:
+		fmt.Println("You win a goat!")
+	default:
+		panic("invalid door number")
 	}
 }
