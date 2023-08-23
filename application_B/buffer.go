@@ -14,7 +14,6 @@ func sendLetters(channel chan string) {
 	channel <- "c"
 	time.Sleep(1 * time.Second)
 	channel <- "d"
-
 }
 
 func main() {
