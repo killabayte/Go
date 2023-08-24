@@ -7,6 +7,9 @@ import "fmt"
 type deck []string
 
 func newDeck() deck {
+	cards := deck{}
+	cardSuits := []string{"Spades", "Diamonds", "Hearts", "Clubs"}
+	cardValues := string{"Ace", "Two", "Three", "Four"}
 
 }
 
