@@ -8,6 +8,6 @@ func main() {
 	fmt.Println(card)
 }
 
-func newCard() {
+func newCard() string {
 	return "Five of Diamonds"
 }
