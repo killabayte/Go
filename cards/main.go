@@ -7,3 +7,7 @@ func main() {
 
 	fmt.Println(card)
 }
+
+func newCard() {
+	return "Five of Diamonds"
+}
