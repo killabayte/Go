@@ -27,6 +27,6 @@ func (d deck) print() {
 	}
 }
 
-func deal() {
+func deal(d deck, handSize int) (deck, deck) {
 
 }
