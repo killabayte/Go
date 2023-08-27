@@ -14,8 +14,12 @@ type contactInfo struct {
 }
 
 func main() {
-	tomas := person{}
-	tomas.firstName = "Tomas"
-	tomas.lastName = "Anderson"
-	fmt.Println(tomas)
+	jim := person{
+		firstName: "Jim",
+		lastName: "Cloud",
+		contact: contactInfo{
+			email: "jim@go.lang",
+			zipCode: 4000
+		}
+	}
 }
