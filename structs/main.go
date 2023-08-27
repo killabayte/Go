@@ -22,5 +22,10 @@ func main() {
 			zipCode: 10101,
 		},
 	}
-	fmt.Printf("%+v", jim)
+
+	jim.print()
+}
+
+func (p person) print() {
+	fmt.Printf("%+v", p)
 }
