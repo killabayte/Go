@@ -18,6 +18,7 @@ func main() {
 		return
 	}
 
+	// Create an AWS session using the specified region
 	sess, err := session.NewSession(&aws.Config{
 		Region: aws.String(region),
 	})
@@ -27,8 +28,10 @@ func main() {
 		return
 	}
 
+	// Create an EC2 service client
 	svc := ec2.New(sess)
 
+	// Describe all security groups
 	input := &ec2.DescribeSecurityGroupsInput{}
 	result, err := svc.DescribeSecurityGroups(input)
 
@@ -37,6 +40,7 @@ func main() {
 		return
 	}
 
+	// Open a JSON file in append mode for writing
 	file, err := os.OpenFile("security_groups.json", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		fmt.Println("Error opening JSON file:", err)
@@ -44,10 +48,23 @@ func main() {
 	}
 	defer file.Close()
 
+	// Create a JSON encoder
 	encoder := json.NewEncoder(file)
 
-	// Iterate through security groups and write each to the JSON file
+	// Iterate through security groups and write each to the JSON file with a newline separator
 	for _, sg := range result.SecurityGroups {
+		// Convert sg.IpPermissions from []*ec2.IpPermission to []ec2.IpPermission
+		inboundRules := make([]ec2.IpPermission, len(sg.IpPermissions))
+		for i, rule := range sg.IpPermissions {
+			inboundRules[i] = *rule
+		}
+
+		// Convert sg.IpPermissionsEgress from []*ec2.IpPermission to []ec2.IpPermission
+		outboundRules := make([]ec2.IpPermission, len(sg.IpPermissionsEgress))
+		for i, rule := range sg.IpPermissionsEgress {
+			outboundRules[i] = *rule
+		}
+
 		// Create a struct to represent the security group details
 		securityGroup := struct {
 			ID            string
@@ -57,8 +74,8 @@ func main() {
 		}{
 			ID:            *sg.GroupId,
 			Name:          *sg.GroupName,
-			InboundRules:  sg.IpPermissions,
-			OutboundRules: sg.IpPermissionsEgress,
+			InboundRules:  inboundRules,  // Use the converted slice
+			OutboundRules: outboundRules, // Use the converted slice
 		}
 
 		// Encode the security group details as JSON and write to the file
@@ -67,5 +84,7 @@ func main() {
 			fmt.Println("Error writing to JSON file:", err)
 			return
 		}
+
+		fmt.Println("Wrote security group details to JSON file:", *sg.GroupName)
 	}
 }
