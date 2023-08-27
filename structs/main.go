@@ -27,5 +27,5 @@ func main() {
 }
 
 func (p person) print() {
-	fmt.Printf("%+v", p)
+	fmt.Printf("%+v", p.firstName)
 }
