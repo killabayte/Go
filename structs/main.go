@@ -16,10 +16,11 @@ type contactInfo struct {
 func main() {
 	jim := person{
 		firstName: "Jim",
-		lastName: "Cloud",
+		lastName:  "Cloud",
 		contact: contactInfo{
-			email: "jim@go.lang",
-			zipCode: 4000
-		}
+			email:   "jim@go.lang",
+			zipCode: 10101,
+		},
 	}
+	fmt.Printf("%+v", jim)
 }
