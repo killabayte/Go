@@ -8,5 +8,6 @@ func main() {
 	// 	"green": "#00FF00",
 	// }
 	colors := make(map[string]string)
+	colors["blue"] = "#0000FF"
 	fmt.Println(colors)
 }
