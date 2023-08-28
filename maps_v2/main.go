@@ -11,3 +11,9 @@ func main() {
 
 	fmt.Println(colors)
 }
+
+func printMap(c map[string]string) {
+	for color, hex := range c {
+		fmt.Printf("Color: %v, hex: %v", color, hex)
+	}
+}
