@@ -9,5 +9,8 @@ func main() {
 	// }
 	colors := make(map[int]string)
 	colors[0] = "zero"
+
+	delete(colors, 0)
+
 	fmt.Println(colors)
 }
