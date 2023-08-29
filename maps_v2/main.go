@@ -8,7 +8,6 @@ func main() {
 		"green": "#00FF00",
 		"blue":  "#bbbbbb",
 	}
-
 	printMap(colors)
 }
 
