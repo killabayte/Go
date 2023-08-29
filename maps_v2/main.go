@@ -9,7 +9,6 @@ func main() {
 		"blue":  "#bbbbbb",
 	}
 	printMap(colors)
-
 }
 
 func printMap(c map[string]string) {
