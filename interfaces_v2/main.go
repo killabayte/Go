@@ -12,6 +12,9 @@ func main() {
 	eb := englishBot{}
 	sb := spanishBot{}
 
+	printEnglishGreeting(eb)
+	printSpanishGreeting(sb)
+
 }
 
 func printEnglishGreeting(eb englishBot) {
