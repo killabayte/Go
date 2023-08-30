@@ -14,14 +14,13 @@ func main() {
 
 	printEnglishGreeting(eb)
 	printSpanishGreeting(sb)
-
 }
 
 func printEnglishGreeting(eb englishBot) {
 	fmt.Println(eb.getGreeting())
 }
 
-func printSpanishGreeting(sb englishBot) {
+func printSpanishGreeting(sb spanishBot) {
 	fmt.Println(sb.getGreeting())
 }
 
