@@ -12,8 +12,12 @@ func main() {
 
 }
 
-func printGreeting(eb englishBot) {
+func printEnglishGreeting(eb englishBot) {
 	fmt.Println(eb.getGreeting())
+}
+
+func printSpanishGreeting(sb englishBot) {
+	fmt.Println(sb.getGreeting())
 }
 
 func (eb englishBot) getGreeting() string {
