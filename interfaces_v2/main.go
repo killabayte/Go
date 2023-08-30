@@ -9,6 +9,8 @@ type spanishBot struct {
 }
 
 func main() {
+	eb := englishBot{}
+	sb := spanishBot{}
 
 }
 
