@@ -23,6 +23,6 @@ func main() {
 
 func (logWriter) Write(bs []byte) (int, error) {
 	fmt.Println(string(bs))
-	fmt.Printf("Just wrote this many bytes: %v", len(bs))
+	fmt.Printf("\nJust wrote this many bytes: %v", len(bs))
 	return len(bs), nil
 }
