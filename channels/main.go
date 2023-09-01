@@ -8,4 +8,8 @@ func main() {
 		"https://golang.com",
 		"https://amazon.com",
 	}
+
+	for _, link := range links {
+
+	}
 }
