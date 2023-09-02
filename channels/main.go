@@ -14,4 +14,6 @@ func main() {
 	}
 }
 
-func
+func checkLink(link string) {
+
+}
