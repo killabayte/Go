@@ -1,6 +1,9 @@
 package main
 
-import "net/http"
+import (
+	"fmt"
+	"net/http"
+)
 
 func main() {
 	links := []string{
@@ -17,5 +20,9 @@ func main() {
 }
 
 func checkLink(link string) {
-	http.Get(link)
+	_, err := http.Get(link)
+	if err != nil {
+		fmt.Println(link, "Might be down!")
+		return
+	}
 }
