@@ -1,5 +1,7 @@
 package main
 
+import "net/http"
+
 func main() {
 	links := []string{
 		"https://google.com",
@@ -15,5 +17,5 @@ func main() {
 }
 
 func checkLink(link string) {
-
+	http.Get(link)
 }
