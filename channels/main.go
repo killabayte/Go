@@ -25,4 +25,6 @@ func checkLink(link string) {
 		fmt.Println(link, "Might be down!")
 		return
 	}
+
+	fmt.Println(link, "is UP!")
 }
