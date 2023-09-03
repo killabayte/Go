@@ -17,6 +17,7 @@ func main() {
 	for _, link := range links {
 		checkLink(link)
 	}
+
 }
 
 func checkLink(link string) {
