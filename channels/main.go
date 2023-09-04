@@ -14,12 +14,14 @@ func main() {
 		"https://amazon.com",
 	}
 
+	c := make(chan string)
+
 	for _, link := range links {
-		go checkLink(link)
+		go checkLink(link, c)
 	}
 }
 
-func checkLink(link string) {
+func checkLink(link string, c chan string) {
 	_, err := http.Get(link)
 	if err != nil {
 		fmt.Println(link, "Might be down!")
