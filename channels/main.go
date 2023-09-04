@@ -23,12 +23,6 @@ func main() {
 	for i := 0; i < len(links); i++ {
 		fmt.Println(<-c)
 	}
-
-	fmt.Println(<-c)
-	fmt.Println(<-c)
-	fmt.Println(<-c)
-	fmt.Println(<-c)
-	fmt.Println(<-c)
 }
 
 func checkLink(link string, c chan string) {
