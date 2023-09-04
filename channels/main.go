@@ -21,11 +21,11 @@ func main() {
 	}
 
 	for {
-		go checkLink(<-c)
+		go checkLink(<-c, c)
 	}
 }
 
-func checkLink(link string) {
+func checkLink(link string, c chan string) {
 	_, err := http.Get(link)
 	if err != nil {
 		fmt.Println(link, "Might be down!")
