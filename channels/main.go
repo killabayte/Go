@@ -21,7 +21,7 @@ func main() {
 	}
 
 	for i := 0; i < len(links); i++ {
-		fmt.Println(<-c)
+		checkLink(<-c)
 	}
 }
 
