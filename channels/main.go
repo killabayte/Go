@@ -20,12 +20,12 @@ func main() {
 		go checkLink(link, c)
 	}
 
-	for i := 0; i < len(links); i++ {
-		checkLink(<-c)
+	for {
+		go checkLink(<-c)
 	}
 }
 
-func checkLink(link string, c chan string) {
+func checkLink(link string) {
 	_, err := http.Get(link)
 	if err != nil {
 		fmt.Println(link, "Might be down!")
