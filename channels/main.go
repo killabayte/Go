@@ -26,6 +26,7 @@ func main() {
 			time.Sleep(time.Second)
 			checkLink(l, c)
 		}()
+
 	}
 }
 
