@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 	"time"
 )
@@ -31,9 +32,11 @@ func main() {
 func checkLink(link string, c chan string) {
 	_, err := http.Get(link)
 	if err != nil {
-		c <- "Might be down\n"
+		fmt.Println(link, "Might be down!")
+		c <- link
 		return
 	}
 
-	c <- "Yep, it's UP!\n"
+	fmt.Println(link, "Is UP!")
+	c <- "Yep, it's UP!"
 }
