@@ -23,7 +23,7 @@ func main() {
 
 	for l := range c {
 		go func(link string) {
-			time.Sleep(time.Second)
+			time.Sleep(5 * time.Second)
 			checkLink(link, c)
 		}(l)
 	}
