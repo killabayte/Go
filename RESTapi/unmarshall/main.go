@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io"
 	"log"
 	"os"
 )
@@ -32,4 +33,11 @@ func main() {
 	}
 	defer jsonFile.Close()
 	fmt.Println("File descriptor sucessfully created")
+
+	var users Users
+	byteValue, err := io.ReadAll(jsonFile)
+	if err != nil {
+		log.Fatal(err)
+	}
+
 }
