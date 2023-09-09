@@ -9,5 +9,5 @@ type Professor struct {
 
 type University struct {
 	Name string `json:"name"`
-	City string `json:city`
+	City string `json:"city"`
 }
