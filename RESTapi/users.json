@@ -1,7 +1,13 @@
 {
     "users": [
         {
-            "name": "Patric"
+            "name": "Patric",
+            "type": "",
+            "age": "",
+            "social": {
+                "twitter": "",
+                "facebook": ""
+            }
         },
         {
             "name": "Hanna"
