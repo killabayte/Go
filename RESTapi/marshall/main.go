@@ -11,3 +11,15 @@ type University struct {
 	Name string `json:"name"`
 	City string `json:"city"`
 }
+
+func main() {
+	prof1 := Professor{
+		Name:      "Karl",
+		ScienseID: 245,
+		IsWorking: true,
+		University: University{
+			Name: "MIT",
+			City: "Boston",
+		},
+	}
+}
