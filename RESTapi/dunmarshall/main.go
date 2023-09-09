@@ -22,4 +22,6 @@ func main() {
 	}
 	var result map[string]interface{}
 	json.Unmarshal(byteValue, &result)
+
+	fmt.Println(result["users"])
 }
