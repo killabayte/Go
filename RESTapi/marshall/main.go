@@ -29,7 +29,7 @@ func main() {
 		},
 	}
 
-	byteArr, err := json.Marshal(prof1)
+	byteArr, err := json.MarshalIndent(prof1, "", "	")
 	if err != nil {
 		log.Fatal(err)
 	}
