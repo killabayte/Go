@@ -2,7 +2,7 @@ package main
 
 // Struct for representation total slice
 type Users struct {
-	Users []User
+	Users []User `json:"users"`
 }
 
 // Interanal user representation
@@ -15,6 +15,6 @@ type User struct {
 
 // Social block representation
 type Social struct {
-	Twitter string
-	Meta    string
+	Twitter string `json: "twitter"`
+	Meta    string `json:"meta"`
 }
