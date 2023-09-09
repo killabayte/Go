@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"os"
 )
 
 type Professor struct {
@@ -34,4 +35,8 @@ func main() {
 		log.Fatal(err)
 	}
 	fmt.Println(string(byteArr))
+	err = os.WriteFile("output.json", byteArr, 0664)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
