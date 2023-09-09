@@ -18,7 +18,7 @@ type User struct {
 	Name   string `json:"name"`
 	Type   string `json:"type"`
 	Age    int    `json:"age"`
-	Socila Social `json:"social"`
+	Social Social `json:"social"`
 }
 
 // Social block representation
@@ -31,7 +31,7 @@ func PrintUser(u *User) {
 	fmt.Printf("Name: %s\n", u.Name)
 	fmt.Printf("Type: %s\n", u.Type)
 	fmt.Printf("Age: %d\n", u.Age)
-	fmt.Printf("Social: Twitter - %s and Facebook - %s\n", u.Socila.Twitter, u.Socila.Facebook)
+	fmt.Printf("Social: Twitter - %s and Facebook - %s\n", u.Social.Twitter, u.Social.Facebook)
 }
 
 func main() {
