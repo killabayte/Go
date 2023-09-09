@@ -6,6 +6,7 @@ type Users struct {
 
 type User struct {
 	Name string
+	Type string
 }
 
 type Social struct {
