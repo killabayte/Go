@@ -1,5 +1,6 @@
 package main
 
+// Struct for representation total slice
 type Users struct {
 	Users []User
 }
