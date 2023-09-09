@@ -24,7 +24,7 @@ type User struct {
 // Social block representation
 type Social struct {
 	Twitter  string `json:"twitter"`
-	Facebook string `json:"meta"`
+	Facebook string `json:"facebook"`
 }
 
 func main() {
