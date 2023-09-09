@@ -27,6 +27,13 @@ type Social struct {
 	Facebook string `json:"facebook"`
 }
 
+func PrintUser(u *User) {
+	fmt.Printf("Name: %s\n", u.Name)
+	fmt.Printf("Type: %s\n", u.Type)
+	fmt.Printf("Age: %d\n", u.Age)
+	fmt.Printf("Social: Twitter - %s and Facebook - %s\n", u.Socila.Twitter, u.Socila.Facebook)
+}
+
 func main() {
 	jsonFile, err := os.Open("users.json")
 	if err != nil {
