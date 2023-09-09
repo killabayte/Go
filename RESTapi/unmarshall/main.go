@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 	"log"
@@ -40,4 +41,6 @@ func main() {
 		log.Fatal(err)
 	}
 
+	json.Unmarshal(byteValue, &users)
+	fmt.Println(users)
 }
