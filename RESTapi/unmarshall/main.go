@@ -49,5 +49,7 @@ func main() {
 	}
 
 	json.Unmarshal(byteValue, &users)
-	fmt.Println(users)
+	for _, u := range users.Users {
+		PrintUser(&u)
+	}
 }
