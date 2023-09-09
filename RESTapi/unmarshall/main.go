@@ -5,9 +5,10 @@ type Users struct {
 }
 
 type User struct {
-	Name string
-	Type string
-	Age  int
+	Name   string
+	Type   string
+	Age    int
+	Socila Social
 }
 
 type Social struct {
