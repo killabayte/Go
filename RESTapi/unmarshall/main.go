@@ -13,6 +13,7 @@ type User struct {
 	Socila Social
 }
 
+// Social block representation
 type Social struct {
 	Twitter string
 	Meta    string
