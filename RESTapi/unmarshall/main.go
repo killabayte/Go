@@ -5,6 +5,7 @@ type Users struct {
 	Users []User
 }
 
+// Interanal user representation
 type User struct {
 	Name   string
 	Type   string
