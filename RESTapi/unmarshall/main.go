@@ -7,10 +7,10 @@ type Users struct {
 
 // Interanal user representation
 type User struct {
-	Name   string
-	Type   string
-	Age    int
-	Socila Social
+	Name   string `json:"name"`
+	Type   string `json:"type"`
+	Age    int    `json:"age"`
+	Socila Social `json:"social"`
 }
 
 // Social block representation
