@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"log"
 	"os"
 )
@@ -34,7 +33,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(string(byteArr))
+
 	err = os.WriteFile("output.json", byteArr, 0664)
 	if err != nil {
 		log.Fatal(err)
