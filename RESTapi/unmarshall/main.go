@@ -28,7 +28,7 @@ type Social struct {
 }
 
 func main() {
-	jsonFile, err := os.Open("../users.json")
+	jsonFile, err := os.Open("users.json")
 	if err != nil {
 		log.Fatal(err)
 	}
