@@ -1,5 +1,11 @@
 package main
 
+import (
+	"encoding/json"
+	"fmt"
+	"log"
+)
+
 type Professor struct {
 	Name       string     `json:"name"`
 	ScienseID  int        `json:science_id`
@@ -22,4 +28,10 @@ func main() {
 			City: "Boston",
 		},
 	}
+
+	byteArr, err := json.Marshal(prof1)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(byteArr)
 }
