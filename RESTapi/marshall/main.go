@@ -33,5 +33,5 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(byteArr)
+	fmt.Println(string(byteArr))
 }
