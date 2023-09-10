@@ -1,0 +1,9 @@
+{
+	"name": "Karl",
+	"ScienseID": 245,
+	"IsWorking": true,
+	"University": {
+		"name": "MIT",
+		"city": "Boston"
+	}
+}
