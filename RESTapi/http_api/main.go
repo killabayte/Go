@@ -10,7 +10,7 @@ func GetGreet(w http.ResponseWriter, r *http.Request) {
 }
 
 func RequestHandler() {
-
+	http.HandleFunc("/", GetGreet)
 }
 
 func main() {
