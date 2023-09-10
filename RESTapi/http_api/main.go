@@ -1,6 +1,8 @@
 package main
 
-func GetGreet() {
+import "net/http"
+
+func GetGreet(w http.ResponseWriter) {
 
 }
 
