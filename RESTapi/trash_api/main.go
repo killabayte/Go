@@ -69,7 +69,7 @@ func GetPizzaById(writer http.ResponseWriter, request *http.Request) {
 func main() {
 	log.Println("Trying to start REST API pizza!")
 	router := mux.NewRouter()
-	router.HandleFunc("/pizza", GetAllPizzas).Methods("GET")
+	router.HandleFunc("/pizzas", GetAllPizzas).Methods("GET")
 	router.HandleFunc("/pizza/{id}", GetPizzaById).Methods("GET")
 	log.Println("Router configured successfully! Ready to work")
 	// err := http.ListenAndServe(":"+port, nil)
