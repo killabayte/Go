@@ -12,7 +12,10 @@ var (
 )
 
 type Pizza struct {
-	ID int `json:"id"`
+	ID       int     `json:"id"`
+	Diameter int     `json:"diameter"`
+	Price    float64 `json:"price"`
+	Title    string  `json:"title"`
 }
 
 func GetAllPizzas(writer http.ResponseWriter, request *http.Request) {
