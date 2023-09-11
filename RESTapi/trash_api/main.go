@@ -12,6 +12,21 @@ var (
 	db   []Pizza
 )
 
+func init() {
+	pizza1 := Pizza{
+		ID:       1,
+		Diameter: 28,
+		Price:    17.5,
+		Title:    "Margarita",
+	}
+	pizza2 := Pizza{
+		ID:       2,
+		Diameter: 35,
+		Price:    27.99,
+		Title:    "Double Cheese",
+	}
+}
+
 type Pizza struct {
 	ID       int     `json:"id"`
 	Diameter int     `json:"diameter"`
