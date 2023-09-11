@@ -29,4 +29,5 @@ func main() {
 	// if err != nil {
 	// 	log.Fatal(err)
 	// }
+	log.Fatal(http.ListenAndServe(":"+port, router))
 }
