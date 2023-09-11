@@ -9,6 +9,7 @@ import (
 
 var (
 	port string = "8080"
+	DB   []Pizza
 )
 
 type Pizza struct {
@@ -17,8 +18,6 @@ type Pizza struct {
 	Price    float64 `json:"price"`
 	Title    string  `json:"title"`
 }
-
-var DB []Pizza
 
 func GetAllPizzas(writer http.ResponseWriter, request *http.Request) {
 
