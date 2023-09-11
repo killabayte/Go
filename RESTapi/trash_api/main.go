@@ -74,6 +74,7 @@ func GetPizzaById(writer http.ResponseWriter, request *http.Request) {
 	pizza, ok := FindPizzaById(id)
 	if ok {
 		writer.WriteHeader(200)
+		json.NewEncoder(writer).Encode(pizza)
 
 	}
 }
