@@ -11,7 +11,7 @@ var (
 	port string = "8080"
 )
 
-func GetAllPizzas() {
+func GetAllPizzas(writer http.ResponseWriter, request *http.Request) {
 
 }
 
