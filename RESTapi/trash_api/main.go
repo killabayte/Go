@@ -19,7 +19,7 @@ type Pizza struct {
 	Title    string  `json:"title"`
 }
 
-func FindPizzaById() {
+func FindPizzaById(id int) (Pizza, bool) {
 
 }
 
