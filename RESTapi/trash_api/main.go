@@ -25,5 +25,8 @@ func main() {
 	router.HandleFunc("/pizza", GetAllPizzas).Method("GET")
 	router.HandleFunc("/pizza/{id}", GetPizzaById).Method("GET")
 	log.Println("Router configured successfully! Ready to work")
-	log.Fatal(http.ListenAndServe(":"+port, nil))
+	err := http.ListenAndServe(":"+port, nil)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
