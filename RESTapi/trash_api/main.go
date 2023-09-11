@@ -58,6 +58,7 @@ func FindPizzaById(id int) (Pizza, bool) {
 }
 
 type ErrorMessage struct {
+	Message string `json:"message"`
 }
 
 func GetAllPizzas(writer http.ResponseWriter, request *http.Request) {
