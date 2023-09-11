@@ -11,6 +11,14 @@ var (
 	port string = "8080"
 )
 
+func GetAllPizzas() {
+
+}
+
+func GetPizzaById() {
+
+}
+
 func main() {
 	log.Println("Trying to start REST API pizza!")
 	router := mux.NewRouter()
