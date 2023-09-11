@@ -22,6 +22,14 @@ type Pizza struct {
 func FindPizzaById(id int) (Pizza, bool) {
 	var pizza Pizza
 	var found bool
+	for _, p := range db {
+		if p.ID == id {
+			pizza = p
+			found = true
+			break
+		}
+	}
+	return pizza, found
 }
 
 func GetAllPizzas(writer http.ResponseWriter, request *http.Request) {}
