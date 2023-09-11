@@ -19,6 +19,10 @@ type Pizza struct {
 	Title    string  `json:"title"`
 }
 
+func FindPizzaById() {
+
+}
+
 func GetAllPizzas(writer http.ResponseWriter, request *http.Request) {}
 func GetPizzaById(writer http.ResponseWriter, request *http.Request) {}
 
