@@ -72,7 +72,7 @@ func GetPizzaById(writer http.ResponseWriter, request *http.Request) {
 	vars := mux.Vars(request) // { "id": "42" }
 	id, err := strconv.Atoi(vars["id"])
 	if err != nil {
-		log.Fatal(err)
+		msg := ErrorMessage{Message: "Do not use ID not supported int casting"}
 	}
 	log.Println("Trying to send to client pizza with id #:", id)
 	pizza, ok := FindPizzaById(id)
@@ -80,7 +80,7 @@ func GetPizzaById(writer http.ResponseWriter, request *http.Request) {
 		writer.WriteHeader(200)
 		json.NewEncoder(writer).Encode(pizza)
 	} else {
-		msg := ErrorMessage{"Pizza with that id doesn't exists in database"}
+		msg := ErrorMessage{Message: "Pizza with that id doesn't exists in database"}
 		writer.WriteHeader(404)
 		json.NewEncoder(writer).Encode(msg)
 	}
