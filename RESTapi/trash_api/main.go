@@ -19,13 +19,8 @@ type Pizza struct {
 	Title    string  `json:"title"`
 }
 
-func GetAllPizzas(writer http.ResponseWriter, request *http.Request) {
-
-}
-
-func GetPizzaById(writer http.ResponseWriter, request *http.Request) {
-
-}
+func GetAllPizzas(writer http.ResponseWriter, request *http.Request) {}
+func GetPizzaById(writer http.ResponseWriter, request *http.Request) {}
 
 func main() {
 	log.Println("Trying to start REST API pizza!")
