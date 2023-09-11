@@ -58,6 +58,7 @@ func FindPizzaById(id int) (Pizza, bool) {
 func GetAllPizzas(writer http.ResponseWriter, request *http.Request) {
 	writer.Header().Set("Content-Type", "application/json")
 	fmt.Println("Get info about all Pizzas in DB")
+	writer.WriteHeader(200) // Status code
 }
 func GetPizzaById(writer http.ResponseWriter, request *http.Request) {
 	writer.Header().Set("Content-Type", "application/json")
