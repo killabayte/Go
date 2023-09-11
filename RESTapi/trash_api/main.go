@@ -35,7 +35,9 @@ func FindPizzaById(id int) (Pizza, bool) {
 func GetAllPizzas(writer http.ResponseWriter, request *http.Request) {
 	writer.Header().Set("Content-Type", "application/json")
 }
-func GetPizzaById(writer http.ResponseWriter, request *http.Request) {}
+func GetPizzaById(writer http.ResponseWriter, request *http.Request) {
+	writer.Header().Set("Content-Type", "application/json")
+}
 
 func main() {
 	log.Println("Trying to start REST API pizza!")
