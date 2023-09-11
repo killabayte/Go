@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 
@@ -56,6 +57,7 @@ func FindPizzaById(id int) (Pizza, bool) {
 
 func GetAllPizzas(writer http.ResponseWriter, request *http.Request) {
 	writer.Header().Set("Content-Type", "application/json")
+	fmt.Println("Get info about all Pizzas in DB")
 }
 func GetPizzaById(writer http.ResponseWriter, request *http.Request) {
 	writer.Header().Set("Content-Type", "application/json")
