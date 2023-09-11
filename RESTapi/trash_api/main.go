@@ -15,6 +15,6 @@ func main() {
 	log.Println("Trying to start REST API pizza!")
 	router := mux.NewRouter()
 	router.HandleFunc("/pizza", GetAllPizzas).Method("GET")
-
+	router.HandleFunc("/pizza/{id}", GetPizzaById).Method("GET")
 	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
