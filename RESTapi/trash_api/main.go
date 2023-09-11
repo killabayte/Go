@@ -72,6 +72,7 @@ func GetPizzaById(writer http.ResponseWriter, request *http.Request) {
 	vars := mux.Vars(request) // { "id": "42" }
 	id, err := strconv.Atoi(vars["id"])
 	if err != nil {
+		fmt.Println("Client had beed tryed to use invalid id param:", err)
 		msg := ErrorMessage{Message: "Do not use ID not supported int casting"}
 		writer.WriteHeader(400)
 		json.NewEncoder(writer).Encode(msg)
