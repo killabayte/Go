@@ -67,6 +67,9 @@ func GetPizzaById(writer http.ResponseWriter, request *http.Request) {
 	writer.Header().Set("Content-Type", "application/json")
 	vars := mux.Vars(request) // { "id": "42" }
 	id, err := strconv.Atoi(vars["id"])
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 func main() {
