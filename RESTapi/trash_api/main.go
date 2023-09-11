@@ -20,7 +20,8 @@ type Pizza struct {
 }
 
 func FindPizzaById(id int) (Pizza, bool) {
-
+	var pizza Pizza
+	var found bool
 }
 
 func GetAllPizzas(writer http.ResponseWriter, request *http.Request) {}
