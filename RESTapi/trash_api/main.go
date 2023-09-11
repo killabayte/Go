@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"log"
 	"net/http"
@@ -59,6 +60,7 @@ func GetAllPizzas(writer http.ResponseWriter, request *http.Request) {
 	writer.Header().Set("Content-Type", "application/json")
 	fmt.Println("Get info about all Pizzas in DB")
 	writer.WriteHeader(200) // Status code
+	json.NewEncoder(writer).Encode(db)
 }
 func GetPizzaById(writer http.ResponseWriter, request *http.Request) {
 	writer.Header().Set("Content-Type", "application/json")
