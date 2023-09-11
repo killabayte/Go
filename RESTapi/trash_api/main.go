@@ -9,7 +9,7 @@ import (
 
 var (
 	port string = "8080"
-	DB   []Pizza
+	db   []Pizza
 )
 
 type Pizza struct {
