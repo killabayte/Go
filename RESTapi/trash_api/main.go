@@ -75,6 +75,7 @@ func GetPizzaById(writer http.ResponseWriter, request *http.Request) {
 		msg := ErrorMessage{Message: "Do not use ID not supported int casting"}
 		writer.WriteHeader(400)
 		json.NewEncoder(writer).Encode(msg)
+		return
 	}
 	log.Println("Trying to send to client pizza with id #:", id)
 	pizza, ok := FindPizzaById(id)
