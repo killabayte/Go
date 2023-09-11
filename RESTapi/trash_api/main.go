@@ -25,6 +25,12 @@ func init() {
 		Price:    27.99,
 		Title:    "Double Cheese",
 	}
+	pizza3 := Pizza{
+		ID:       3,
+		Diameter: 18,
+		Price:    21.30,
+		Title:    "BBQ",
+	}
 }
 
 type Pizza struct {
