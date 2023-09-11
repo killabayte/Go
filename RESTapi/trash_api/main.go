@@ -18,6 +18,8 @@ type Pizza struct {
 	Title    string  `json:"title"`
 }
 
+var DB []Pizza
+
 func GetAllPizzas(writer http.ResponseWriter, request *http.Request) {
 
 }
