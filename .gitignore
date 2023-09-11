@@ -1,3 +1,5 @@
 */main
 */*.pem
 *.pem
+
+**/main.go
