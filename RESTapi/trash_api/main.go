@@ -31,6 +31,7 @@ func init() {
 		Price:    21.30,
 		Title:    "BBQ",
 	}
+	db = append(db, pizza1, pizza2, pizza3)
 }
 
 type Pizza struct {
