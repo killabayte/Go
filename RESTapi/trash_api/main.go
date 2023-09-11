@@ -11,5 +11,5 @@ var (
 
 func main() {
 	log.Println("Trying to start REST API pizza!")
-	log.Fatal(http.ListenAndServe(":8080"+port, nil))
+	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
