@@ -71,6 +71,11 @@ func GetPizzaById(writer http.ResponseWriter, request *http.Request) {
 		log.Fatal(err)
 	}
 	log.Println("Trying to send to client pizza with id #:", id)
+	pizza, ok := FindPizzaById(id)
+	if ok {
+		writer.WriteHeader(200)
+
+	}
 }
 
 func main() {
