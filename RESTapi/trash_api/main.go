@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"strconv"
 
 	"github.com/gorilla/mux"
 )
@@ -64,6 +65,8 @@ func GetAllPizzas(writer http.ResponseWriter, request *http.Request) {
 }
 func GetPizzaById(writer http.ResponseWriter, request *http.Request) {
 	writer.Header().Set("Content-Type", "application/json")
+	vars := mux.Vars(request) //
+	id, err := strconv.Atoi()
 }
 
 func main() {
