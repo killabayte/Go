@@ -15,7 +15,7 @@ func GetAllPizzas(writer http.ResponseWriter, request *http.Request) {
 
 }
 
-func GetPizzaById() {
+func GetPizzaById(writer http.ResponseWriter, request *http.Request) {
 
 }
 
