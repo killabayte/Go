@@ -32,7 +32,9 @@ func FindPizzaById(id int) (Pizza, bool) {
 	return pizza, found
 }
 
-func GetAllPizzas(writer http.ResponseWriter, request *http.Request) {}
+func GetAllPizzas(writer http.ResponseWriter, request *http.Request) {
+	writer.Header().Set("Content-Type", "application/json")
+}
 func GetPizzaById(writer http.ResponseWriter, request *http.Request) {}
 
 func main() {
