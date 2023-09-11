@@ -3,6 +3,8 @@ package main
 import (
 	"log"
 	"net/http"
+
+	"github.com/gorilla/mux"
 )
 
 var (
@@ -11,5 +13,8 @@ var (
 
 func main() {
 	log.Println("Trying to start REST API pizza!")
+	router := mux.NewRouter()
+	router.HandleFunc("/pizza", GetAllPizzas).Method("GET")
+
 	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
