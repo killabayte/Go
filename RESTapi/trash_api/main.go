@@ -11,6 +11,9 @@ var (
 	port string = "8080"
 )
 
+type Pizza struct {
+}
+
 func GetAllPizzas(writer http.ResponseWriter, request *http.Request) {
 
 }
