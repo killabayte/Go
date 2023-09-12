@@ -87,6 +87,7 @@ func GetPizzaById(writer http.ResponseWriter, request *http.Request) {
 		msg := ErrorMessage{Message: "Pizza with that id doesn't exists in database"}
 		writer.WriteHeader(404)
 		json.NewEncoder(writer).Encode(msg)
+
 	}
 }
 
