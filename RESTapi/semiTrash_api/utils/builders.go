@@ -1,6 +1,8 @@
 package utils
 
 import (
+	handlers "command-line-arguments/Users/ykostiannikov/workspace/Go/RESTapi/semiTrash_api/handlers/bookHandlers.go"
+
 	"github.com/gorilla/mux"
 )
 
@@ -12,5 +14,5 @@ func BuildBookResource(router *mux.Router, prefix string) {
 }
 
 func BuildBooksResource(router *mux.Router, prefix string) {
-
+	router.HandleFunc(prefix, handlers.GetAllBooks).Methods("GET")
 }
