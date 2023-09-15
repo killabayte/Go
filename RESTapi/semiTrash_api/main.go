@@ -5,6 +5,8 @@ import (
 	"net/http"
 	"os"
 
+	"semiTrash_api/utils"
+
 	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"
 )
