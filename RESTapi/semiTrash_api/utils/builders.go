@@ -1,7 +1,7 @@
 package utils
 
 import (
-	handlers "command-line-arguments/Users/ykostiannikov/workspace/Go/RESTapi/semiTrash_api/handlers/bookHandlers.go"
+	handlers "./semiTrash_api/handlers"
 
 	"github.com/gorilla/mux"
 )
