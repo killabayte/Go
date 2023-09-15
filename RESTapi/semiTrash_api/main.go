@@ -13,7 +13,7 @@ var (
 func init() {
 	err := godotenv.Load()
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal("could not find .env file:", err)
 	}
 }
 
