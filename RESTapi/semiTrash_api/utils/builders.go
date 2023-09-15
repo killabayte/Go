@@ -7,3 +7,7 @@ import (
 func BuildBookResource(router *mux.Router, prefix string) {
 
 }
+
+func BuildBooksResource(router *mux.Router, prefix string) {
+
+}
