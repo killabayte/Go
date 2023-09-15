@@ -1,5 +1,7 @@
 package main
 
+import "github.com/joho/godotenv"
+
 var (
 	port string
 )
