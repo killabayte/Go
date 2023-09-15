@@ -5,7 +5,7 @@ var (
 )
 
 func init() {
-
+	env := godotenv.Load()
 }
 
 func main() {
