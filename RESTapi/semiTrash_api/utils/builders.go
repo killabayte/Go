@@ -1,7 +1,7 @@
 package utils
 
 import (
-	handlers "./semiTrash_api/handlers"
+	handlers "semiTrash_api/handlers"
 
 	"github.com/gorilla/mux"
 )
