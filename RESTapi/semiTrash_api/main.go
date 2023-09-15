@@ -1,6 +1,10 @@
 package main
 
-import "github.com/joho/godotenv"
+import (
+	"log"
+
+	"github.com/joho/godotenv"
+)
 
 var (
 	port string
@@ -8,6 +12,9 @@ var (
 
 func init() {
 	err := godotenv.Load()
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 func main() {
