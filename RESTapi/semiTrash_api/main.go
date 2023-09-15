@@ -14,8 +14,9 @@ const (
 )
 
 var (
-	port               string
-	bookResourcePrefix string = "/book"
+	port                string
+	bookResourcePrefix  string = "/book"
+	booksResourcePrefix string = "/books"
 )
 
 func init() {
