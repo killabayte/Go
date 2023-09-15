@@ -7,7 +7,7 @@ var (
 )
 
 func init() {
-	env := godotenv.Load()
+	err := godotenv.Load()
 }
 
 func main() {
