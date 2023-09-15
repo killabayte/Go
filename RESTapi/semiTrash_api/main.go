@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"net/http"
 	"os"
 
 	"github.com/joho/godotenv"
@@ -20,5 +21,7 @@ func init() {
 }
 
 func main() {
+	log.Println("Starting REST API server on port:", port)
+	log.Fatal(http.ListenAndServe(":"+port, nil))
 
 }
