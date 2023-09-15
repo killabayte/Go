@@ -4,6 +4,10 @@ var (
 	port string
 )
 
+func init() {
+
+}
+
 func main() {
 
 }
