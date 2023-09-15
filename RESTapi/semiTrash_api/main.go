@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"os"
 
 	"github.com/joho/godotenv"
 )
@@ -15,6 +16,7 @@ func init() {
 	if err != nil {
 		log.Fatal("could not find .env file:", err)
 	}
+	port = os.Getenv("app_port")
 }
 
 func main() {
