@@ -9,6 +9,10 @@ import (
 	"github.com/joho/godotenv"
 )
 
+const (
+	apiPrefix string = "/api/v1"
+)
+
 var (
 	port string
 )
