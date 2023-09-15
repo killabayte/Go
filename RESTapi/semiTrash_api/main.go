@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"
 )
 
@@ -23,6 +24,7 @@ func init() {
 func main() {
 	log.Println("Starting REST API server on port:", port)
 	router := mux.Router()
+	log.Println("Router initialization is succesfull. Ready to go!")
 	log.Fatal(http.ListenAndServe(":"+port, router))
 
 }
