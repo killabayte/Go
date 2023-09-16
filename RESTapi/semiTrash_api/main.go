@@ -31,12 +31,11 @@ func init() {
 
 func main() {
 	log.Println("Starting REST API server on port:", port)
-	router := mux.Router()
+	router := mux.NewRouter()
 
 	utils.BuildBookResource(router, bookResourcePrefix)
 	utils.BuildBooksResource(router, booksResourcePrefix)
 
 	log.Println("Router initialization is succesfull. Ready to go!")
 	log.Fatal(http.ListenAndServe(":"+port, router))
-
 }
