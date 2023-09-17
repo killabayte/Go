@@ -108,4 +108,7 @@ func DeleteBookByID(writer http.ResponseWriter, request *http.Request) {
 		json.NewEncoder(writer).Encode(msg)
 		return
 	}
+	//Have to delete book from DB
+	msg := models.Message{Message: "successfully deleted requested item"}
+	json.NewEncoder(writer).Encode(msg)
 }
