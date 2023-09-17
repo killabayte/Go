@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"strconv"
 
-	models "command-line-arguments/Users/ykostiannikov/workspace/Go/RESTapi/semiTrash_api/models/helper.go"
+	"semiTrash_api/models"
 
 	"github.com/gorilla/mux"
 )
@@ -22,7 +22,7 @@ func GetBookByID(writer http.ResponseWriter, request *http.Request) {
 		return
 	}
 
-	book, ok := models.FindBookById(id)
+	book, ok := models.FindBookByID(id)
 	log.Println("Get book with id:", id)
 
 	if !ok {
@@ -36,6 +36,10 @@ func GetBookByID(writer http.ResponseWriter, request *http.Request) {
 }
 func CreateBook(writer http.ResponseWriter, request *http.Request) {
 	initHeaders(writer)
+	log.Println("Creating new book ...")
+	var book models.Book
+	err := json.NewDecoder(request.Body).Decode(&book)
+
 }
 func UpdateBookByID(writer http.ResponseWriter, request *http.Request) {
 	initHeaders(writer)
