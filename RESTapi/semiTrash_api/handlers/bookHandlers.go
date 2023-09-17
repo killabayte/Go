@@ -39,6 +39,12 @@ func CreateBook(writer http.ResponseWriter, request *http.Request) {
 	log.Println("Creating new book ...")
 	var book models.Book
 	err := json.NewDecoder(request.Body).Decode(&book)
+	if err != nil {
+		msg := models.Message{Message: "provider json file is invalid"}
+		writer.Header(400)
+		json.NewEncoder(writer).Encode(msg)
+		return
+	}
 
 }
 func UpdateBookByID(writer http.ResponseWriter, request *http.Request) {
