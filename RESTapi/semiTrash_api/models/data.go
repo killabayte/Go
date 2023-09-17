@@ -33,4 +33,12 @@ func FindBookByID(id int) (Book, bool) {
 	var book Book
 	var found bool
 
+	for _, b := range DB {
+		if b.ID == id {
+			book = b
+			found = true
+			break
+		}
+	}
+	return book, found
 }
