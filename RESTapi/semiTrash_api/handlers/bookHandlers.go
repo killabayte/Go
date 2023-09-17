@@ -46,6 +46,10 @@ func CreateBook(writer http.ResponseWriter, request *http.Request) {
 		return
 	}
 
+	var newBookID int = len(models.DB) + 1
+	book.ID = newBookID
+	models.DB = append(models.DB, book)
+
 }
 func UpdateBookByID(writer http.ResponseWriter, request *http.Request) {
 	initHeaders(writer)
