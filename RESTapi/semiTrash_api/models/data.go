@@ -1,6 +1,6 @@
 package models
 
-var db []Book
+var DB []Book
 
 type Book struct {
 	ID             int    `json:"id"`
@@ -26,5 +26,11 @@ func init() {
 			BornYear: 1892,
 		},
 	}
-	db = append(db, book1)
+	DB = append(DB, book1)
+}
+
+func FindBookByID(id int) (Book, bool) {
+	var book Book
+	var found bool
+
 }
