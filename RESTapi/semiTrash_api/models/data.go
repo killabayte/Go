@@ -12,4 +12,5 @@ type Book struct {
 type Author struct {
 	Name     string `json:"name"`
 	LastName string `json:"last_name"`
+	BornYear int    `json:"born_year"`
 }
