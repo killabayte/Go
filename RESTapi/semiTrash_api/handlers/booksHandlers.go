@@ -4,6 +4,8 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
+
+	"semiTrash_api/models"
 )
 
 func initHeaders(writer http.ResponseWriter) {
