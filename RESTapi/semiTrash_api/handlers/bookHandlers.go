@@ -101,4 +101,11 @@ func DeleteBookByID(writer http.ResponseWriter, request *http.Request) {
 	}
 
 	book, ok := models.FindBookByID(id)
+	if !ok {
+		log.Println("book not found in data base id:", id)
+		writer.WriteHeader(404)
+		msg := models.Message{Message: "book with that ID does not exist in database"}
+		json.NewEncoder(writer).Encode(msg)
+		return
+	}
 }
