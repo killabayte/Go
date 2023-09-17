@@ -1,6 +1,9 @@
 package handlers
 
-import "net/http"
+import (
+	"log"
+	"net/http"
+)
 
 func initHeaders(writer http.ResponseWriter) {
 	writer.Header().Set("Content-Type", "application-json")
@@ -8,4 +11,6 @@ func initHeaders(writer http.ResponseWriter) {
 
 func GetAllBooks(writer http.ResponseWriter, request *http.Request) {
 	initHeaders(writer)
+	log.Println("Get infos about all books in data base")
+	writer.WriteHeader(200)
 }
