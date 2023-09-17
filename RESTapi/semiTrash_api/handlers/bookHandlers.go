@@ -2,6 +2,7 @@ package handlers
 
 import (
 	"encoding/json"
+	"log"
 	"net/http"
 	"strconv"
 
@@ -13,7 +14,7 @@ import (
 func GetBookByID(writer http.ResponseWriter, request *http.Request) {
 	initHeaders(writer)
 	id, err := strconv.Atoi(mux.Vars(request)["id"])
-	if err := nil{
+	if err != nil {
 		log.Println("error while parsing happend:", err)
 		writer.WriteHeader(400)
 		msg := models.Message{Message: "do not use parameter ID as uncasted to int type"}
@@ -24,7 +25,7 @@ func GetBookByID(writer http.ResponseWriter, request *http.Request) {
 	book, ok := models.FindBookById(id)
 	log.Println("Get book with id:", id)
 
-	if !ok{
+	if !ok {
 		writer.WriteHeader(404)
 		msg := models.Message{Message: "Book with that ID does not exists in data base"}
 		json.NewEncoder(writer).Encode(msg)
