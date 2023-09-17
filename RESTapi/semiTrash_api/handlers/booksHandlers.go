@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"encoding/json"
 	"log"
 	"net/http"
 )
@@ -13,4 +14,5 @@ func GetAllBooks(writer http.ResponseWriter, request *http.Request) {
 	initHeaders(writer)
 	log.Println("Get infos about all books in data base")
 	writer.WriteHeader(200)
+	json.NewEncoder(writer).Encode(models.DB)
 }
