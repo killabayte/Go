@@ -18,11 +18,13 @@ func GetBookByID(writer http.ResponseWriter, request *http.Request) {
 		writer.WriteHeader(400)
 		msg := models.Message{Message: "do not use parameter ID as uncasted to int type"}
 		json.NewEncoder(writer).Encode(msg)
+		return
 	}
 	book, ok := models.FindBookById(id)
 	if !ok{
 		writer.WriteHeader(404)
 		msg := models.Message{Message: "Book with that ID does not exists in data base"}
+		json.NewEncoder(writer).Encode(msg)
 	}
 }
 func CreateBook(writer http.ResponseWriter, request *http.Request) {
