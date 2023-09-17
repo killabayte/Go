@@ -34,6 +34,7 @@ func GetBookByID(writer http.ResponseWriter, request *http.Request) {
 		json.NewEncoder(writer).Encode(book)
 	}
 }
+
 func CreateBook(writer http.ResponseWriter, request *http.Request) {
 	initHeaders(writer)
 	log.Println("Creating new book ...")
@@ -54,9 +55,11 @@ func CreateBook(writer http.ResponseWriter, request *http.Request) {
 	json.NewEncoder(writer).Encode(book)
 
 }
+
 func UpdateBookByID(writer http.ResponseWriter, request *http.Request) {
 	initHeaders(writer)
 }
+
 func DeleteBookByID(writer http.ResponseWriter, request *http.Request) {
 	initHeaders(writer)
 }
