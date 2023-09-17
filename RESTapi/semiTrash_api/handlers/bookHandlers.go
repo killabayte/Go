@@ -42,7 +42,7 @@ func CreateBook(writer http.ResponseWriter, request *http.Request) {
 	err := json.NewDecoder(request.Body).Decode(&book)
 	if err != nil {
 		msg := models.Message{Message: "provider json file is invalid"}
-		writer.Header(400)
+		writer.WriteHeader(400)
 		json.NewEncoder(writer).Encode(msg)
 		return
 	}
