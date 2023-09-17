@@ -2,7 +2,15 @@ package handlers
 
 import "net/http"
 
-func GetBookByID(writer http.ResponseWriter, request *http.Request)    {}
-func CreateBook(writer http.ResponseWriter, request *http.Request)     {}
-func UpdateBookByID(writer http.ResponseWriter, request *http.Request) {}
-func DeleteBookByID(writer http.ResponseWriter, request *http.Request) {}
+func GetBookByID(writer http.ResponseWriter, request *http.Request) {
+	initHeaders(writer)
+}
+func CreateBook(writer http.ResponseWriter, request *http.Request) {
+	initHeaders(writer)
+}
+func UpdateBookByID(writer http.ResponseWriter, request *http.Request) {
+	initHeaders(writer)
+}
+func DeleteBookByID(writer http.ResponseWriter, request *http.Request) {
+	initHeaders(writer)
+}
