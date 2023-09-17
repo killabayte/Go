@@ -39,6 +39,7 @@ func CreateBook(writer http.ResponseWriter, request *http.Request) {
 	initHeaders(writer)
 	log.Println("Creating new book ...")
 	var book models.Book
+
 	err := json.NewDecoder(request.Body).Decode(&book)
 	if err != nil {
 		msg := models.Message{Message: "provider json file is invalid"}
@@ -53,11 +54,31 @@ func CreateBook(writer http.ResponseWriter, request *http.Request) {
 
 	writer.WriteHeader(201)
 	json.NewEncoder(writer).Encode(book)
-
 }
 
 func UpdateBookByID(writer http.ResponseWriter, request *http.Request) {
 	initHeaders(writer)
+	log.Println("Updating book...")
+	id, err := strconv.Atoi(mux.Vars(request)["id"])
+	if err != nil {
+		log.Println("error while parsing happend:", err)
+		writer.WriteHeader(400)
+		msg := models.Message{Message: "do not use parameter ID as uncasted to int type"}
+		json.NewEncoder(writer).Encode(msg)
+		return
+	}
+
+	oldBook, ok := models.FindBookByID(id)
+	if !ok {
+		log.Println("book not found")
+		writer.WriteHeader(404)
+		msg := models.Message{Message: "book with that ID does not exist in database"}
+		json.NewEncoder(writer).Encode(msg)
+		return
+	} else {
+
+	}
+
 }
 
 func DeleteBookByID(writer http.ResponseWriter, request *http.Request) {
