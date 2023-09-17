@@ -69,15 +69,22 @@ func UpdateBookByID(writer http.ResponseWriter, request *http.Request) {
 	}
 
 	oldBook, ok := models.FindBookByID(id)
+	var newBook models.Book
 	if !ok {
 		log.Println("book not found in data base id:", id)
 		writer.WriteHeader(404)
 		msg := models.Message{Message: "book with that ID does not exist in database"}
 		json.NewEncoder(writer).Encode(msg)
 		return
-	} else {
-
 	}
+	err := json.NewDecoder(request.Body).Decode(&newBook)
+	if err != nil {
+		msg := models.Message{Message: "provider json file is invalid"}
+		writer.WriteHeader(400)
+		json.NewEncoder(writer).Encode(msg)
+		return
+	}
+	//Have to change oldBook on newBook in DB
 
 }
 
