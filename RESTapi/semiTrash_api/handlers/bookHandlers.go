@@ -90,4 +90,15 @@ func UpdateBookByID(writer http.ResponseWriter, request *http.Request) {
 
 func DeleteBookByID(writer http.ResponseWriter, request *http.Request) {
 	initHeaders(writer)
+	log.Println("Deleting book...")
+	id, err := strconv.Atoi(mux.Vars(request)["id"])
+	if err != nil {
+		log.Println("error while parsing happend:", err)
+		writer.WriteHeader(400)
+		msg := models.Message{Message: "do not use parameter ID as uncasted to int type"}
+		json.NewEncoder(writer).Encode(msg)
+		return
+	}
+
+	book, ok := models.FindBookByID(id)
 }
