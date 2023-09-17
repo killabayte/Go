@@ -20,6 +20,10 @@ func GetBookByID(writer http.ResponseWriter, request *http.Request) {
 		json.NewEncoder(writer).Encode(msg)
 	}
 	book, ok := models.FindBookById(id)
+	if !ok{
+		writer.WriteHeader(404)
+		msg := models.Message{Message: "Book with that ID does not exists in data base"}
+	}
 }
 func CreateBook(writer http.ResponseWriter, request *http.Request) {
 	initHeaders(writer)
