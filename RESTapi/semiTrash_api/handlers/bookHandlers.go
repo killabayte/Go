@@ -22,11 +22,15 @@ func GetBookByID(writer http.ResponseWriter, request *http.Request) {
 	}
 
 	book, ok := models.FindBookById(id)
-	
+	log.Println("Get book with id:", id)
+
 	if !ok{
 		writer.WriteHeader(404)
 		msg := models.Message{Message: "Book with that ID does not exists in data base"}
 		json.NewEncoder(writer).Encode(msg)
+	} else {
+		writer.WriteHeader(200)
+		json.NewEncoder(writer).Encode(book)
 	}
 }
 func CreateBook(writer http.ResponseWriter, request *http.Request) {
