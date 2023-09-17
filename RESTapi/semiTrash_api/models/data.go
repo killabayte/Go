@@ -26,4 +26,5 @@ func init() {
 			BornYear: 1892,
 		},
 	}
+	db = append(db, book1)
 }
