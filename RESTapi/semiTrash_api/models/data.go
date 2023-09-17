@@ -14,3 +14,16 @@ type Author struct {
 	LastName string `json:"last_name"`
 	BornYear int    `json:"born_year"`
 }
+
+func init() {
+	book1 := Book{
+		ID:             1,
+		Title:          "Lord of the rings. Vol.1",
+		YearPublishoed: 1937,
+		Author: Author{
+			Name:     "J.R.R",
+			LastName: "Tolkien",
+			BornYear: 1892,
+		},
+	}
+}
