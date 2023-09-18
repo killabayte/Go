@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"log"
 
 	"github.com/BurntSushi/toml"
@@ -12,12 +13,16 @@ var (
 )
 
 func init() {
+	flag.StringVar(&configPath, "config-path", "configs/api.toml", "path to config file")
 }
 
 func main() {
 	log.Println("It works!")
 	config := api.NewConfig()
 	_, err := toml.DecodeFile(configPath, config)
+	if err != nil {
+		log.Println("Can't decode config file", err)
+	}
 
 	server := api.New(config)
 
