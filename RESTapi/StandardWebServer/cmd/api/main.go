@@ -13,7 +13,8 @@ func init() {
 
 func main() {
 	log.Println("It works!")
-	server := api.New()
+	config := api.NewConfig()
+	server := api.New(config)
 
 	if err := server.Start(); err != nil {
 		log.Fatal(err)
