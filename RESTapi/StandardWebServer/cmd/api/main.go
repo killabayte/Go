@@ -8,5 +8,5 @@ func init() {
 }
 
 func main() {
-	log.Panicln("It works!")
+	log.Println("It works!")
 }
