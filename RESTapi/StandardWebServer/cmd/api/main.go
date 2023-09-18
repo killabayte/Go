@@ -9,7 +9,7 @@ import (
 )
 
 var (
-	configPath string = "configs/api.toml"
+	configPath string
 )
 
 func init() {
@@ -17,6 +17,7 @@ func init() {
 }
 
 func main() {
+	flag.Parse()
 	log.Println("It works!")
 	config := api.NewConfig()
 	_, err := toml.DecodeFile(configPath, config)
