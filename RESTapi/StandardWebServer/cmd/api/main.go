@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"StandardWebServer/internal/app/api"
+	"github.com/killabayte/Go/RESTapi/StandardWebServer/internal/app/api"
 )
 
 var ()
