@@ -11,25 +11,29 @@ import (
 
 var (
 	configPath string
+	format     string
 )
 
 func init() {
-	flag.StringVar(&configPath, "path", "configs/api.toml", "path to config file")
+	flag.StringVar(&configPath, "path", "", "path to config file")
+	flag.StringVar(&format, "format", "", "format of config file, can be .env or .toml extension")
 }
 
 func main() {
 	flag.Parse()
-	if configPath == "" {
+	config := api.NewConfig()
+
+	if configPath == "" || format == "" {
 		fmt.Println("No config path specified, using default")
 		configPath = "configs/api.toml"
-	}
-	log.Println("It works!")
-	config := api.NewConfig()
-	_, err := toml.DecodeFile(configPath, config)
-	if err != nil {
-		log.Println("Error decoding config file:", err)
+		_, err := toml.DecodeFile(configPath, config)
+		if err != nil {
+			log.Println("Error decoding config file:", err)
+		}
+		fmt.Println(config)
 	}
 
+	log.Println("It works!")
 	server := api.New(config)
 
 	if err := server.Start(); err != nil {
