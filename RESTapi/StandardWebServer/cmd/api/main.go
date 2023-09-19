@@ -21,6 +21,8 @@ func init() {
 
 func main() {
 	flag.Parse()
+	log.Println("It works!")
+
 	config := api.NewConfig()
 
 	if configPath == "" || format == "" {
@@ -32,8 +34,6 @@ func main() {
 		}
 		fmt.Println(config)
 	}
-
-	log.Println("It works!")
 	server := api.New(config)
 
 	if err := server.Start(); err != nil {
