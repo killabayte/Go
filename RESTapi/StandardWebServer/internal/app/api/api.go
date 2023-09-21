@@ -1,7 +1,12 @@
 package api
 
+import (
+	"github.com/sirupsen/logrus"
+)
+
 type API struct {
 	config *Config
+	logger *logrus.Logger
 }
 
 func New(config *Config) *API {
