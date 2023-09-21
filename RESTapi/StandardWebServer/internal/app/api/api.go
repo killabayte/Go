@@ -16,6 +16,7 @@ func New(config *Config) *API {
 	}
 }
 
-func (a *API) Start() error {
+func (api *API) Start() error {
+
 	return nil
 }
