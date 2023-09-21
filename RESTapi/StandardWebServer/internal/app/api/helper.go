@@ -5,7 +5,7 @@ import (
 )
 
 func (a *API) configureLoggerField() error {
-	log_level := logrus.ParseLevel(a.config.LoggerLevel)
+	log_level, err := logrus.ParseLevel(a.config.LoggerLevel)
 	if err != nil {
 		return err
 	}
