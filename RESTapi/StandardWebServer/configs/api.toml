@@ -1,1 +1,2 @@
-bind_addr = ":9090"
+bind_addr    = ":9090"
+logger_level = "debug"
