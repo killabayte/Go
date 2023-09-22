@@ -50,7 +50,9 @@ func main() {
 			log.Println("Error decoding provided .env config file:", err)
 		}
 		bind_addr := os.Getenv("bind_addr")
+		logger_level := os.Getenv("logger_level")
 		config.BindAddr = bind_addr
+		config.LoggerLevel = logger_level
 	}
 
 	log.Println("It works!")
