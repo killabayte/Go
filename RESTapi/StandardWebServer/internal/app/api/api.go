@@ -15,6 +15,7 @@ func New(config *Config) *API {
 	return &API{
 		config: config,
 		logger: logrus.New(),
+		router: mux.NewRouter(),
 	}
 }
 
