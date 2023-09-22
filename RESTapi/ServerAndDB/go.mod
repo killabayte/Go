@@ -1,4 +1,4 @@
-module github.com/killabayte/Go/RESTapi/StandardWebServer
+module github.com/killabayte/Go/RESTapi/ServerAndDB
 
 go 1.21.0
 
