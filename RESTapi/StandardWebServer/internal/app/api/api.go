@@ -1,6 +1,8 @@
 package api
 
 import (
+	"net/http"
+
 	"github.com/gorilla/mux"
 	"github.com/sirupsen/logrus"
 )
@@ -24,5 +26,6 @@ func (api *API) Start() error {
 		return err
 	}
 	api.logger.Info("Starting API server at port ", api.config.BindAddr)
-	return nil
+	api.configureRouterField()
+	return http.ListenAndServe(api.config.BindAddr, api.router)
 }
