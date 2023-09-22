@@ -3,7 +3,6 @@ package api
 import (
 	"net/http"
 
-	_ "github.com/gorilla/mux"
 	"github.com/sirupsen/logrus"
 )
 
