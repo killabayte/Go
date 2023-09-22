@@ -17,5 +17,7 @@ func (a *API) configureLoggerField() error {
 }
 
 func (a *API) configureRouterField() {
-	a.router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) { w.Write([]byte("Hello! From REST api")) })
+	a.router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("Hello! From REST api"))
+	})
 }
