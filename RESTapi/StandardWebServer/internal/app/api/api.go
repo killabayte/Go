@@ -1,12 +1,14 @@
 package api
 
 import (
+	"github.com/gorilla/mux"
 	"github.com/sirupsen/logrus"
 )
 
 type API struct {
 	config *Config
 	logger *logrus.Logger
+	router *mux.Router
 }
 
 func New(config *Config) *API {
