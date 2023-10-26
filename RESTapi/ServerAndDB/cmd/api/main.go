@@ -8,7 +8,7 @@ import (
 
 	"github.com/BurntSushi/toml"
 	"github.com/joho/godotenv"
-	"github.com/killabayte/Go/RESTapi/StandardWebServer/internal/app/api"
+	"github.com/killabayte/Go/RESTapi/ServerAndDB/internal/app/api"
 )
 
 var (
