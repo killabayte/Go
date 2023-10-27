@@ -14,6 +14,7 @@ type API struct {
 }
 
 func New(config *Config) *API {
+
 	return &API{
 		config: config,
 		logger: logrus.New(),
