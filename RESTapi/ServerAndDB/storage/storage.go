@@ -13,3 +13,10 @@ func New(config *Config) *Storage {
 		config: config
 	}
 }	
+
+//Open connection method
+func (s *Storage) Open() error {
+	return nil
+}
+
+//Close connection method
