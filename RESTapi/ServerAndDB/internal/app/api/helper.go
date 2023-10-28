@@ -3,6 +3,7 @@ package api
 import (
 	"net/http"
 
+	"github.com/killabayte/Go/RESTapi/ServerAndDB/storage"
 	"github.com/sirupsen/logrus"
 )
 
@@ -21,4 +22,13 @@ func (a *API) configureRouterField() {
 	})
 }
 
-//Configuration for the store field
+// Configuration for the store field
+func (a *API) configureStoreField() error {
+	store := storage.New(a.config.Storage)
+	//Try to establish connection to the database, if not possible - return error
+	if err := store.Open(); err != nil {
+		return err
+	}
+	a.store = store
+	return nil
+}
