@@ -1,6 +1,11 @@
 package storage
 
-import "honnef.co/go/tools/config"
+import (
+	"honnef.co/go/tools/config"
+	"github.com/lib/pq"
+)
+
+
 
 //Instance of storage
 type Storage struct {
