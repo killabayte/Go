@@ -25,6 +25,7 @@ func main() {
 	flag.Parse()
 	config := api.NewConfig()
 
+	//Setup for default config file and local .toml config file
 	if configPath == "" || format == "" {
 		fmt.Println("No config path specified, using local .toml file as default")
 		_, err := os.Stat("configs/api.toml")
@@ -37,12 +38,14 @@ func main() {
 		} else {
 			fmt.Println("No config file provided and no config file found locally, using default values from the code")
 		}
+		//Setup for .toml config file
 	} else if format == ".toml" {
 		fmt.Println("Got an .toml format config file")
 		_, err := toml.DecodeFile(configPath, config)
 		if err != nil {
 			log.Println("Error decoding provided .toml config file:", err)
 		}
+		//Setup for .env config file
 	} else if format == ".env" {
 		fmt.Println("Got an .env format config file")
 		err := godotenv.Load(configPath)
