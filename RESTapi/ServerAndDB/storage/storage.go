@@ -20,3 +20,6 @@ func (s *Storage) Open() error {
 }
 
 //Close connection method
+func (s *Storage) Close() error {
+	
+}
