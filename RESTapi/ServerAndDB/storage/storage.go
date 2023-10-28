@@ -5,8 +5,6 @@ import (
 	"github.com/lib/pq"
 )
 
-
-
 //Instance of storage
 type Storage struct {
 	config *Config
@@ -31,6 +29,7 @@ func (s *Storage) Open() error {
 		return err
 	}
 	s.db = db
+	log.Println("Database connection established successfully")
 	return nil
 }
 
