@@ -55,11 +55,7 @@ func main() {
 		config.LoggerLevel = logger_level
 	}
 
-	log.Println("It works!")
-	fmt.Println(config)
 	server := api.New(config)
 
-	if err := server.Start(); err != nil {
-		log.Fatal(err)
-	}
+	log.Fatal(server.Start())
 }
