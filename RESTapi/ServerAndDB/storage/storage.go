@@ -18,7 +18,7 @@ func New(config *Config) *Storage {
 
 //Open connection method
 func (s *Storage) Open() error {
-
+	db, err := sql.Open("postgres", s.config.DataBaseURL)
 	return nil
 }
 
