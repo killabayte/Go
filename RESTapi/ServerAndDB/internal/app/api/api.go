@@ -4,6 +4,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
+	"github.com/killabayte/Go/RESTapi/ServerAndDB/storage"
 	"github.com/sirupsen/logrus"
 )
 
@@ -11,6 +12,8 @@ type API struct {
 	config *Config
 	logger *logrus.Logger
 	router *mux.Router
+	//Add storage field
+	store *storage.Storage
 }
 
 func New(config *Config) *API {
