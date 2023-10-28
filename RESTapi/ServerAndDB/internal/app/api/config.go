@@ -1,6 +1,9 @@
 package api
 
-import "github.com/killabayte/Go/RESTapi/ServerAndDB/storage"
+import (
+	"github.com/killabayte/Go/RESTapi/ServerAndDB/storage"
+	_ "github.com/lib/pq"
+)
 
 type Config struct {
 	BindAddr    string `toml:"bind_addr"`

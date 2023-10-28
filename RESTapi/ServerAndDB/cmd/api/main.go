@@ -9,6 +9,7 @@ import (
 	"github.com/BurntSushi/toml"
 	"github.com/joho/godotenv"
 	"github.com/killabayte/Go/RESTapi/ServerAndDB/internal/app/api"
+	_ "github.com/lib/pq"
 )
 
 var (

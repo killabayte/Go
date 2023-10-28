@@ -5,6 +5,7 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/killabayte/Go/RESTapi/ServerAndDB/storage"
+	_ "github.com/lib/pq"
 	"github.com/sirupsen/logrus"
 )
 
