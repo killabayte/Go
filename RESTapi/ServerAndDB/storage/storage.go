@@ -1,25 +1,25 @@
 package storage
 
 import (
-	"honnef.co/go/tools/config"
-	"github.com/lib/pq"
+	"database/sql"
+	"log"
 )
 
-//Instance of storage
+// Instance of storage
 type Storage struct {
 	config *Config
 	//Database file descriptor
 	db *sql.DB
 }
 
-//Storage constructor
+// Storage constructor
 func New(config *Config) *Storage {
 	return &Storage{
-		config: config
+		config: config,
 	}
-}	
+}
 
-//Open connection method
+// Open connection method
 func (s *Storage) Open() error {
 	db, err := sql.Open("postgres", s.config.DataBaseURL)
 	if err != nil {
@@ -33,7 +33,8 @@ func (s *Storage) Open() error {
 	return nil
 }
 
-//Close connection method
+// Close connection method
 func (s *Storage) Close() error {
 	s.db.Close()
+	return nil
 }

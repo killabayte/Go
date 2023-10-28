@@ -12,4 +12,6 @@ require (
 require (
 	github.com/lib/pq v1.10.9 // indirect
 	golang.org/x/sys v0.12.0 // indirect
+	golang.org/x/tools v0.12.1-0.20230825192346-2191a27a6dc5 // indirect
+	honnef.co/go/tools v0.4.6 // indirect
 )
