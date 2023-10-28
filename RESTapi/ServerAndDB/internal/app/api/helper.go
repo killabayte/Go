@@ -20,3 +20,5 @@ func (a *API) configureRouterField() {
 		w.Write([]byte("Hello! From REST api"))
 	})
 }
+
+//Configuration for the store field
