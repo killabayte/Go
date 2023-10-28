@@ -7,6 +7,7 @@ type Storage struct {
 	config *Config
 }
 
+//Storage constructor
 func New(config *Config) *Storage {
 	return &Storage{
 		config: config
