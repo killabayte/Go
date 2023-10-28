@@ -33,7 +33,9 @@ func (api *API) Start() error {
 	//Configure router
 	api.configureRouterField()
 	//Configure storage
-	api.configureStoreField()
+	if err := api.configureStoreField(); err != nil {
+		return err
+	}
 
 	return http.ListenAndServe(api.config.BindAddr, api.router)
 }
