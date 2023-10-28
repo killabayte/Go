@@ -22,6 +22,10 @@ func (s *Storage) Open() error {
 	if err != nil {
 		return err
 	}
+	if err := db.Ping(); err != nil {
+		return err
+	}
+	s.db = db
 	return nil
 }
 
