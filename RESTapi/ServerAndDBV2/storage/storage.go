@@ -11,7 +11,9 @@ import (
 type Storage struct {
 	config *Config
 	//Database file descriptor
-	db *sql.DB
+	db                *sql.DB
+	userRepository    *UserRepository
+	articleRepository *ArticleRepository
 }
 
 // Storage constructor
