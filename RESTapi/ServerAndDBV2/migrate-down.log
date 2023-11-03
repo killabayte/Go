@@ -1,0 +1,3 @@
+Are you sure you want to apply all down migrations? [y/N]
+Applying all down migrations
+error: Dirty database version 20231028114752. Fix and force version.
