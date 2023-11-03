@@ -24,7 +24,20 @@ func (ur *UserRepository) Create(u *models.User) (*models.User, error) {
 }
 
 func (ur *UserRepository) FindByLogin(login string) (*models.User, bool, error) {
-	return nil, false, nil
+	users, err := ur.SelectAll()
+	var founded bool
+	if err != nil {
+		return nil, founded, err
+	}
+	var userFounded *models.User
+	for _, u := range users {
+		if u.Login == login {
+			userFounded = u
+			founded = true
+			break
+		}
+	}
+	return userFounded, founded, nil
 }
 
 func (ur *UserRepository) SelectAll() ([]*models.User, error) {
@@ -33,7 +46,9 @@ func (ur *UserRepository) SelectAll() ([]*models.User, error) {
 	if err != nil {
 		return nil, err
 	}
+
 	defer rows.Close()
+
 	users := make([]*models.User, 0)
 	for rows.Next() {
 		u := models.User{}
@@ -44,5 +59,5 @@ func (ur *UserRepository) SelectAll() ([]*models.User, error) {
 		}
 		users = append(users, &u)
 	}
-	return nil, nil
+	return users, nil
 }
