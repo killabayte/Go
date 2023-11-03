@@ -42,3 +42,11 @@ func (s *Storage) Close() error {
 	s.db.Close()
 	return nil
 }
+
+func (s *Storage) User() *UserRepository {
+	return nil
+}
+
+func (s *Storage) Article() *ArticleRepository {
+	return nil
+}
