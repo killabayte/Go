@@ -44,9 +44,17 @@ func (s *Storage) Close() error {
 }
 
 func (s *Storage) User() *UserRepository {
+	if s.userRepository != nil {
+		return s.userRepository
+	}
+	s.userRepository = &UserRepository{}
 	return nil
 }
 
 func (s *Storage) Article() *ArticleRepository {
+	if s.articleRepository != nil {
+		return s.articleRepository
+	}
+	s.articleRepository = &ArticleRepository{}
 	return nil
 }
