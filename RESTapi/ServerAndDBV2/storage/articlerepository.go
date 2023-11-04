@@ -24,11 +24,19 @@ func (ar *ArticleRepository) Create(a *models.Article) (*models.Article, error) 
 }
 
 func (ar *ArticleRepository) DeleteById(id int) (*models.Article, error) {
-	query := fmt.Sprintf("DELETE FROM %s WHERE id=$1", tableArticle)
-	if _, err := ar.storage.db.Exec(query, id); err != nil {
+	article, ok, err := ar.FindArticleById(id)
+	if err != nil {
 		return nil, err
 	}
-	return nil, nil
+	if ok {
+		query := fmt.Sprintf("DELETE FROM %s WHERE id=$1", tableArticle)
+		_, err := ar.storage.db.Exec(query, id)
+		if err != nil {
+			return nil, err
+		}
+		return article, nil
+	}
+	return article, nil
 }
 
 func (ar *ArticleRepository) FindArticleById(id int) (*models.Article, bool, error) {
@@ -48,12 +56,20 @@ func (ar *ArticleRepository) FindArticleById(id int) (*models.Article, bool, err
 	return articleFounded, founded, nil
 }
 
-func (ar *ArticleRepository) UpdateArticleById(id int, a *models.Article) (*models.Article, error) {
-	query := fmt.Sprintf("UPDATE %s SET title=$1, author=$2, content=$3 WHERE id=$4", tableArticle)
-	if _, err := ar.storage.db.Exec(query, a.Title, a.Author, a.Content, id); err != nil {
+func (ar *ArticleRepository) UpdateArticleById(id int) (*models.Article, error) {
+	article, ok, err := ar.FindArticleById(id)
+	if err != nil {
 		return nil, err
 	}
-	return a, nil
+	if ok {
+		query := fmt.Sprintf("UPDATE %s SET title=$1, author=$2, content=$3 WHERE id=$4", tableArticle)
+		_, err := ar.storage.db.Exec(query, id)
+		if err != nil {
+			return nil, err
+		}
+		return article, nil
+	}
+	return article, nil
 }
 
 func (ar *ArticleRepository) SelectAll() ([]*models.Article, error) {
