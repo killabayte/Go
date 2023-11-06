@@ -1,11 +1,13 @@
 package api
 
 import (
-	"net/http"
-
 	"github.com/killabayte/Go/RESTapi/ServerAndDBV2/storage"
 	_ "github.com/lib/pq"
 	"github.com/sirupsen/logrus"
+)
+
+var (
+	prefix string = "/api/v1"
 )
 
 func (a *API) configureLoggerField() error {
@@ -18,9 +20,11 @@ func (a *API) configureLoggerField() error {
 }
 
 func (a *API) configureRouterField() {
-	a.router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Hello! From REST api"))
-	})
+	a.router.HandleFunc().Methods()
+	a.router.HandleFunc().Methods()
+	a.router.HandleFunc().Methods()
+	a.router.HandleFunc().Methods()
+	a.router.HandleFunc().Methods()
 }
 
 // Configuration for the store field
