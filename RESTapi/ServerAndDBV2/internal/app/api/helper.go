@@ -23,8 +23,8 @@ func (a *API) configureRouterField() {
 	a.router.HandleFunc(prefix+"/articles", a.GetAllArticles).Methods("GET")
 	a.router.HandleFunc(prefix+"/articles/{id}", a.GetArticleById).Methods("GET")
 	a.router.HandleFunc(prefix+"/articles/{id}", a.DeleteArticleById).Methods("DELETE")
-	a.router.HandleFunc().Methods()
-	a.router.HandleFunc().Methods()
+	a.router.HandleFunc(prefix+"/articles", a.PostArticle).Methods("POST")
+	a.router.HandleFunc(prefix+"/user/register", a.PostUserRegister).Methods("POST")
 }
 
 // Configuration for the store field
