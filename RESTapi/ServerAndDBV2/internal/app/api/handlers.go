@@ -33,3 +33,8 @@ func (api *API) GetAllArticles(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(200)
 	json.NewEncoder(w).Encode(articles)
 }
+
+func (api *API) GetArticleById(w http.ResponseWriter, r *http.Request)    {}
+func (api *API) DeleteArticleById(w http.ResponseWriter, r *http.Request) {}
+func (api *API) PostArticle(w http.ResponseWriter, r *http.Request)       {}
+func (api *API) PostUserRegister(w http.ResponseWriter, r *http.Request)  {}
