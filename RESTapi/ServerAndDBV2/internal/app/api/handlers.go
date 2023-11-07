@@ -30,4 +30,6 @@ func (api *API) GetAllArticles(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(msg)
 		return
 	}
+	w.WriteHeader(200)
+	json.NewEncoder(w).Encode(articles)
 }
