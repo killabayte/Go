@@ -1,6 +1,9 @@
 package api
 
-import "net/http"
+import (
+	"encoding/json"
+	"net/http"
+)
 
 type Message struct {
 	StatusCode int    `json:"status_code"`
@@ -20,7 +23,11 @@ func (api *API) GetAllArticles(w http.ResponseWriter, r *http.Request) {
 		api.logger.Info("Error while Articles.SelectAll(): ", err)
 		msg := Message{
 			StatusCode: 501,
-			Message:   "We have some troubles to access the database. Try again later.",
-			IsError:   true,
+			Message:    "We have some troubles to access the database. Try again later.",
+			IsError:    true,
+		}
+		w.WriteHeader(501)
+		json.NewEncoder(w).Encode(msg)
+		return
 	}
 }
