@@ -14,7 +14,7 @@ type API struct {
 	logger *logrus.Logger
 	router *mux.Router
 	//Add storage field
-	store *storage.Storage
+	storage *storage.Storage
 }
 
 func New(config *Config) *API {
