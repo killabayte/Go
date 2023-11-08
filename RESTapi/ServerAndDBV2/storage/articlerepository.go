@@ -91,5 +91,6 @@ func (ar *ArticleRepository) SelectAll() ([]*models.Article, error) {
 		}
 		articles = append(articles, &a)
 	}
+
 	return articles, nil
 }
