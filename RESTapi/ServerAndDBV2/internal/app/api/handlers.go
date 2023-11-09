@@ -41,6 +41,17 @@ func (api *API) PostArticle(w http.ResponseWriter, r *http.Request) {
 	api.logger.Info("Post Article POST /api/v1/articles")
 	var article models.Article
 	err := json.NewDecoder(r.Body).Decode(&article)
+	if err != nil {
+		api.logger.Info("Error while decoding request body: ")
+		msg := Message{
+			StatusCode: 400,
+			Message:    "Bad request. Check your input data.",
+			IsError:    true,
+		}
+		w.WriteHeader(400)
+		json.NewEncoder(w).Encode(msg)
+		return
+	}
 
 }
 
