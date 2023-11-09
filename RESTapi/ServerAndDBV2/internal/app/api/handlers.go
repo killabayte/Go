@@ -3,6 +3,8 @@ package api
 import (
 	"encoding/json"
 	"net/http"
+
+	"github.com/killabayte/Go/RESTapi/ServerAndDBV2/internal/app/models"
 )
 
 type Message struct {
@@ -37,6 +39,8 @@ func (api *API) GetAllArticles(w http.ResponseWriter, r *http.Request) {
 func (api *API) PostArticle(w http.ResponseWriter, r *http.Request) {
 	initHeaders(w)
 	api.logger.Info("Post Article POST /api/v1/articles")
+	var article models.Article
+	err := json.NewDecoder(r.Body).Decode(&article)
 
 }
 
