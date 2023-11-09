@@ -52,7 +52,17 @@ func (api *API) PostArticle(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(msg)
 		return
 	}
-
+	a, err := api.storage.Article().Create(&article)
+	if err != nil {
+		api.logger.Info("Error while Articles.Create(): ", err)
+		msg := Message{
+			StatusCode: 501,
+			Message:    "We have some troubles to access the database. Try again later.",
+			IsError:    true,
+		}
+		w.WriteHeader(501)
+		json.NewEncoder(w).Encode(msg)
+		return
 }
 
 func (api *API) GetArticleById(w http.ResponseWriter, r *http.Request)    {}
