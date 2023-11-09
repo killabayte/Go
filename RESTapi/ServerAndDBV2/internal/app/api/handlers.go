@@ -62,7 +62,9 @@ func (api *API) PostArticle(w http.ResponseWriter, r *http.Request) {
 		}
 		w.WriteHeader(501)
 		json.NewEncoder(w).Encode(msg)
-		return
+	}
+	w.WriteHeader(201)
+	json.NewEncoder(w).Encode(a)
 }
 
 func (api *API) GetArticleById(w http.ResponseWriter, r *http.Request)    {}
