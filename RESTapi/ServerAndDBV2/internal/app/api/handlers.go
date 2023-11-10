@@ -88,11 +88,11 @@ func (api *API) GetArticleById(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		api.logger.Info("Error while Articles.FindArticleById(): ", err)
 		msg := Message{
-			StatusCode: 501,
+			StatusCode: 500,
 			Message:    "We have some troubles to access the database. Try again later.",
 			IsError:    true,
 		}
-		w.WriteHeader(501)
+		w.WriteHeader(500)
 		json.NewEncoder(w).Encode(msg)
 		return
 	}
