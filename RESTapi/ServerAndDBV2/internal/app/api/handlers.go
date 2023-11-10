@@ -84,6 +84,19 @@ func (api *API) GetArticleById(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(msg)
 		return
 	}
+	article, ok, err := api.storage.Article().FindArticleById(id)
+	if err != nil {
+		api.logger.Info("Error while Articles.FindArticleById(): ", err)
+		msg := Message{
+			StatusCode: 501,
+			Message:    "We have some troubles to access the database. Try again later.",
+			IsError:    true,
+		}
+		w.WriteHeader(501)
+		json.NewEncoder(w).Encode(msg)
+		return
+	}
+
 }
 
 func (api *API) DeleteArticleById(w http.ResponseWriter, r *http.Request) {}
