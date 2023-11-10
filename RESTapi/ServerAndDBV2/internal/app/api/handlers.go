@@ -3,7 +3,9 @@ package api
 import (
 	"encoding/json"
 	"net/http"
+	"strconv"
 
+	"github.com/gorilla/mux"
 	"github.com/killabayte/Go/RESTapi/ServerAndDBV2/internal/app/models"
 )
 
@@ -67,6 +69,22 @@ func (api *API) PostArticle(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(a)
 }
 
-func (api *API) GetArticleById(w http.ResponseWriter, r *http.Request)    {}
+func (api *API) GetArticleById(w http.ResponseWriter, r *http.Request) {
+	initHeaders(w)
+	api.logger.Info("Get Article by ID GET /api/v1/articles/{id}")
+	id, err := strconv.Atoi(mux.Vars(r)["id"])
+	if err != nil {
+		api.logger.Info("Error while converting {id} parameter: ", err)
+		msg := Message{
+			StatusCode: 400,
+			Message:    "Bad request. Check your input data.",
+			IsError:    true,
+		}
+		w.WriteHeader(400)
+		json.NewEncoder(w).Encode(msg)
+		return
+	}
+}
+
 func (api *API) DeleteArticleById(w http.ResponseWriter, r *http.Request) {}
 func (api *API) PostUserRegister(w http.ResponseWriter, r *http.Request)  {}
