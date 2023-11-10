@@ -96,6 +96,17 @@ func (api *API) GetArticleById(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(msg)
 		return
 	}
+	if !ok {
+		api.logger.Info("Article not found")
+		msg := Message{
+			StatusCode: 404,
+			Message:    "Article not found in database.",
+			IsError:    true,
+		}
+		w.WriteHeader(404)
+		json.NewEncoder(w).Encode(msg)
+		return
+	}
 
 }
 
