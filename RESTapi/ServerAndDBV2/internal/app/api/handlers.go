@@ -187,30 +187,28 @@ func (api *API) PostUserRegister(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(msg)
 		return
 	}
-	_, ok, err := api.storage.User().FindByLogin(user.Login){
-		if err != nil {
-			api.logger.Info("Error while User.FindByLogin(): ", err)
-			msg := Message{
-				StatusCode: 500,
-				Message:    "We have some troubles to access the database. Try again later.",
-				IsError:    true,
-			}
-			w.WriteHeader(500)
-			json.NewEncoder(w).Encode(msg)
-			return
+	_, ok, err := api.storage.User().FindByLogin(user.Login)
+	if err != nil {
+		api.logger.Info("Error while User.FindByLogin(): ", err)
+		msg := Message{
+			StatusCode: 500,
+			Message:    "We have some troubles to access the database. Try again later.",
+			IsError:    true,
 		}
-		if ok {
-			api.logger.Info("User already exists")
-			msg := Message{
-				StatusCode: 400,
-				Message:    "User already exists.",
-				IsError:    true,
-			}
-			w.WriteHeader(400)
-			json.NewEncoder(w).Encode(msg)
-			return
+		w.WriteHeader(500)
+		json.NewEncoder(w).Encode(msg)
+		return
+	}
+	if ok {
+		api.logger.Info("User already exists")
+		msg := Message{
+			StatusCode: 400,
+			Message:    "User already exists.",
+			IsError:    true,
 		}
-
+		w.WriteHeader(400)
+		json.NewEncoder(w).Encode(msg)
+		return
 	}
 	u, err := api.storage.User().Create(&user)
 	if err != nil {
@@ -220,7 +218,7 @@ func (api *API) PostUserRegister(w http.ResponseWriter, r *http.Request) {
 			Message:    "We have some troubles to access the database. Try again later.",
 			IsError:    true,
 		}
-		w.WriteHeader(500)
+		w.WriteHeader(501)
 		json.NewEncoder(w).Encode(msg)
 		return
 	}
