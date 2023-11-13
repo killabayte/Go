@@ -202,11 +202,11 @@ func (api *API) PostUserRegister(w http.ResponseWriter, r *http.Request) {
 		if ok {
 			api.logger.Info("User already exists")
 			msg := Message{
-				StatusCode: 409,
+				StatusCode: 400,
 				Message:    "User already exists.",
 				IsError:    true,
 			}
-			w.WriteHeader(409)
+			w.WriteHeader(400)
 			json.NewEncoder(w).Encode(msg)
 			return
 		}
