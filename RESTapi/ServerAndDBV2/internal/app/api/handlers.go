@@ -225,5 +225,10 @@ func (api *API) PostUserRegister(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	w.WriteHeader(201)
-	json.NewEncoder(w).Encode(u)
+	msg := Message{
+		StatusCode: 201,
+		Message:    fmt.Sprintf("User with id %d was created.", u.ID),
+		IsError:    false,
+	}
+	json.NewEncoder(w).Encode(msg)
 }
