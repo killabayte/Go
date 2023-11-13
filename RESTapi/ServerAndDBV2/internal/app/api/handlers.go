@@ -218,7 +218,7 @@ func (api *API) PostUserRegister(w http.ResponseWriter, r *http.Request) {
 			Message:    "We have some troubles to access the database. Try again later.",
 			IsError:    true,
 		}
-		w.WriteHeader(501)
+		w.WriteHeader(500)
 		json.NewEncoder(w).Encode(msg)
 		return
 	}
