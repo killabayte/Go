@@ -2,6 +2,7 @@ package api
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 	"strconv"
 
@@ -161,6 +162,13 @@ func (api *API) DeleteArticleById(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(msg)
 		return
 	}
+	w.WriteHeader(202)
+	msg := Message{
+		StatusCode: 202,
+		Message:    fmt.Sprintf("Article with id %d was deleted.", id),
+		IsError:    false,
+	}
+	json.NewEncoder(w).Encode(msg)
 }
 
 func (api *API) PostUserRegister(w http.ResponseWriter, r *http.Request) {}
