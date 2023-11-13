@@ -212,17 +212,18 @@ func (api *API) PostUserRegister(w http.ResponseWriter, r *http.Request) {
 		}
 
 	}
-	a, err := api.storage.User().Create(&user)
+	u, err := api.storage.User().Create(&user)
 	if err != nil {
 		api.logger.Info("Error while User.Create(): ", err)
 		msg := Message{
-			StatusCode: 501,
+			StatusCode: 500,
 			Message:    "We have some troubles to access the database. Try again later.",
 			IsError:    true,
 		}
-		w.WriteHeader(501)
+		w.WriteHeader(500)
 		json.NewEncoder(w).Encode(msg)
+		return
 	}
 	w.WriteHeader(201)
-	json.NewEncoder(w).Encode(a)
+	json.NewEncoder(w).Encode(u)
 }
