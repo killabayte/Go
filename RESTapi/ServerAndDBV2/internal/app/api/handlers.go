@@ -111,5 +111,34 @@ func (api *API) GetArticleById(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(article)
 }
 
-func (api *API) DeleteArticleById(w http.ResponseWriter, r *http.Request) {}
-func (api *API) PostUserRegister(w http.ResponseWriter, r *http.Request)  {}
+func (api *API) DeleteArticleById(w http.ResponseWriter, r *http.Request) {
+	initHeaders(w)
+	api.logger.Info("Delete Article by ID DELETE /api/v1/articles/{id}")
+	id, err := strconv.Atoi(mux.Vars(r)["id"])
+	if err != nil {
+		api.logger.Info("Error while converting {id} parameter: ", err)
+		msg := Message{
+			StatusCode: 400,
+			Message:    "Bad request. Check your input data.",
+			IsError:    true,
+		}
+		w.WriteHeader(400)
+		json.NewEncoder(w).Encode(msg)
+		return
+	}
+	_, ok, err := api.storage.Article().FindArticleById(id)
+	if err != nil {
+		api.logger.Info("Error while Articles.FindArticleById(): ", err)
+		msg := Message{
+			StatusCode: 500,
+			Message:    "We have some troubles to access the database. Try again later.",
+			IsError:    true,
+		}
+		w.WriteHeader(500)
+		json.NewEncoder(w).Encode(msg)
+		return
+	}
+
+}
+
+func (api *API) PostUserRegister(w http.ResponseWriter, r *http.Request) {}
