@@ -153,11 +153,11 @@ func (api *API) DeleteArticleById(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		api.logger.Info("Error while deleting article from databease by method Articles.DeleteById(): ", err)
 		msg := Message{
-			StatusCode: 500,
+			StatusCode: 501,
 			Message:    "We have some troubles to access the database. Try again later.",
 			IsError:    true,
 		}
-		w.WriteHeader(500)
+		w.WriteHeader(501)
 		json.NewEncoder(w).Encode(msg)
 		return
 	}
