@@ -149,7 +149,18 @@ func (api *API) DeleteArticleById(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(msg)
 		return
 	}
-
+	_, err = api.storage.Article().DeleteById(id)
+	if err != nil {
+		api.logger.Info("Error while deleting article from databease by method Articles.DeleteById(): ", err)
+		msg := Message{
+			StatusCode: 500,
+			Message:    "We have some troubles to access the database. Try again later.",
+			IsError:    true,
+		}
+		w.WriteHeader(500)
+		json.NewEncoder(w).Encode(msg)
+		return
+	}
 }
 
 func (api *API) PostUserRegister(w http.ResponseWriter, r *http.Request) {}
