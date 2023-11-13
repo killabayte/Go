@@ -171,4 +171,58 @@ func (api *API) DeleteArticleById(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(msg)
 }
 
-func (api *API) PostUserRegister(w http.ResponseWriter, r *http.Request) {}
+func (api *API) PostUserRegister(w http.ResponseWriter, r *http.Request) {
+	initHeaders(w)
+	api.logger.Info("Create user POST /api/v1/users/register")
+	var user models.User
+	err := json.NewDecoder(r.Body).Decode(&user)
+	if err != nil {
+		api.logger.Info("Error while decoding request body: ")
+		msg := Message{
+			StatusCode: 400,
+			Message:    "Bad request. Check your input data.",
+			IsError:    true,
+		}
+		w.WriteHeader(400)
+		json.NewEncoder(w).Encode(msg)
+		return
+	}
+	_, ok, err := api.storage.User().FindByLogin(user.Login){
+		if err != nil {
+			api.logger.Info("Error while User.FindByLogin(): ", err)
+			msg := Message{
+				StatusCode: 500,
+				Message:    "We have some troubles to access the database. Try again later.",
+				IsError:    true,
+			}
+			w.WriteHeader(500)
+			json.NewEncoder(w).Encode(msg)
+			return
+		}
+		if ok {
+			api.logger.Info("User already exists")
+			msg := Message{
+				StatusCode: 409,
+				Message:    "User already exists.",
+				IsError:    true,
+			}
+			w.WriteHeader(409)
+			json.NewEncoder(w).Encode(msg)
+			return
+		}
+
+	}
+	a, err := api.storage.User().Create(&user)
+	if err != nil {
+		api.logger.Info("Error while User.Create(): ", err)
+		msg := Message{
+			StatusCode: 501,
+			Message:    "We have some troubles to access the database. Try again later.",
+			IsError:    true,
+		}
+		w.WriteHeader(501)
+		json.NewEncoder(w).Encode(msg)
+	}
+	w.WriteHeader(201)
+	json.NewEncoder(w).Encode(a)
+}
