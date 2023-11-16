@@ -18,6 +18,7 @@ type Message struct {
 
 func initHeaders(w http.ResponseWriter) {
 	w.Header().Set("Content-Type", "application/json")
+
 }
 
 func (api *API) GetAllArticles(w http.ResponseWriter, r *http.Request) {
