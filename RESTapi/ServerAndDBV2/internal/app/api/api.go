@@ -29,7 +29,6 @@ func (api *API) Start() error {
 	if err := api.configureLoggerField(); err != nil {
 		return err
 	}
-
 	api.logger.Info("Starting API server at port ", api.config.BindAddr)
 	//Configure router
 	api.configureRouterField()
