@@ -1,6 +1,7 @@
 package middleware
 
 var (
-    SecretKey = []byte
+    SecretKey = []byte("BakerStreet221BNowayToHack")
+    emptyValidFunc
 )
 
