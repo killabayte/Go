@@ -260,5 +260,16 @@ func (api *API) PostToAuth(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(msg)
 		return
 	}
+	if !ok {
+		api.logger.Info("User not found")
+		msg := Message{
+			StatusCode: 404,
+			Message:    "User not found.",
+			IsError:    true,
+		}
+		w.WriteHeader(404)
+		json.NewEncoder(w).Encode(msg)
+		return
+	}
 
 }
