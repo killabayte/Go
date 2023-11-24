@@ -290,4 +290,16 @@ func (api *API) PostToAuth(w http.ResponseWriter, r *http.Request) {
 	claims["admin"] = true
 	claims["name"] = userInDB.Login
 	tokenString, err := token.SignedString(middleware.SecretKey)
+	if err != nil {
+		api.logger.Info("Error while generating token: ", err)
+		msg := Message{
+			StatusCode: 500,
+			Message:    "We have some troubles. Try again later.",
+			IsError:    true,
+		}
+		w.WriteHeader(500)
+		json.NewEncoder(w).Encode(msg)
+		return
+	}
+
 }
