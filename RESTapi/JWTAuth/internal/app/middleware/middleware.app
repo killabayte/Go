@@ -7,3 +7,7 @@ var (
     }
 )
 
+var JwtMiddleware = jwtmiddleware.New(jwtmiddleware.Options{
+    ValidationKeyGetter: emptyValidFunc,
+    SigningMethod:       jwt.SigningMethodHS256,
+})
