@@ -11,4 +11,7 @@ require (
 	github.com/sirupsen/logrus v1.9.3
 )
 
-require golang.org/x/sys v0.12.0 // indirect
+require (
+	github.com/auth0/go-jwt-middleware v1.0.1
+	golang.org/x/sys v0.12.0 // indirect
+)
