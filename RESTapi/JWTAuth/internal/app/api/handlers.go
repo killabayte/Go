@@ -284,5 +284,6 @@ func (api *API) PostToAuth(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	token := jwt.New(jwt.SigningMethodHS256)
+	claims := token.Claims.(jwt.MapClaims)
 
 }
