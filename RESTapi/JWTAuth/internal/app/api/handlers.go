@@ -231,3 +231,7 @@ func (api *API) PostUserRegister(w http.ResponseWriter, r *http.Request) {
 	}
 	json.NewEncoder(w).Encode(msg)
 }
+
+func (api *API) PostToAuth(w http.ResponseWriter, request *http.Request) {
+	initHeaders(w)
+}
