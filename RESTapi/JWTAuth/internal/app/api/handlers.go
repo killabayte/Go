@@ -235,5 +235,7 @@ func (api *API) PostUserRegister(w http.ResponseWriter, r *http.Request) {
 func (api *API) PostToAuth(w http.ResponseWriter, request *http.Request) {
 	initHeaders(w)
 	api.logger.Info("Auth user POST /api/v1/users/auth")
+	var user models.User
+	json.NewDecoder(request.Body).Decode(&user)
 
 }
