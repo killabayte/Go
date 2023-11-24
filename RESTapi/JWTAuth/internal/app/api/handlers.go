@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"strconv"
 
+	"github.com/form3tech-oss/jwt-go"
 	"github.com/gorilla/mux"
 	"github.com/killabayte/Go/RESTapi/JWTAuth/internal/app/models"
 )
@@ -282,5 +283,6 @@ func (api *API) PostToAuth(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(msg)
 		return
 	}
+	token := jwt.New(jwt.SigningMethodHS256)
 
 }
