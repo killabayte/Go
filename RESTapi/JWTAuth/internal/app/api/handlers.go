@@ -302,5 +302,11 @@ func (api *API) PostToAuth(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(msg)
 		return
 	}
-
+	msg := Message{
+		StatusCode: 201,
+		Message:    tokenString,
+		IsError:    false,
+	}
+	w.WriteHeader(201)
+	json.NewEncoder(w).Encode(msg)
 }
