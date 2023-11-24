@@ -9,6 +9,7 @@ import (
 
 	"github.com/form3tech-oss/jwt-go"
 	"github.com/gorilla/mux"
+	"github.com/killabayte/Go/RESTapi/JWTAuth/internal/app/middleware"
 	"github.com/killabayte/Go/RESTapi/JWTAuth/internal/app/models"
 )
 
