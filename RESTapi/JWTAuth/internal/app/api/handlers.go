@@ -289,5 +289,5 @@ func (api *API) PostToAuth(w http.ResponseWriter, r *http.Request) {
 	claims["exp"] = time.Now().Add(time.Hour * 2).Unix()
 	claims["admin"] = true
 	claims["name"] = userInDB.Login
-
+	tokenString, err := token.SignedString(middleware.SecretKey)
 }
