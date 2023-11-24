@@ -237,5 +237,16 @@ func (api *API) PostToAuth(w http.ResponseWriter, request *http.Request) {
 	api.logger.Info("Auth user POST /api/v1/users/auth")
 	var user models.User
 	json.NewDecoder(request.Body).Decode(&user)
+	if err != nil {
+		api.logger.Info("Error while decoding request body: ")
+		msg := Message{
+			StatusCode: 400,
+			Message:    "Bad request. Check your input data.",
+			IsError:    true,
+		}
+		w.WriteHeader(400)
+		json.NewEncoder(w).Encode(msg)
+		return
+	}
 
 }
