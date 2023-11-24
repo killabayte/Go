@@ -2,6 +2,8 @@ package middleware
 
 var (
     SecretKey = []byte("BakerStreet221BNowayToHack")
-    emptyValidFunc
+    emptyValidFunc jwt.Keyfunc = func(token *jwt.Token) (interface{}, error) {
+        return SecretKey, nil
+    }
 )
 
