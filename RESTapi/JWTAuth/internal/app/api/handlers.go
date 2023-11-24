@@ -237,7 +237,7 @@ func (api *API) PostUserRegister(w http.ResponseWriter, r *http.Request) {
 
 func (api *API) PostToAuth(w http.ResponseWriter, r *http.Request) {
 	initHeaders(w)
-	api.logger.Info("Auth user POST /api/v1/users/auth")
+	api.logger.Info("Auth user POST /api/v1/user/auth")
 	var user models.User
 	err := json.NewDecoder(r.Body).Decode(&user)
 	if err != nil {

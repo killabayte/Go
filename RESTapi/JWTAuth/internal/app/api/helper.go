@@ -1,6 +1,9 @@
 package api
 
 import (
+	"net/http"
+
+	"github.com/killabayte/Go/RESTapi/JWTAuth/internal/app/middleware"
 	"github.com/killabayte/Go/RESTapi/JWTAuth/storage"
 	_ "github.com/lib/pq"
 	"github.com/sirupsen/logrus"
@@ -21,11 +24,13 @@ func (a *API) configureLoggerField() error {
 
 func (a *API) configureRouterField() {
 	a.router.HandleFunc(prefix+"/articles", a.GetAllArticles).Methods("GET")
-	a.router.HandleFunc(prefix+"/articles/{id}", a.GetArticleById).Methods("GET")
+	a.router.Handle(prefix+"/articles/{id}", middleware.JwtMiddleware.Handler(
+		http.HandlerFunc(a.GetArticleById),
+	))
 	a.router.HandleFunc(prefix+"/articles/{id}", a.DeleteArticleById).Methods("DELETE")
 	a.router.HandleFunc(prefix+"/articles", a.PostArticle).Methods("POST")
 	a.router.HandleFunc(prefix+"/user/register", a.PostUserRegister).Methods("POST")
-	a.router.HandleFunc(prefix+"/user/auth", a.PostToAuth).Methods("POST")
+	a.router.HandleFunc(prefix+"/user/auth", a.PostToAuth).Methods("GET")
 }
 
 // Configuration for the store field
