@@ -25,7 +25,7 @@ func (a *API) configureRouterField() {
 	a.router.HandleFunc(prefix+"/articles/{id}", a.DeleteArticleById).Methods("DELETE")
 	a.router.HandleFunc(prefix+"/articles", a.PostArticle).Methods("POST")
 	a.router.HandleFunc(prefix+"/user/register", a.PostUserRegister).Methods("POST")
-	a.router.HandleFunc(prefix+"/user/auth", a.PostTorAuth).Methods("POST")
+	a.router.HandleFunc(prefix+"/user/auth", a.PostToAuth).Methods("POST")
 }
 
 // Configuration for the store field
