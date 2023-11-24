@@ -271,5 +271,16 @@ func (api *API) PostToAuth(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(msg)
 		return
 	}
+	if userInDB.Password != user.Password {
+		api.logger.Info("Wrong password")
+		msg := Message{
+			StatusCode: 400,
+			Message:    "Wrong password.",
+			IsError:    true,
+		}
+		w.WriteHeader(400)
+		json.NewEncoder(w).Encode(msg)
+		return
+	}
 
 }
