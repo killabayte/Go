@@ -3,7 +3,7 @@ package main
 import "testing"
 
 type TestCase struct {
-	input    int
+	Input    int
 	Answer   int
 	Expected int
 }
