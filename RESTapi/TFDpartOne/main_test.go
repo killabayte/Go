@@ -3,9 +3,9 @@ package main
 import "testing"
 
 type TestCase struct {
-	Input    int
-	Answer   int
-	Expected int
+	InputData int
+	Answer    int
+	Expected  int
 }
 
 var cases []TestCase = []TestCase{
@@ -17,9 +17,8 @@ var cases []TestCase = []TestCase{
 
 func TestFactorial(t *testing.T) {
 	for _, test := range cases {
-		test.Answer = Factorial(test.Input)
-		if test.Answer != test.Expected {
-			t.Errorf("Factorial(%d) = %d, want %d", test.Input, test.Answer, test.Expected)
+		if res := (test.InputData); res != test.Expected {
+			t.Errorf("Factorial(%d) = %d, expected %d", test.InputData, res, test.Expected)
 		}
 	}
 }
