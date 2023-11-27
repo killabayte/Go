@@ -17,8 +17,8 @@ var cases []TestCase = []TestCase{
 
 func TestFactorial(t *testing.T) {
 	for id, test := range cases {
-		if res := (test.InputData); res != test.Expected {
-			t.Errorf("Test case %d failed. Expected %d, got %d", id, test.Expected, res)
+		if test.Answer := (test.InputData); test.Answer != test.Expected {
+			t.Errorf("Test case %d failed. Expected %d, got %d", id, test.Expected, test.Answer)
 		}
 	}
 }
