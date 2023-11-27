@@ -16,5 +16,10 @@ var cases []TestCase = []TestCase{
 }
 
 func TestFactorial(t *testing.T) {
-
+	for _, test := range cases {
+		test.Answer = Factorial(test.Input)
+		if test.Answer != test.Expected {
+			t.Errorf("Factorial(%d) = %d, want %d", test.Input, test.Answer, test.Expected)
+		}
+	}
 }
