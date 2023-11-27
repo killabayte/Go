@@ -23,7 +23,6 @@ func (a *API) configureLoggerField() error {
 }
 
 func (a *API) configureRouterField() {
-
 	a.router.HandleFunc(prefix+"/articles", a.GetAllArticles).Methods("GET")
 	a.router.Handle(prefix+"/articles/{id}", middleware.JwtMiddleware.Handler(
 		http.HandlerFunc(a.GetArticleById),
