@@ -9,7 +9,6 @@ type TestCase struct {
 }
 
 var cases []TestCase = []TestCase{
-
 	{InputData: 0, Expected: 1},
 	{InputData: 1, Expected: 1},
 	{InputData: 3, Expected: 6},
