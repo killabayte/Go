@@ -46,7 +46,7 @@ func TestHandleFactorial(t *testing.T) {
 		t.Run(test.Name, func(t *testing.T) {
 			recorder := httptest.NewRecorder()
 			handlerData := fmt.Sprintf("/factorial?n=%d", test.Numeric)
-			request, err := httptest.NewRequest("GET", "/factorial?n="+string(test.Numeric), nil)
+			request, err := httptest.NewRequest("GET", handlerData, nil)
 		})
 	}
 }
