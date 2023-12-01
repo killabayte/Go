@@ -43,6 +43,7 @@ var httpCases = []HttpTestCase{
 }
 
 func TestHandleFactorial(t *testing.T) {
+	handler := http.HandlerFunc(HandlerFactorial)
 	for _, test := range httpCases {
 		t.Run(test.Name, func(t *testing.T) {
 			recorder := httptest.NewRecorder()
