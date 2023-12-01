@@ -54,6 +54,7 @@ func TestHandleFactorial(t *testing.T) {
 			if err != nil {
 				t.Fatal(err)
 			}
+			handler.ServeHTTP(recorder, request)
 		})
 	}
 }
