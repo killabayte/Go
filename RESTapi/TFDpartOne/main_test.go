@@ -1,6 +1,13 @@
 package main
 
-import "testing"
+import (
+	"bytes"
+	"fmt"
+	"net/http"
+	"net/http/httptest"
+	"net/url"
+	"testing"
+)
 
 type TestCase struct {
 	InputData int
@@ -38,5 +45,17 @@ var httpCases = []HttpTestCase{
 }
 
 func TestHandleFactorial(t *testing.T) {
+	for _, test := range httpCases {
+		req := &http.Request{Method: "GET"}
+		req.URL, _ = url.Parse(fmt.Sprintf("http://localhost:8080/factorial/%d", test.Numeric))
+		w := httptest.NewRecorder()
+		handleFactorial(w, req)
+		if w.Code != http.StatusOK {
+			t.Errorf("Test case %s failed. Expected status code %d, got %d", test.Name, http.StatusOK, w.Code)
+		}
+		if !bytes.Equal(w.Body.Bytes(), test.Expected) {
+			t.Errorf("Test case %s failed. Expected %s, got %s", test.Name, test.Expected, w.Body.Bytes())
+		}
+	}
 
 }
