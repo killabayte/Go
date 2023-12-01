@@ -23,7 +23,7 @@ func TestFactorial(t *testing.T) {
 	}
 }
 
-type HttpTestFactorial struct {
+type HttpTestCase struct {
 	Name     string
 	Numeric  int
 	Expected []byte
