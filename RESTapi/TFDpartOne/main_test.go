@@ -47,6 +47,8 @@ func TestHandleFactorial(t *testing.T) {
 			recorder := httptest.NewRecorder()
 			handlerData := fmt.Sprintf("/factorial?n=%d", test.Numeric)
 			request, err := httptest.NewRequest("GET", handlerData, nil)
+			//In case if we want to tests POST request
+			//request, err := http.Post("http://localhost:8080/factorial", "application/json", bytes.NewBuffer([]byte(fmt.Sprintf(`{"n": %d}`, test.Numeric))))
 		})
 	}
 }
