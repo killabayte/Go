@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net/http/httptest"
 	"testing"
 )
@@ -44,6 +45,7 @@ func TestHandleFactorial(t *testing.T) {
 	for _, test := range httpCases {
 		t.Run(test.Name, func(t *testing.T) {
 			recorder := httptest.NewRecorder()
+			handlerData := fmt.Sprintf("/factorial?n=%d", test.Numeric)
 			request, err := httptest.NewRequest("GET", "/factorial?n="+string(test.Numeric), nil)
 		})
 	}
