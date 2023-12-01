@@ -51,6 +51,10 @@ func TestHandleFactorial(t *testing.T) {
 			//In case if we want to tests POST request
 			//data := io.Reader(bytes.NewBuffer([]byte(fmt.Sprintf(`{"n": %d}`, test.Numeric))))
 			//request, err := http.Post("http://localhost:8080/factorial", "application/json", bytes.NewBuffer([]byte(fmt.Sprintf(`{"n": %d}`, test.Numeric))))
+			if err != nil {
+				t.Fatal(err)
+			}
+
 		})
 	}
 }
