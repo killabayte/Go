@@ -28,3 +28,15 @@ type HttpTestFactorial struct {
 	Numeric  int
 	Expected []byte
 }
+
+var httpCases = []HttpTestCase{
+	{Name: "Zero", Numeric: 0, Expected: []byte("1")},
+	{Name: "One", Numeric: 1, Expected: []byte("1")},
+	{Name: "Three", Numeric: 3, Expected: []byte("6")},
+	{Name: "Five", Numeric: 5, Expected: []byte("120")},
+	{Name: "Ten", Numeric: 7, Expected: []byte("5040")},
+}
+
+func TestHandleFactorial(t *testing.T) {
+
+}
