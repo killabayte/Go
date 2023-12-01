@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"net/http"
 	"net/http/httptest"
 	"testing"
 )
@@ -46,7 +47,7 @@ func TestHandleFactorial(t *testing.T) {
 		t.Run(test.Name, func(t *testing.T) {
 			recorder := httptest.NewRecorder()
 			handlerData := fmt.Sprintf("/factorial?n=%d", test.Numeric)
-			request, err := httptest.NewRequest("GET", handlerData, nil)
+			request, err := http.NewRequest("GET", handlerData, nil)
 			//In case if we want to tests POST request
 			//data := io.Reader(bytes.NewBuffer([]byte(fmt.Sprintf(`{"n": %d}`, test.Numeric))))
 			//request, err := http.Post("http://localhost:8080/factorial", "application/json", bytes.NewBuffer([]byte(fmt.Sprintf(`{"n": %d}`, test.Numeric))))
