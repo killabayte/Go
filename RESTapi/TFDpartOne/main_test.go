@@ -35,6 +35,7 @@ type HttpTestCase struct {
 }
 
 var httpCases = []HttpTestCase{
+
 	{Name: "Zero", Numeric: 0, Expected: []byte("1")},
 	{Name: "One", Numeric: 1, Expected: []byte("1")},
 	{Name: "Three", Numeric: 3, Expected: []byte("6")},
