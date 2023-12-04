@@ -27,7 +27,7 @@ func HandlerFactorial(w http.ResponseWriter, r *http.Request) {
 	num := r.FormValue("num")
 	n, err := strconv.Atoi(num)
 	if err != nil {
-		http.Error(w, "Invalid input", http.StatusBadRequest)
+		http.Error(w, err.Error(), 404)
 		return
 	}
 	io.WriteString(w, strconv.Itoa(factorial(n)))

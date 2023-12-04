@@ -23,7 +23,7 @@ var Сases []TestCase = []TestCase{
 func TestFactorial(t *testing.T) {
 	for id, test := range Сases {
 		if test.Answer = factorial(test.InputData); test.Answer != test.Expected {
-			t.Errorf("Test case %d failed. Input %v, Result: %v, Expected: %v", id, test.InputData, test.Answer, test)
+			t.Errorf("Test case %d failed: result %v, expected %v", id, test.Answer, test.Expected)
 		}
 	}
 }
@@ -52,7 +52,7 @@ func TestHandleFactorial(t *testing.T) {
 			}
 			handler.ServeHTTP(recorder, request)
 			if string(recorder.Body.Bytes()) != string(test.Expected) {
-				t.Errorf("test %s failed. Input %v! Result %v, Expected: %v",
+				t.Errorf("test %s failed: input %v! result %v, expected: %v",
 					test.Name,
 					test.Numeric,
 					string(recorder.Body.Bytes()),
