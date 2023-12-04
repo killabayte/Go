@@ -1,7 +1,13 @@
 package main
 
+import (
+	"net/http"
+	"strconv"
+)
+
 func main() {
-	// Do nothing
+	http.HandleFunc("/factorial", HandlerFactorial)
+	http.ListenAndServe(":8080", nil)
 }
 
 func factorial(n int) int {
@@ -13,4 +19,14 @@ func factorial(n int) int {
 		ans *= i
 	}
 	return ans
+}
+
+func HandlerFactorial(w http.ResponseWriter, r *http.Request) {
+	n, err := strconv.Atoi(r.URL.Query().Get("n"))
+	if err != nil {
+		w.WriteHeader(http.StatusBadRequest)
+		w.Write([]byte("400 Bad Request"))
+		return
+	}
+	w.Write([]byte(strconv.Itoa(factorial(n))))
 }
