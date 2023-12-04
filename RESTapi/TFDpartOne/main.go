@@ -23,10 +23,12 @@ func factorial(n int) int {
 }
 
 func HandlerFactorial(w http.ResponseWriter, r *http.Request) {
-	n, err := strconv.Atoi(r.URL.Query().Get("n"))
+	num := r.FormValue("num")
+	n, err := strconv.Atoi(num)
 	if err != nil {
-		w.WriteHeader(http.StatusBadRequest)
+		http.Error(w, "Invalid input", http.StatusBadRequest)
 		return
 	}
-	w.Write([]byte(strconv.Itoa(factorial(n))))
+	ans := factorial(n)
+	w.Write([]byte(strconv.Itoa(ans)))
 }
