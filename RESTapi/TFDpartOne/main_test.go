@@ -34,7 +34,7 @@ type HttpTestCase struct {
 	Expected []byte
 }
 
-var httpCases = []HttpTestCase{
+var HttpCases = []HttpTestCase{
 	{Name: "First test:", Numeric: 1, Expected: []byte("1")},
 	{Name: "Second test:", Numeric: 3, Expected: []byte("6")},
 	{Name: "Third test:", Numeric: 5, Expected: []byte("120")},
@@ -42,7 +42,7 @@ var httpCases = []HttpTestCase{
 
 func TestHandleFactorial(t *testing.T) {
 	handler := http.HandlerFunc(HandlerFactorial)
-	for _, test := range httpCases {
+	for _, test := range HttpCases {
 		t.Run(test.Name, func(t *testing.T) {
 			recorder := httptest.NewRecorder()
 			handlerData := fmt.Sprintf("/factorial?n=%d", test.Numeric)
@@ -52,7 +52,12 @@ func TestHandleFactorial(t *testing.T) {
 			}
 			handler.ServeHTTP(recorder, request)
 			if string(recorder.Body.Bytes()) != string(test.Expected) {
-				t.Errorf("test %s failed. Input %d! Expected %d, got %d", test.Name, test.Numeric, test.Expected, recorder.Body.Bytes())
+				t.Errorf("test %s failed. Input %v! Result %v, Expected: %v",
+					test.Name,
+					test.Numeric,
+					string(recorder.Body.Bytes()),
+					string(test.Expected),
+				)
 			}
 		})
 	}
