@@ -1,13 +1,14 @@
 package main
 
 import (
+	"log"
 	"net/http"
 	"strconv"
 )
 
 func main() {
 	http.HandleFunc("/factorial", HandlerFactorial)
-	http.ListenAndServe(":8080", nil)
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 
 func factorial(n int) int {
