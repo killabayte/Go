@@ -30,5 +30,5 @@ func HandlerFactorial(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Invalid input", http.StatusBadRequest)
 		return
 	}
-	io.WriteString(w, strconv.Itoa(factorial(n))
+	io.WriteString(w, strconv.Itoa(factorial(n)))
 }

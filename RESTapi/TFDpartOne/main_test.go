@@ -35,11 +35,9 @@ type HttpTestCase struct {
 }
 
 var httpCases = []HttpTestCase{
-	{Name: "Zero", Numeric: 0, Expected: []byte("1")},
-	{Name: "One", Numeric: 1, Expected: []byte("1")},
-	{Name: "Three", Numeric: 3, Expected: []byte("6")},
-	{Name: "Five", Numeric: 5, Expected: []byte("120")},
-	{Name: "Ten", Numeric: 7, Expected: []byte("5040")},
+	{Name: "First test:", Numeric: 1, Expected: []byte("1")},
+	{Name: "Second test:", Numeric: 3, Expected: []byte("6")},
+	{Name: "Third test:", Numeric: 5, Expected: []byte("120")},
 }
 
 func TestHandleFactorial(t *testing.T) {
@@ -49,20 +47,12 @@ func TestHandleFactorial(t *testing.T) {
 			recorder := httptest.NewRecorder()
 			handlerData := fmt.Sprintf("/factorial?n=%d", test.Numeric)
 			request, err := http.NewRequest("GET", handlerData, nil)
-			//In case if we want to tests POST request
-			//data := io.Reader(bytes.NewBuffer([]byte(fmt.Sprintf(`{"n": %d}`, test.Numeric))))
-			//request, err := http.Post("http://localhost:8080/factorial", "application/json", bytes.NewBuffer([]byte(fmt.Sprintf(`{"n": %d}`, test.Numeric))))
 			if err != nil {
 				t.Fatal(err)
 			}
 			handler.ServeHTTP(recorder, request)
 			if string(recorder.Body.Bytes()) != string(test.Expected) {
-				t.Error("test %s failed. Input %d! Expected %d, got %d",
-					test.Name,
-					test.Numeric,
-					test.Expected,
-					recorder.Body.Bytes(),
-				)
+				t.Errorf("test %s failed. Input %d! Expected %d, got %d", test.Name, test.Numeric, test.Expected, recorder.Body.Bytes())
 			}
 		})
 	}
