@@ -57,7 +57,12 @@ func TestHandleFactorial(t *testing.T) {
 			}
 			handler.ServeHTTP(recorder, request)
 			if string(recorder.Body.Bytes()) != string(test.Expected) {
-				t.Error("test %s failed. Input %d! Expected %d, got %d", test.Name, test.Numeric, test.Expected, recorder.Body.Bytes())
+				t.Error("test %s failed. Input %d! Expected %d, got %d",
+					test.Name,
+					test.Numeric,
+					test.Expected,
+					recorder.Body.Bytes(),
+				)
 			}
 		})
 	}
