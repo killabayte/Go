@@ -1,6 +1,7 @@
 package main
 
 import (
+	"io"
 	"log"
 	"net/http"
 	"strconv"
@@ -29,6 +30,5 @@ func HandlerFactorial(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Invalid input", http.StatusBadRequest)
 		return
 	}
-	ans := factorial(n)
-	w.Write([]byte(strconv.Itoa(ans)))
+	io.WriteString(w, strconv.Itoa(factorial(n))
 }
