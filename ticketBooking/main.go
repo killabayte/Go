@@ -21,6 +21,7 @@ func main() {
 	fmt.Scan(&userTickets)
 	remainingTickets -= userTickets
 	bookings = append(bookings, firstName+" "+lastName+" "+email+" "+string(userTickets))
+
 	fmt.Printf("The whole slice: %v\n", bookings)
 	fmt.Printf("The first element of slice: %v\n", bookings[0])
 
