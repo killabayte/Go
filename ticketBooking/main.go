@@ -32,6 +32,7 @@ func main() {
 		for _, booking := range bookings {
 			var names = strings.Fields(booking)
 			var firstName = names[0]
+			firstNames = append(firstNames, firstName)
 		}
 		fmt.Printf("All bookings what we have so far: %v\n", bookings)
 	}
