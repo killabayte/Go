@@ -12,7 +12,7 @@ func main() {
 	fmt.Printf("We have total %d tickets for the conference, and %d still available.\n", conferenceTickets, remainingTickets)
 	fmt.Println("Get your tickets here to attend")
 
-	for remainingTickets >= 0 {
+	for remainingTickets > 0 {
 		var firstName, lastName, email string
 		var userTickets uint
 
