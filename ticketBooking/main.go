@@ -5,14 +5,14 @@ import "fmt"
 func main() {
 	conferenceName := "Go for DevOps Conference"
 	const conferenceTickets = 50
-	remainingTickets := conferenceTickets
+	var remainingTickets uint = conferenceTickets
 
 	fmt.Printf("Wellcome to our %s conference booking application\n", conferenceName)
 	fmt.Printf("We have total %d tickets for the conference, and %d still available.\n", conferenceTickets, remainingTickets)
 	fmt.Println("Get your tickets here to attend")
 
 	var firstName, lastName, email string
-	var userTickets int
+	var userTickets uint
 
 	fmt.Println("Please enter your first name, last name and email separated by space:")
 	fmt.Scan(&firstName, &lastName, &email)
