@@ -13,5 +13,6 @@ func main() {
 
 	var userName string
 	userName = "John Wick"
+	fmt.Println(userName)
 
 }
