@@ -12,6 +12,7 @@ func main() {
 	fmt.Println("Get your tickets here to attend")
 
 	userName := "John Wick"
-	fmt.Println(userName)
+	userTickets := 3
+	fmt.Printf("User %s booked %d tickets\n", userName, userTickets)
 
 }
