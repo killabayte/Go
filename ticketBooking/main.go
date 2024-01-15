@@ -6,23 +6,26 @@ func main() {
 	conferenceName := "Go lang for DevOps Conference"
 	const conferenceTickets = 50
 	var remainingTickets uint = conferenceTickets
+	bookings := []string{}
 
 	fmt.Printf("Wellcome to our %s conference booking application\n", conferenceName)
 	fmt.Printf("We have total %d tickets for the conference, and %d still available.\n", conferenceTickets, remainingTickets)
 	fmt.Println("Get your tickets here to attend")
 
-	bookings := []string{}
-	var firstName, lastName, email string
-	var userTickets uint
+	for remainingTickets >= 0 {
+		var firstName, lastName, email string
+		var userTickets uint
 
-	fmt.Println("Please enter your first name, last name and email separated by space:")
-	fmt.Scan(&firstName, &lastName, &email)
-	fmt.Println("How many tickets you want to book?")
-	fmt.Scan(&userTickets)
-	remainingTickets -= userTickets
-	bookings = append(bookings, firstName+" "+lastName+" "+email+" "+string(userTickets))
+		fmt.Println("Please enter your first name, last name and email separated by space:")
+		fmt.Scan(&firstName, &lastName, &email)
+		fmt.Println("How many tickets you want to book?")
+		fmt.Scan(&userTickets)
+		remainingTickets -= userTickets
+		bookings = append(bookings, firstName+" "+lastName+" "+email+" "+string(userTickets))
 
-	fmt.Printf("Thanks %s %s, you have booked %d tickets. You will receive a confiramtion on your email: %s\n", firstName, lastName, userTickets, email)
-	fmt.Println("Remaining tickets are:", remainingTickets)
-	fmt.Printf("All bookings what we have so far: %v\n", bookings)
+		fmt.Printf("Thanks %s %s, you have booked %d tickets. You will receive a confiramtion on your email: %s\n", firstName, lastName, userTickets, email)
+		fmt.Println("Remaining tickets are:", remainingTickets)
+		fmt.Printf("All bookings what we have so far: %v\n", bookings)
+	}
+
 }
