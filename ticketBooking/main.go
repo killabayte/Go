@@ -21,7 +21,7 @@ func main() {
 		fmt.Println("How many tickets you want to book?")
 		fmt.Scan(&userTickets)
 		remainingTickets -= userTickets
-		bookings = append(bookings, firstName+" "+lastName+" "+email+" "+string(userTickets))
+		bookings = append(bookings, firstName+" "+lastName+" "+email+" "+fmt.Sprint(userTickets))
 
 		fmt.Printf("Thanks %s %s, you have booked %d tickets. You will receive a confiramtion on your email: %s\n", firstName, lastName, userTickets, email)
 		fmt.Println("Remaining tickets are:", remainingTickets)
