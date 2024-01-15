@@ -7,5 +7,6 @@ func main() {
 	fmt.Println("Get your tickets here to attend")
 
 	var conferenceName = "Go for DevOps Conference"
+	fmt.Println(conferenceName)
 
 }
