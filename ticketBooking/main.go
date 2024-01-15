@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
 	conferenceName := "Go lang for DevOps Conference"
@@ -25,6 +28,11 @@ func main() {
 
 		fmt.Printf("Thanks %s %s, you have booked %d tickets. You will receive a confiramtion on your email: %s\n", firstName, lastName, userTickets, email)
 		fmt.Println("Remaining tickets are:", remainingTickets)
+		firstNames := []string{}
+		for _, booking := range bookings {
+			var names = strings.Fields(booking)
+			var firstName = names[0]
+		}
 		fmt.Printf("All bookings what we have so far: %v\n", bookings)
 	}
 
