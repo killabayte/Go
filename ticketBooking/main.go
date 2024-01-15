@@ -14,7 +14,10 @@ func main() {
 	var userName string
 	var userTickets int
 
+	fmt.Println("Please enter your name:")
 	fmt.Scan(&userName)
+	fmt.Println("How many tickets you want to book?")
+	fmt.Scan(&userTickets)
 	fmt.Printf("User %s booked %d tickets\n", userName, userTickets)
 
 }
