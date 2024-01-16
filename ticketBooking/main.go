@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-var debugEnabled = true
+var debugEnabled = false
 
 func main() {
 	conferenceName := "Go lang for DevOps Conference"
