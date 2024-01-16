@@ -48,9 +48,9 @@ func greetUsers() {
 	fmt.Println("Get your tickets here to attend")
 }
 
-func getFirstNames(b []string) []string {
+func getFirstNames() []string {
 	firstNames := []string{}
-	for _, booking := range b {
+	for _, booking := range bookings {
 		var names = strings.Fields(booking)
 		firstNames = append(firstNames, names[0])
 	}
