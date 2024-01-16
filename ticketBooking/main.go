@@ -60,11 +60,11 @@ func greetUsers(c string, t uint, rt uint) {
 	fmt.Println("Get your tickets here to attend")
 }
 
-func printFirstNames(b []string) {
+func printFirstNames(b []string) []string {
 	firstNames := []string{}
 	for _, booking := range b {
 		var names = strings.Fields(booking)
 		firstNames = append(firstNames, names[0])
 	}
-	fmt.Printf("All first names what we have so far: %v\n", firstNames)
+	return firstNames
 }
