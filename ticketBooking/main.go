@@ -5,14 +5,14 @@ import (
 	"strings"
 )
 
+const conferenceTickets = 50
+
 var debugEnabled = false
+var conferenceName = "Go lang for DevOps Conference"
+var remainingTickets uint = conferenceTickets
+var bookings = []string{}
 
 func main() {
-	conferenceName := "Go lang for DevOps Conference"
-	const conferenceTickets = 50
-	var remainingTickets uint = conferenceTickets
-	bookings := []string{}
-
 	greetUsers(conferenceName, conferenceTickets, remainingTickets)
 
 	for remainingTickets > 0 {
