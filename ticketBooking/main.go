@@ -25,9 +25,9 @@ func main() {
 		fmt.Println("How many tickets you want to book?")
 		fmt.Scan(&userTickets)
 
-		var isValidUserInput = len(firstName) >= 2 && len(lastName) > 2 && strings.Contains(email, "@") && userTickets > 0
+		var isValidUserInput = len(firstName) >= 2 && len(lastName) > 2 && strings.Contains(email, "@") && userTickets > 0 && userTickets <= remainingTickets
 
-		if userTickets <= remainingTickets {
+		if isValidUserInput {
 			remainingTickets -= userTickets
 
 			bookings = append(bookings, firstName+" "+lastName+" "+email+" "+fmt.Sprint(userTickets))
