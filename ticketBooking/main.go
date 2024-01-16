@@ -29,7 +29,7 @@ func main() {
 		var isEmailValid = strings.Contains(email, "@")
 		var isTicketsValid = userTickets > 0 && userTickets <= remainingTickets
 
-		if isValidUserInput {
+		if isNameValid && isEmailValid && isTicketsValid {
 			remainingTickets -= userTickets
 
 			bookings = append(bookings, firstName+" "+lastName+" "+email+" "+fmt.Sprint(userTickets))
