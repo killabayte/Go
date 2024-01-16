@@ -5,15 +5,19 @@ import (
 	"strings"
 )
 
+func greetUsers(c string, t uint, rt uint) {
+	fmt.Printf("Wellcome to our %s conference booking application\n", c)
+	fmt.Printf("We have total %d tickets for the conference, and %d still available.\n", t, rt)
+	fmt.Println("Get your tickets here to attend")
+}
+
 func main() {
 	conferenceName := "Go lang for DevOps Conference"
 	const conferenceTickets = 50
 	var remainingTickets uint = conferenceTickets
 	bookings := []string{}
 
-	fmt.Printf("Wellcome to our %s conference booking application\n", conferenceName)
-	fmt.Printf("We have total %d tickets for the conference, and %d still available.\n", conferenceTickets, remainingTickets)
-	fmt.Println("Get your tickets here to attend")
+	greetUsers(conferenceName, conferenceTickets, remainingTickets)
 
 	for remainingTickets > 0 {
 		var firstName, lastName, email string
