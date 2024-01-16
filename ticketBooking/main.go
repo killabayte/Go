@@ -13,12 +13,11 @@ func main() {
 	var remainingTickets uint = conferenceTickets
 	bookings := []string{}
 
-	firstName, lastName, email, userTickets := getUserInput()
-
 	greetUsers(conferenceName, conferenceTickets, remainingTickets)
 
 	for remainingTickets > 0 {
 
+		firstName, lastName, email, userTickets := getUserInput()
 		isNameValid, isEmailValid, isTicketsValid := validateUserInput(firstName, lastName, email, userTickets, remainingTickets)
 
 		if isNameValid && isEmailValid && isTicketsValid {
