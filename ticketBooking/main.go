@@ -44,6 +44,10 @@ func main() {
 			fmt.Printf("All bookings what we have so far: %v\n", bookings)
 			fmt.Printf("All first names what we have so far: %v\n", firstNames)
 		} else {
+			if !isNameValid {
+				fmt.Printf("Sorry, your name is not valid. Please try again.\n")
+			}
+
 			fmt.Printf("Sorry, your input is not valid. Please try again.\n")
 		}
 	}
