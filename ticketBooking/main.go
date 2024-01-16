@@ -28,19 +28,25 @@ func main() {
 			fmt.Printf("Sorry, we only have %d tickets left. Please try again with less tickets.\n", remainingTickets)
 			continue
 		}
-		remainingTickets -= userTickets
+		if userTickets <= remainingTickets {
+			remainingTickets -= userTickets
 
-		bookings = append(bookings, firstName+" "+lastName+" "+email+" "+fmt.Sprint(userTickets))
+			bookings = append(bookings, firstName+" "+lastName+" "+email+" "+fmt.Sprint(userTickets))
 
-		fmt.Printf("Thanks %s %s, you have booked %d tickets. You will receive a confiramtion on your email: %s\n", firstName, lastName, userTickets, email)
-		fmt.Println("Remaining tickets are:", remainingTickets)
-		firstNames := []string{}
-		for _, booking := range bookings {
-			var names = strings.Fields(booking)
-			firstNames = append(firstNames, names[0])
+			fmt.Printf("Thanks %s %s, you have booked %d tickets. You will receive a confiramtion on your email: %s\n", firstName, lastName, userTickets, email)
+			fmt.Println("Remaining tickets are:", remainingTickets)
+			firstNames := []string{}
+			for _, booking := range bookings {
+				var names = strings.Fields(booking)
+				firstNames = append(firstNames, names[0])
+			}
+			fmt.Printf("All bookings what we have so far: %v\n", bookings)
+			fmt.Printf("All first names what we have so far: %v\n", firstNames)
 		}
-		fmt.Printf("All bookings what we have so far: %v\n", bookings)
-		fmt.Printf("All first names what we have so far: %v\n", firstNames)
+
+		fmt.Printf("Sorry, we only have %d tickets left. Please try again with less tickets.\n", remainingTickets)
+		continue
+
 	}
 
 }
