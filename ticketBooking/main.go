@@ -47,6 +47,9 @@ func main() {
 			if !isNameValid {
 				fmt.Printf("Sorry, your name is not valid. Please try again.\n")
 			}
+			if !isEmailValid {
+				fmt.Printf("Sorry, your email is not valid. Please try again.\n")
+			}
 
 			fmt.Printf("Sorry, your input is not valid. Please try again.\n")
 		}
