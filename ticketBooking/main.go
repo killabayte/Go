@@ -46,7 +46,5 @@ func main() {
 			fmt.Printf("Sorry, we only have %d tickets left. Please try again with less tickets.\n", remainingTickets)
 			continue
 		}
-
 	}
-
 }
