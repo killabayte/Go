@@ -22,7 +22,6 @@ func main() {
 
 		if isNameValid && isEmailValid && isTicketsValid {
 			bookTicket(remainingTickets, userTickets, firstName, lastName, email, bookings)
-
 			if debugEnabled {
 				firstNames := getFirstNames(bookings)
 				fmt.Printf("All first names what we have so far: %v\n", firstNames)
