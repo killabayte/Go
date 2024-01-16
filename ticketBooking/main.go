@@ -7,10 +7,12 @@ import (
 
 const conferenceTickets = 50
 
-var debugEnabled = false
-var conferenceName = "Go lang for DevOps Conference"
-var remainingTickets uint = conferenceTickets
-var bookings = []string{}
+var (
+	debugEnabled          = false
+	conferenceName        = "Go lang for DevOps Conference"
+	remainingTickets uint = conferenceTickets
+	bookings              = []string{}
+)
 
 func main() {
 	greetUsers(conferenceName, conferenceTickets, remainingTickets)
