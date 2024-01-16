@@ -42,7 +42,7 @@ func main() {
 			fmt.Printf("All bookings what we have so far: %v\n", bookings)
 			fmt.Printf("All first names what we have so far: %v\n", firstNames)
 		} else {
-			fmt.Printf("Sorry, we only have %d tickets left. Please try again with less tickets.\n", remainingTickets)
+			fmt.Printf("Sorry, your input is not valid. Please try again.\n")
 		}
 	}
 }
