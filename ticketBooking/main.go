@@ -15,7 +15,7 @@ var (
 )
 
 func main() {
-	greetUsers(conferenceName, conferenceTickets, remainingTickets)
+	greetUsers()
 
 	for remainingTickets > 0 {
 
@@ -42,9 +42,9 @@ func main() {
 	}
 }
 
-func greetUsers(c string, t uint, rt uint) {
-	fmt.Printf("Wellcome to our %s conference booking application\n", c)
-	fmt.Printf("We have total %d tickets for the conference, and %d still available.\n", t, rt)
+func greetUsers() {
+	fmt.Printf("Wellcome to our %s conference booking application\n", conferenceName)
+	fmt.Printf("We have total %d tickets for the conference, and %d still available.\n", conferenceTickets, remainingTickets)
 	fmt.Println("Get your tickets here to attend")
 }
 
