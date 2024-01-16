@@ -21,9 +21,15 @@ func main() {
 
 		fmt.Println("Please enter your first name, last name and email separated by space:")
 		fmt.Scan(&firstName, &lastName, &email)
+
 		fmt.Println("How many tickets you want to book?")
 		fmt.Scan(&userTickets)
+		if userTickets > remainingTickets {
+			fmt.Printf("Sorry, we only have %d tickets left. Please try again with less tickets.\n", remainingTickets)
+			continue
+		}
 		remainingTickets -= userTickets
+
 		bookings = append(bookings, firstName+" "+lastName+" "+email+" "+fmt.Sprint(userTickets))
 
 		fmt.Printf("Thanks %s %s, you have booked %d tickets. You will receive a confiramtion on your email: %s\n", firstName, lastName, userTickets, email)
