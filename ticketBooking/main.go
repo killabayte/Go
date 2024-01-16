@@ -38,7 +38,8 @@ func main() {
 			fmt.Println("Remaining tickets are:", remainingTickets)
 			fmt.Printf("All bookings what we have so far: %v\n", bookings)
 			if debugEnabled {
-				printFirstNames(bookings)
+				firstNames := printFirstNames(bookings)
+				fmt.Printf("All first names what we have so far: %v\n", firstNames)
 			}
 		} else {
 			if !isNameValid {
