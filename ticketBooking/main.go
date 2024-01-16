@@ -40,7 +40,6 @@ func main() {
 				firstNames = append(firstNames, names[0])
 			}
 			fmt.Printf("All bookings what we have so far: %v\n", bookings)
-			fmt.Printf("All first names what we have so far: %v\n", firstNames)
 		} else {
 			fmt.Printf("Sorry, your input is not valid. Please try again.\n")
 		}
