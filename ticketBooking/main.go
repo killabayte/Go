@@ -38,7 +38,7 @@ func main() {
 			fmt.Println("Remaining tickets are:", remainingTickets)
 			fmt.Printf("All bookings what we have so far: %v\n", bookings)
 			if debugEnabled {
-				firstNames := printFirstNames(bookings)
+				firstNames := getFirstNames(bookings)
 				fmt.Printf("All first names what we have so far: %v\n", firstNames)
 			}
 		} else {
@@ -61,7 +61,7 @@ func greetUsers(c string, t uint, rt uint) {
 	fmt.Println("Get your tickets here to attend")
 }
 
-func printFirstNames(b []string) []string {
+func getFirstNames(b []string) []string {
 	firstNames := []string{}
 	for _, booking := range b {
 		var names = strings.Fields(booking)
