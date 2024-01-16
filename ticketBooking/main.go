@@ -23,9 +23,9 @@ func main() {
 		isNameValid, isEmailValid, isTicketsValid := validateUserInput(firstName, lastName, email, userTickets)
 
 		if isNameValid && isEmailValid && isTicketsValid {
-			bookTicket(remainingTickets, userTickets, firstName, lastName, email, bookings)
+			bookTicket(userTickets, firstName, lastName, email)
 			if debugEnabled {
-				firstNames := getFirstNames(bookings)
+				firstNames := getFirstNames()
 				fmt.Printf("All first names what we have so far: %v\n", firstNames)
 			}
 		} else {
@@ -76,7 +76,7 @@ func getUserInput() (string, string, string, uint) {
 	return firstName, lastName, email, userTickets
 }
 
-func bookTicket(remainingTickets uint, userTickets uint, firstName string, lastName string, email string, bookings []string) {
+func bookTicket(userTickets uint, firstName string, lastName string, email string) {
 	remainingTickets -= userTickets
 
 	bookings = append(bookings, firstName+" "+lastName+" "+email+" "+fmt.Sprint(userTickets))
