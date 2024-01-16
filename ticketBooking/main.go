@@ -21,6 +21,7 @@ func main() {
 		isNameValid, isEmailValid, isTicketsValid := validateUserInput(firstName, lastName, email, userTickets, remainingTickets)
 
 		if isNameValid && isEmailValid && isTicketsValid {
+			bookTicket(remainingTickets, userTickets, firstName, lastName, email, bookings)
 
 			if debugEnabled {
 				firstNames := getFirstNames(bookings)
