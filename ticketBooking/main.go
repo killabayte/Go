@@ -13,7 +13,7 @@ func main() {
 	var remainingTickets uint = conferenceTickets
 	bookings := []string{}
 
-	getUserInput()
+	firstName, lastName, email, userTickets := getUserInput()
 
 	greetUsers(conferenceName, conferenceTickets, remainingTickets)
 
