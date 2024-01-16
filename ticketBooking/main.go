@@ -20,7 +20,7 @@ func main() {
 	for remainingTickets > 0 {
 
 		firstName, lastName, email, userTickets := getUserInput()
-		isNameValid, isEmailValid, isTicketsValid := ValidateUserInput(firstName, lastName, email, userTickets)
+		isNameValid, isEmailValid, isTicketsValid := validateUserInput(firstName, lastName, email, userTickets)
 
 		if isNameValid && isEmailValid && isTicketsValid {
 			bookTicket(userTickets, firstName, lastName, email)
