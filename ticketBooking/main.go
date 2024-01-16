@@ -5,11 +5,7 @@ import (
 	"strings"
 )
 
-func greetUsers(c string, t uint, rt uint) {
-	fmt.Printf("Wellcome to our %s conference booking application\n", c)
-	fmt.Printf("We have total %d tickets for the conference, and %d still available.\n", t, rt)
-	fmt.Println("Get your tickets here to attend")
-}
+var debugEnabled = true
 
 func main() {
 	conferenceName := "Go lang for DevOps Conference"
@@ -40,13 +36,10 @@ func main() {
 
 			fmt.Printf("Thanks %s %s, you have booked %d tickets. You will receive a confiramtion on your email: %s\n", firstName, lastName, userTickets, email)
 			fmt.Println("Remaining tickets are:", remainingTickets)
-			firstNames := []string{}
-			for _, booking := range bookings {
-				var names = strings.Fields(booking)
-				firstNames = append(firstNames, names[0])
-			}
 			fmt.Printf("All bookings what we have so far: %v\n", bookings)
-			fmt.Printf("All first names what we have so far: %v\n", firstNames)
+			if debugEnabled {
+				printFirstNames(bookings)
+			}
 		} else {
 			if !isNameValid {
 				fmt.Printf("Sorry, your name is not valid. Please try again.\n")
@@ -59,4 +52,19 @@ func main() {
 			}
 		}
 	}
+}
+
+func greetUsers(c string, t uint, rt uint) {
+	fmt.Printf("Wellcome to our %s conference booking application\n", c)
+	fmt.Printf("We have total %d tickets for the conference, and %d still available.\n", t, rt)
+	fmt.Println("Get your tickets here to attend")
+}
+
+func printFirstNames(b []string) {
+	firstNames := []string{}
+	for _, booking := range b {
+		var names = strings.Fields(booking)
+		firstNames = append(firstNames, names[0])
+	}
+	fmt.Printf("All first names what we have so far: %v\n", firstNames)
 }
