@@ -50,8 +50,9 @@ func main() {
 			if !isEmailValid {
 				fmt.Printf("Sorry, your email is not valid. Please try again.\n")
 			}
-
-			fmt.Printf("Sorry, your input is not valid. Please try again.\n")
+			if !isTicketsValid {
+				fmt.Printf("Sorry, your tickets number is not valid. Please try again.\n")
+			}
 		}
 	}
 }
