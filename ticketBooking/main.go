@@ -21,13 +21,7 @@ func main() {
 		isNameValid, isEmailValid, isTicketsValid := validateUserInput(firstName, lastName, email, userTickets, remainingTickets)
 
 		if isNameValid && isEmailValid && isTicketsValid {
-			remainingTickets -= userTickets
 
-			bookings = append(bookings, firstName+" "+lastName+" "+email+" "+fmt.Sprint(userTickets))
-
-			fmt.Printf("Thanks %s %s, you have booked %d tickets. You will receive a confiramtion on your email: %s\n", firstName, lastName, userTickets, email)
-			fmt.Println("Remaining tickets are:", remainingTickets)
-			fmt.Printf("All bookings what we have so far: %v\n", bookings)
 			if debugEnabled {
 				firstNames := getFirstNames(bookings)
 				fmt.Printf("All first names what we have so far: %v\n", firstNames)
@@ -78,4 +72,14 @@ func getUserInput() (string, string, string, uint) {
 	fmt.Println("How many tickets you want to book?")
 	fmt.Scan(&userTickets)
 	return firstName, lastName, email, userTickets
+}
+
+func bookTicket(remainingTickets uint, userTickets uint, firstName string, lastName string, email string, bookings []string) {
+	remainingTickets -= userTickets
+
+	bookings = append(bookings, firstName+" "+lastName+" "+email+" "+fmt.Sprint(userTickets))
+
+	fmt.Printf("Thanks %s %s, you have booked %d tickets. You will receive a confiramtion on your email: %s\n", firstName, lastName, userTickets, email)
+	fmt.Println("Remaining tickets are:", remainingTickets)
+	fmt.Printf("All bookings what we have so far: %v\n", bookings)
 }
