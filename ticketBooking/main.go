@@ -11,7 +11,7 @@ var (
 	debugEnabled          = false
 	conferenceName        = "Go lang for DevOps Conference"
 	remainingTickets uint = conferenceTickets
-	bookings              = make([]map[string]string, 0)
+	bookings              = make([]UserData, 0)
 )
 
 type UserData struct {
