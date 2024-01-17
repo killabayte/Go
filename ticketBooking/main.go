@@ -58,7 +58,7 @@ func greetUsers() {
 func getFirstNames() []string {
 	firstNames := []string{}
 	for _, booking := range bookings {
-		var names = strings.Fields(booking["firstName"])
+		var names = strings.Fields(booking.firstName)
 		firstNames = append(firstNames, names[0])
 	}
 	return firstNames
@@ -79,7 +79,7 @@ func getUserInput() (string, string, string, uint) {
 func bookTicket(userTickets uint, firstName string, lastName string, email string) {
 	remainingTickets -= userTickets
 
-	var userData = UserData{firstName, lastName, email, userTickets}{
+	var userData = UserData{
 		firstName: firstName,
 		lastName:  lastName,
 		email:     email,
