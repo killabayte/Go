@@ -14,6 +14,13 @@ var (
 	bookings              = make([]map[string]string, 0)
 )
 
+type userData struct {
+	firstName string
+	lastName  string
+	email     string
+	tickets   uint
+}
+
 func main() {
 	greetUsers()
 
