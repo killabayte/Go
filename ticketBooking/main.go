@@ -14,7 +14,7 @@ var (
 	bookings              = make([]map[string]string, 0)
 )
 
-type userData struct {
+type UserData struct {
 	firstName string
 	lastName  string
 	email     string
