@@ -72,6 +72,8 @@ func getUserInput() (string, string, string, uint) {
 func bookTicket(userTickets uint, firstName string, lastName string, email string) {
 	remainingTickets -= userTickets
 
+	var userData = make(map[string]string)
+
 	bookings = append(bookings, firstName+" "+lastName+" "+email+" "+fmt.Sprint(userTickets))
 
 	fmt.Printf("Thanks %s %s, you have booked %d tickets. You will receive a confiramtion on your email: %s\n", firstName, lastName, userTickets, email)
