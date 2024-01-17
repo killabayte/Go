@@ -11,7 +11,7 @@ var (
 	debugEnabled          = false
 	conferenceName        = "Go lang for DevOps Conference"
 	remainingTickets uint = conferenceTickets
-	bookings              = []string{}
+	bookings              = []map[string]string{}
 )
 
 func main() {
