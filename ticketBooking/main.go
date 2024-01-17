@@ -73,6 +73,10 @@ func bookTicket(userTickets uint, firstName string, lastName string, email strin
 	remainingTickets -= userTickets
 
 	var userData = make(map[string]string)
+	userData["firstName"] = firstName
+	userData["lastName"] = lastName
+	userData["email"] = email
+	userData["tickets"] = fmt.Sprint(userTickets)
 
 	bookings = append(bookings, firstName+" "+lastName+" "+email+" "+fmt.Sprint(userTickets))
 
