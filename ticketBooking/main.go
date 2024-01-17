@@ -79,3 +79,10 @@ func bookTicket(userTickets uint, firstName string, lastName string, email strin
 	fmt.Println("Remaining tickets are:", remainingTickets)
 	fmt.Printf("All bookings what we have so far: %v\n", bookings)
 }
+
+func validateUserInput(fn string, ln string, e string, ut uint) (bool, bool, bool) {
+	var isNameValid = len(fn) >= 2 && len(ln) > 2
+	var isEmailValid = strings.Contains(e, "@")
+	var isTicketsValid = ut > 0 && ut <= rt
+	return isNameValid, isEmailValid, isTicketsValid
+}
