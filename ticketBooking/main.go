@@ -51,7 +51,7 @@ func greetUsers() {
 func getFirstNames() []string {
 	firstNames := []string{}
 	for _, booking := range bookings {
-		var names = strings.Fields(booking)
+		var names = strings.Fields(booking["firstName"])
 		firstNames = append(firstNames, names[0])
 	}
 	return firstNames
@@ -78,7 +78,7 @@ func bookTicket(userTickets uint, firstName string, lastName string, email strin
 	userData["email"] = email
 	userData["tickets"] = fmt.Sprint(userTickets)
 
-	bookings = append(bookings, firstName+" "+lastName+" "+email+" "+fmt.Sprint(userTickets))
+	bookings = append(bookings, userData)
 
 	fmt.Printf("Thanks %s %s, you have booked %d tickets. You will receive a confiramtion on your email: %s\n", firstName, lastName, userTickets, email)
 	fmt.Println("Remaining tickets are:", remainingTickets)
