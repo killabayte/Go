@@ -79,11 +79,12 @@ func getUserInput() (string, string, string, uint) {
 func bookTicket(userTickets uint, firstName string, lastName string, email string) {
 	remainingTickets -= userTickets
 
-	var userData = make(map[string]string)
-	userData["firstName"] = firstName
-	userData["lastName"] = lastName
-	userData["email"] = email
-	userData["tickets"] = fmt.Sprint(userTickets)
+	var userData = UserData{firstName, lastName, email, userTickets}{
+		firstName: firstName,
+		lastName:  lastName,
+		email:     email,
+		tickets:   userTickets,
+	}
 
 	bookings = append(bookings, userData)
 
