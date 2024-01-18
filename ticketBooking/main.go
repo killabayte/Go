@@ -102,5 +102,7 @@ func validateUserInput(fn string, ln string, e string, ut uint) (bool, bool, boo
 
 func sendTicket(userTickets uint, firstName string, lastName string, email string) {
 	ticket := fmt.Sprintf("%v tickets for %v %v", userTickets, firstName, lastName)
+	fmt.Println()
 	fmt.Printf("Sending ticket:\n %v \nto email address %v\n", ticket, email)
+	fmt.Println()
 }
