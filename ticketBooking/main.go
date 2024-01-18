@@ -101,5 +101,5 @@ func validateUserInput(fn string, ln string, e string, ut uint) (bool, bool, boo
 }
 
 func sendTicket(userTickets uint, firstName string, lastName string) {
-	fmt.Println("%v tickets for %v %v", userTickets, firstName, lastName)
+	var ticket = fmt.Sprintf("%v tickets for %v %v", userTickets, firstName, lastName)
 }
