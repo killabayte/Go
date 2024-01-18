@@ -31,6 +31,8 @@ func main() {
 
 		if isNameValid && isEmailValid && isTicketsValid {
 			bookTicket(userTickets, firstName, lastName, email)
+			sendTicket(userTickets, firstName, lastName, email)
+
 			if debugEnabled {
 				firstNames := getFirstNames()
 				fmt.Printf("All first names what we have so far: %v\n", firstNames)
