@@ -99,3 +99,7 @@ func validateUserInput(fn string, ln string, e string, ut uint) (bool, bool, boo
 	var isTicketsValid = ut > 0 && ut <= remainingTickets
 	return isNameValid, isEmailValid, isTicketsValid
 }
+
+func sendTicket() {
+	fmt.Println("Sending ticket to user")
+}
