@@ -31,6 +31,7 @@ func main() {
 		isNameValid, isEmailValid, isTicketsValid := validateUserInput(firstName, lastName, email, userTickets)
 
 		if isNameValid && isEmailValid && isTicketsValid {
+
 			bookTicket(userTickets, firstName, lastName, email)
 			go sendTicket(userTickets, firstName, lastName, email)
 
