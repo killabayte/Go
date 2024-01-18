@@ -115,5 +115,5 @@ func sendTicket(userTickets uint, firstName string, lastName string, email strin
 	fmt.Println()
 	fmt.Printf("Sending ticket:\n %v \nto email address %v\n", ticket, email)
 	fmt.Println()
-	wg.Done()
+	//wg.Done()
 }
