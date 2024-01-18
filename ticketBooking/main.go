@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"strings"
+	"time"
 )
 
 const conferenceTickets = 50
@@ -103,6 +104,7 @@ func validateUserInput(fn string, ln string, e string, ut uint) (bool, bool, boo
 }
 
 func sendTicket(userTickets uint, firstName string, lastName string, email string) {
+	time.Sleep(10 * time.Second)
 	ticket := fmt.Sprintf("%v tickets for %v %v", userTickets, firstName, lastName)
 	fmt.Println()
 	fmt.Printf("Sending ticket:\n %v \nto email address %v\n", ticket, email)
