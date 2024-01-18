@@ -36,6 +36,7 @@ func main() {
 		if isNameValid && isEmailValid && isTicketsValid {
 
 			bookTicket(userTickets, firstName, lastName, email)
+			wg.Add(1)
 			go sendTicket(userTickets, firstName, lastName, email)
 
 			if debugEnabled {
