@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"strings"
-	"sync"
 	"time"
 )
 
@@ -23,7 +22,7 @@ type UserData struct {
 	tickets   uint
 }
 
-var wg = sync.WaitGroup{}
+// var wg = sync.WaitGroup{}
 
 func main() {
 	greetUsers()
