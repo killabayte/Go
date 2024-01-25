@@ -28,14 +28,13 @@ func main() {
 	greetUsers()
 
 	for remainingTickets > 0 {
-
 		firstName, lastName, email, userTickets := getUserInput()
 		isNameValid, isEmailValid, isTicketsValid := validateUserInput(firstName, lastName, email, userTickets)
 
 		if isNameValid && isEmailValid && isTicketsValid {
 
 			bookTicket(userTickets, firstName, lastName, email)
-
+			// wg.Add(1)
 			go sendTicket(userTickets, firstName, lastName, email)
 
 			if debugEnabled {
