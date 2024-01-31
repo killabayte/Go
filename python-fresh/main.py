@@ -1,5 +1,6 @@
 calculation_to_units = 24
 name_of_unit = "hours"
+num_of_days = 365
 
 print(f"20 days are {20 * calculation_to_units} {name_of_unit}")
 
