@@ -12,4 +12,4 @@ today_date = datetime.datetime.today()
 time_till_deadline = deadline_date - today_date
 print(time_till_deadline)
 
-print("The time remaining for your goal is: " + str(time_till_deadline.days) + " days"
+print(f"The time remaining for your goal is: " + str(time_till_deadline.days) + " days")
