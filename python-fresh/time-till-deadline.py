@@ -8,3 +8,5 @@ deadline = input_list[1]
 
 deadline_date = datetime.datetime.strptime(deadline, "%d.%m.%Y")
 today_date = datetime.datetime.today()
+
+time_till_deadline = deadline_date - today_date
