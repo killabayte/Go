@@ -7,4 +7,5 @@ goal = input_list[0]
 deadline = input_list[1]
 
 datetime.datetime.strptime(deadline, '%d.%m.%Y')
+
 print(input_list)
