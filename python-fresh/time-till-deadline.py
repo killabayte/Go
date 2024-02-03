@@ -8,4 +8,3 @@ deadline = input_list[1]
 
 deadline_date = datetime.datetime.strptime(deadline, "%d.%m.%Y")
 
-print(input_list)
