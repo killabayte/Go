@@ -23,4 +23,15 @@ func main() {
 
 	sum = part1 + part2
 	fmt.Println("New sum is:", sum)
+
+	var (
+		lessonName = "Variables"
+		lessonType = "Demo"
+	)
+	fmt.Println("lessonName=", lessonName)
+	fmt.Println("lessonType=", lessonType)
+
+	word1, word2, _ := "hello", "world", "!"
+	fmt.Println(word1, word2)
+
 }
