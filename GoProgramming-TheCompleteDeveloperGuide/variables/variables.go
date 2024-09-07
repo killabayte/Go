@@ -20,4 +20,7 @@ func main() {
 
 	part2, other := 2, 0
 	fmt.Println("part2 is", part2, "other is", other)
+
+	sum = part1 + part2
+	fmt.Println("New sum is:", sum)
 }
