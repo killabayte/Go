@@ -11,4 +11,10 @@ func main() {
 
 	userName := "admin"
 	fmt.Println("User name is:", userName)
+
+	var sum int
+	fmt.Println("The sum is", sum)
+
+	part1, other := 1, 5
+	fmt.Println("The sum of part1 and other is", part1+other)
 }
