@@ -10,12 +10,12 @@ func add(l, r int) int {
 	return l + r
 }
 
-func greet() {
-	fmt.Println("Hi, this is great day!")
+func greet(name string) {
+	fmt.Println("Namaskar", name)
 }
 
 func main() {
-	greet()
+	greet("Matsyendranatha")
 	dozen := double(6)
 	fmt.Println("This is dozen:", dozen)
 	bakerDozen := add(dozen, 1)
