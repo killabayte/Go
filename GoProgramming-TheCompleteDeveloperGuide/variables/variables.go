@@ -17,4 +17,7 @@ func main() {
 
 	part1, other := 1, 5
 	fmt.Println("The sum of part1 and other is", part1+other)
+
+	part2, other := 2, 0
+	fmt.Println("part2 is", part2, "other is", other)
 }
