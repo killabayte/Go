@@ -8,4 +8,7 @@ func main() {
 
 	var name string = "Kate"
 	fmt.Println("Name is equal:", name)
+
+	userName := "admin"
+	fmt.Println("User name is:", userName)
 }
