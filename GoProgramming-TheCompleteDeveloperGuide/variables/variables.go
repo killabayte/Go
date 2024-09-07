@@ -5,4 +5,7 @@ import "fmt"
 func main() {
 	var myName = "John"
 	fmt.Println("My name is:", myName)
+
+	var name string = "Kate"
+	fmt.Println("Name is equal:", name)
 }
