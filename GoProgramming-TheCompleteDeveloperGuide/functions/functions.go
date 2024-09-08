@@ -42,6 +42,7 @@ func main() {
 	b, c := multiNumReturn()
 	sumOfThree := addThreeNum(numReturn(), b, c)
 	fmt.Println("This is sum of three num:", sumOfThree)
+	// Other
 	dozen := double(6)
 	fmt.Println("This is dozen:", dozen)
 	bakerDozen := add(dozen, 1)
