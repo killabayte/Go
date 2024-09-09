@@ -3,8 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	age := 12
-	switch {
+	switch age := 12; {
 	case age == 0:
 		fmt.Println("Newborn")
 	case age > 0 && age <= 3:
