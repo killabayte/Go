@@ -20,6 +20,10 @@ const (
 	Guest      = 50
 )
 
+func weekday(day int) bool {
+	return day <= 4
+}
+
 func accessGranted() {
 	fmt.Println("Granted")
 }
