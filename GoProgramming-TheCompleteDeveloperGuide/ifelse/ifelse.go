@@ -40,7 +40,7 @@ func main() {
 		accessGranted()
 	} else if role == Memeber && weekday(today) {
 		accessGranted()
-	} else if role == Guest && today == Monday || today == Wednesday || today == Friday {
+	} else if role == Guest && (today == Monday || today == Wednesday || today == Friday) {
 		accessGranted()
 	} else {
 		accessDenied()
