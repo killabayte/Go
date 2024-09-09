@@ -16,7 +16,6 @@ func main() {
 		fmt.Println("Quiz1 and Quiz2 are equal")
 	}
 
-	fmt.Println(avarage(quiz1, quiz2, quiz3))
 	if avarage(quiz1, quiz2, quiz3) > 7 {
 		fmt.Println("The avarage score is acceptable")
 	} else {
