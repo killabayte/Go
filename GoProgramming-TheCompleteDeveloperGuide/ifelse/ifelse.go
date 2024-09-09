@@ -2,23 +2,33 @@ package main
 
 import "fmt"
 
-func avarage(a, b, c int) float64 {
-	return float64(a+b+c) / 3
+const (
+	Monday    = 0
+	Tuesday   = 1
+	Wednesday = 2
+	Thursday  = 3
+	Friday    = 4
+	Saturday  = 5
+	Sunday    = 6
+)
+
+const (
+	Admin      = 10
+	Manager    = 20
+	Contractor = 30
+	Memeber    = 40
+	Guest      = 50
+)
+
+func accessGranted() {
+	fmt.Println("Granted")
+}
+
+func accessDenied() {
+	fmt.Println("Denied")
 }
 
 func main() {
-	quiz1, quiz2, quiz3 := 9, 7, 8
-	if quiz1 > quiz2 {
-		fmt.Println("Quiz1 is greater than Quiz2")
-	} else if quiz1 < quiz2 {
-		fmt.Println("Quiz2 is greater than Quiz1")
-	} else {
-		fmt.Println("Quiz1 and Quiz2 are equal")
-	}
-
-	if avarage(quiz1, quiz2, quiz3) > 7 {
-		fmt.Println("The avarage score is acceptable")
-	} else {
-		fmt.Println("Please try again, and re-cap some quiz")
-	}
+	today, role := Tuesday, Guest
+	accessGranted()
 }
