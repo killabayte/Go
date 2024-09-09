@@ -34,7 +34,7 @@ func accessDenied() {
 
 func main() {
 	//today, role := Tuesday, Guest
-
+	today, role := Monday, Memeber
 	if role == Admin || role == Manager {
 		accessGranted()
 	} else if role == Contractor && !weekday(today) {
