@@ -16,3 +16,5 @@ func width(rect Rectangle) int {
 func lenght(rect Rectangle) int {
 	return (rect.a.y - rect.b.y)
 }
+
+func area(rect Rectangle)
