@@ -21,6 +21,10 @@ func area(rect Rectangle) int {
 	return (lenght(rect) * width(rect))
 }
 
+func perimeter(rect Rectangle) int {
+	return (width(rect) * 2) + (lenght(rect) * 2)
+}
+
 func main() {
 
 }
