@@ -33,5 +33,7 @@ func printInfo(rect Rectangle) {
 }
 
 func main() {
+	rect := Rectangle{a: Coordinate{0, 7}, b: Coordinate{10, 0}}
+	printInfo(rect)
 
 }
