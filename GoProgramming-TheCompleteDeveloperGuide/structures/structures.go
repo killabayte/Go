@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type Coordinate struct {
 	x, y int
 }
@@ -23,6 +25,11 @@ func area(rect Rectangle) int {
 
 func perimeter(rect Rectangle) int {
 	return (width(rect) * 2) + (lenght(rect) * 2)
+}
+
+func printInfo(rect Rectangle) {
+	fmt.Println("Area is", area(rect))
+	fmt.Println("Perimeter is", perimeter(rect))
 }
 
 func main() {
