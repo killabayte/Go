@@ -32,5 +32,4 @@ func main() {
 	}
 	fmt.Println("First dice is:", diceOne)
 	fmt.Println("Second dice is:", diceTwo)
-
 }
