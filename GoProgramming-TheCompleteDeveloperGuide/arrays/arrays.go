@@ -24,6 +24,6 @@ func main() {
 		totalCost += shoppingListActual[i].price
 	}
 	fmt.Println(totalCost)
-	shoppingListActual[3] = shoppingList{name: "avocado", price: 4.5}o
+	shoppingListActual[3] = shoppingList{name: "avocado", price: 4.5}
 	fmt.Println(shoppingListActual)
 }
