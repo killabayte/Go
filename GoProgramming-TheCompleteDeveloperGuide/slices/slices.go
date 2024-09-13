@@ -10,3 +10,7 @@ func showLine(line []Part) {
 		fmt.Println(part)
 	}
 }
+
+func main() {
+	assemblyLine := make([]Part, 3)
+}
