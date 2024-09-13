@@ -13,4 +13,9 @@ func showLine(line []Part) {
 
 func main() {
 	assemblyLine := make([]Part, 3)
+
+	assemblyLine[0] = "Pipe"
+	assemblyLine[1] = "Bolt"
+	assemblyLine[2] = "Sheet"
+
 }
