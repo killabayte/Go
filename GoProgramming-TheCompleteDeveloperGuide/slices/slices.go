@@ -20,4 +20,9 @@ func main() {
 
 	fmt.Println("3 parts:")
 	showLine(assemblyLine)
+
+	assemblyLine = append(assemblyLine, "Washer", "Wheel")
+	fmt.Println("\nAdded two parts:")
+	showLine(assemblyLine)
+
 }
