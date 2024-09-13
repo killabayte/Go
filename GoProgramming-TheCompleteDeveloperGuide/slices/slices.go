@@ -18,4 +18,6 @@ func main() {
 	assemblyLine[1] = "Bolt"
 	assemblyLine[2] = "Sheet"
 
+	fmt.Println("3 parts:")
+	showLine(assemblyLine)
 }
