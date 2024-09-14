@@ -3,34 +3,31 @@ package main
 import "fmt"
 
 func printServerStatus(serversMap map[string]string) {
-	online := 0
-	offline := 0
-	maintenance := 0
-	retired := 0
+	stats := make(map[string]int)
 
 	fmt.Println("-----------------------------------")
 	fmt.Println("Total server number:", len(serversMap))
 
 	for _, v := range serversMap {
 		if v == "Online" {
-			online++
+			stats["Online"]++
 		} else if v == "Offline" {
-			offline++
+			stats["Offline"]++
 		} else if v == "Maintenance" {
-			maintenance++
+			stats["Maintenance"]++
 		} else if v == "Retired" {
-			retired++
+			stats["Retired"]++
 		}
 	}
-	fmt.Println("Online", online)
-	fmt.Println("Offline", offline)
-	fmt.Println("Maintenance", maintenance)
-	fmt.Println("Retired", retired)
+	fmt.Println("Online", stats["Online"])
+	fmt.Println("Offline", stats["Offline"])
+	fmt.Println("Maintenance", stats["Maintenance"])
+	fmt.Println("Retired", stats["Retired"])
 	fmt.Println("-----------------------------------")
 }
 
 func main() {
-	servers := []string{"darkstar", "aiur", "hope", "blackhole"}
+	servers := []string{"darkstar", "aiur", "hope", "blackhole", "r2d2"}
 
 	serversMap := make(map[string]string)
 
