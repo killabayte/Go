@@ -17,6 +17,6 @@ func main() {
 
 	_, found := shoppingList["cereal"]
 	if !found {
-		fmt.Println("There is no cerela in the list")
+		fmt.Println("There is no cereal in the list")
 	}
 }
