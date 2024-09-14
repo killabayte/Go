@@ -24,4 +24,5 @@ func main() {
 	for _, amount := range shoppingList {
 		totalItems += amount
 	}
+	fmt.Println("There are", totalItems, "on the shopping list")
 }
