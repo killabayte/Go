@@ -13,4 +13,10 @@ func main() {
 
 	delete(shoppingList, "milk")
 	fmt.Println("After cleanup:", shoppingList)
+	fmt.Println("Need", shoppingList["eggs"], "eggs")
+
+	_, found := shoppingList["cereal"]
+	if !found {
+		fmt.Println("There is no cerela in the list")
+	}
 }
