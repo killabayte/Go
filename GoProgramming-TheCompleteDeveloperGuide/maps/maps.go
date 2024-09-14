@@ -5,4 +5,6 @@ func main() {
 	shoppingList["eggs"] = 11
 	shoppingList["milk"] = 5
 	shoppingList["bread"] += 3
+
+	shoppingList["eggs"] = 11
 }
