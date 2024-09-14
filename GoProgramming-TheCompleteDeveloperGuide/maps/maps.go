@@ -19,4 +19,9 @@ func main() {
 	if !found {
 		fmt.Println("There is no cereal in the list")
 	}
+
+	totalItems := 0
+	for _, amount := range shoppingList {
+		totalItems += amount
+	}
 }
