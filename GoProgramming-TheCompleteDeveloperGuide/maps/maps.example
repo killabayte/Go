@@ -1,0 +1,28 @@
+package main
+
+import "fmt"
+
+func main_example() {
+	shoppingList := make(map[string]int)
+	shoppingList["eggs"] = 11
+	shoppingList["milk"] = 5
+	shoppingList["bread"] += 3
+
+	shoppingList["eggs"] = 5
+	fmt.Println(shoppingList)
+
+	delete(shoppingList, "milk")
+	fmt.Println("After cleanup:", shoppingList)
+	fmt.Println("Need", shoppingList["eggs"], "eggs")
+
+	_, found := shoppingList["cereal"]
+	if !found {
+		fmt.Println("There is no cereal in the list")
+	}
+
+	totalItems := 0
+	for _, amount := range shoppingList {
+		totalItems += amount
+	}
+	fmt.Println("There are", totalItems, "on the shopping list")
+}
