@@ -9,7 +9,7 @@ func main() {
 		fmt.Println(i, element, ":")
 
 		for _, ch := range element {
-			fmt.Printf(".   %q\n", ch)
+			fmt.Printf("    %q\n", ch)
 		}
 	}
 }
