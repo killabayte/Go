@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
 	shoppingList := make(map[string]int)
 	shoppingList["eggs"] = 11
@@ -7,4 +9,7 @@ func main() {
 	shoppingList["bread"] += 3
 
 	shoppingList["eggs"] = 5
+	fmt.Println(shoppingList)
+
+	delete(shoppingList, "milk")
 }
