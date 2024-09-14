@@ -12,4 +12,5 @@ func main() {
 	fmt.Println(shoppingList)
 
 	delete(shoppingList, "milk")
+	fmt.Println("After cleanup:", shoppingList)
 }
