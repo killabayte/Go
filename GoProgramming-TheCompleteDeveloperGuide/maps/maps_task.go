@@ -44,5 +44,3 @@ func main() {
 	}
 	printServerStatus(serversMap)
 }
-
-//
