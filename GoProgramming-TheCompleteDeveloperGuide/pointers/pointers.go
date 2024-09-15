@@ -15,3 +15,12 @@ func replace(old *string, new string, c *Counter) {
 	*old = new
 	increment(c)
 }
+
+func main() {
+	counter := Counter{}
+	hello := "Hello"
+	world := "World!"
+	fmt.Println(hello, world)
+
+	replace(&hello, "Hi", &counter)
+}
