@@ -23,4 +23,5 @@ func main() {
 	fmt.Println(hello, world)
 
 	replace(&hello, "Hi", &counter)
+	fmt.Println(hello, world)
 }
