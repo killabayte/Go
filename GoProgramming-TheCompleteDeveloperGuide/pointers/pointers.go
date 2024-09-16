@@ -16,7 +16,7 @@ func replace(old *string, new string, c *Counter) {
 	increment(c)
 }
 
-func main() {
+func main_example() {
 	counter := Counter{}
 	hello := "Hello"
 	world := "World!"
