@@ -66,7 +66,49 @@ func checkoutBook(library *Library, title Title, member *Member) bool {
 	}
 	book.lended += 1
 	library.books[title] = book
+	member.books[title] = LendAudit{checkOut: time.Now()}
+	return true
+}
+
+func returnBook(library *Library, title Title, member *Member) bool {
+	book, found := library.books[title]
+	if !found {
+		fmt.Println("Book is not part of the library")
+		return false
+	}
+	audit, found := member.books[title]
+	if !found {
+		fmt.Println("Member did not check out this book")
+		return false
+	}
+	book.lended -= 1
+	library.books[title] = book
+
+	audit.checkIn = time.Now()
+	member.books[title] = audit
+	return true
 }
 
 func main() {
+	library := Library{
+		books:   make(map[Title]BookEntry),
+		members: make(map[Name]Member),
+	}
+
+	library.books["Webapps in Go"] = BookEntry{
+		total:  4,
+		lended: 0,
+	}
+	library.books["The little Go Book"] = BookEntry{
+		total:  3,
+		lended: 0,
+	}
+	library.books["Let's learn Go"] = BookEntry{
+		total:  2,
+		lended: 0,
+	}
+	library.books["Go bootcamp"] = BookEntry{
+		total:  1,
+		lended: 0,
+	}
 }
