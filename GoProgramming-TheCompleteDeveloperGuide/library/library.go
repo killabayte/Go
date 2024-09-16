@@ -10,8 +10,8 @@ type Member struct {
 }
 type Book struct {
 	name     string
-	checkOut time.Time
-	checkIn  time.Time
+	checkOut string
+	checkIn  string
 }
 type Library struct {
 	members []Member
@@ -19,29 +19,19 @@ type Library struct {
 }
 
 func checkOut(b *Book, l *Library, m Member) {
-	b.checkOut = time.Now()
+	b.checkOut = time.Now().Format(time.RFC3339)
 	fmt.Println(m.name, "Is Checking Out next book:", b.name, "at the time:", b.checkOut)
 }
 
 func checkIn(b *Book, l *Library, m Member) {
-	b.checkIn = time.Now()
+	b.checkIn = time.Now().Format(time.RFC3339)
 	fmt.Println(m.name, "Is Checking In next book:", b.name, "at the time:", b.checkIn)
 }
 
 func printLibraryInfo(l *Library) {
 	for i := 0; i < len(l.books); i++ {
 		book := l.books[i]
-		fmt.Printf("Book: %s\n", book.name)
-		if !book.checkOut.IsZero() {
-			fmt.Printf("  Check Out: %s\n", book.checkOut.Format(time.RFC3339))
-		} else {
-			fmt.Println("  Check Out: Not checked out")
-		}
-		if !book.checkIn.IsZero() {
-			fmt.Printf("  Check In: %s\n", book.checkIn.Format(time.RFC3339))
-		} else {
-			fmt.Println("  Check In: Not checked in")
-		}
+		fmt.Printf("Book: %s\n", book)
 	}
 	for i := 0; i < len(l.members); i++ {
 		fmt.Println("Member:", l.members[i].name)
