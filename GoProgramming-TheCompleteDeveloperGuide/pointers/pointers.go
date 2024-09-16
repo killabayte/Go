@@ -38,4 +38,5 @@ func main() {
 
 	deactivate(&items[0].tag)
 	fmt.Println("Item 0 deactivated", items)
+	checkout(items)
 }
