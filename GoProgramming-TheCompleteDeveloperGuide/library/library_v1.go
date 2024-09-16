@@ -13,22 +13,22 @@ type Book struct {
 	checkOut string
 	checkIn  string
 }
-type Library struct {
+type Library_v1 struct {
 	members []Member_v1
 	books   []Book
 }
 
-func checkOut(b *Book, l *Library, m Member_v1) {
+func checkOut(b *Book, l *Library_v1, m Member_v1) {
 	b.checkOut = time.Now().Format(time.RFC3339)
 	fmt.Println(m.name, "Is Checking Out next book:", b.name, "at the time:", b.checkOut)
 }
 
-func checkIn(b *Book, l *Library, m Member_v1) {
+func checkIn(b *Book, l *Library_v1, m Member_v1) {
 	b.checkIn = time.Now().Format(time.RFC3339)
 	fmt.Println(m.name, "Is Checking In next book:", b.name, "at the time:", b.checkIn)
 }
 
-func printLibraryInfo(l *Library) {
+func printLibraryInfo(l *Library_v1) {
 	for i := 0; i < len(l.books); i++ {
 		book := l.books[i]
 		fmt.Printf("Book: %s\n", book)
@@ -39,7 +39,7 @@ func printLibraryInfo(l *Library) {
 }
 
 func main_v1() {
-	newLibrary := Library{}
+	newLibrary := Library_v1{}
 	book1 := Book{name: "Harry Potter and philosopher's stone"}
 	book2 := Book{name: "Harry Potter and the Chamber of Secrets"}
 	book3 := Book{name: "Harry Potter and the Prisoner of Azkaban"}
