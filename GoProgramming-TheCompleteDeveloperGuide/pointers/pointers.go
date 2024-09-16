@@ -32,4 +32,7 @@ func main() {
 	pants := Item{"Pants", Active}
 	backpack := Item{"Backpack", Active}
 	watch := Item{"Watch", Active}
+
+	items := []Item{shirt, pants, backpack, watch}
+	fmt.Println(items)
 }
