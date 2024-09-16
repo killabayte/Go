@@ -55,7 +55,7 @@ func printLibraryBooks(library *Library) {
 }
 
 func checkoutBook(library *Library, title Title, member *Member) bool {
-	book, found := library.book[title]
+	book, found := library.books[title]
 	if !found {
 		fmt.Println("Book is not part of the library")
 		return false
