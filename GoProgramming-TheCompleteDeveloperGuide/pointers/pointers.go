@@ -22,4 +22,7 @@ func deactivate(tag *SecurityTag) {
 
 func checkout(items []Item) {
 	fmt.Println("Checking out")
+	for i := 0; i < len(items); i++ {
+		deactivate(&items[i].tag)
+	}
 }
