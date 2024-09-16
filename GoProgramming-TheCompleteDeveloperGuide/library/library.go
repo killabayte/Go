@@ -40,7 +40,7 @@ func printMemberAudit(member *Member) {
 	}
 }
 
-func printMemberAudit(library *Library) {
+func printMemberAudits(library *Library) {
 	for _, member := range library.members {
 		printMemberAudit(&member)
 	}
@@ -115,6 +115,22 @@ func main() {
 	library.members["Bob"] = Member{"Bob", make(map[Title]LendAudit)}
 	library.members["John"] = Member{"John", make(map[Title]LendAudit)}
 	library.members["Erik"] = Member{"Erik", make(map[Title]LendAudit)}
+
 	fmt.Println("\nInitial:")
 	printLibraryBooks(&library)
+	printMemberAudits(&library)
+
+	member := library.members["Jayson"]
+	checkedOut := checkoutBook(&library, "Go Bootcamp", &member)
+	fmt.Println("\nCheck out a book:")
+	if checkedOut {
+		printLibraryBooks(&library)
+		printMemberAudits(&library)
+	}
+	returned := returnBook(&library, "Go Bootcamp", &member)
+	fmt.Println("\nCheck ia a book:")
+	if returned {
+		printLibraryBooks(&library)
+		printMemberAudits(&library)
+	}
 }
