@@ -34,7 +34,7 @@ func main() {
 	watch := Item{"Watch", Active}
 
 	items := []Item{shirt, pants, backpack, watch}
-	fmt.Println(items)
+	fmt.Println("Initial", items)
 
 	deactivate(&items[0].tag)
 }
