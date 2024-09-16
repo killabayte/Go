@@ -35,4 +35,6 @@ func main() {
 
 	items := []Item{shirt, pants, backpack, watch}
 	fmt.Println(items)
+
+	deactivate(&items[0].tag)
 }
