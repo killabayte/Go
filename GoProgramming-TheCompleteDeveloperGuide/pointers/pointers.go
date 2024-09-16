@@ -26,3 +26,10 @@ func checkout(items []Item) {
 		deactivate(&items[i].tag)
 	}
 }
+
+func main() {
+	shirt := Item{"Shirt", Active}
+	pants := Item{"Pants", Active}
+	backpack := Item{"Backpack", Active}
+	watch := Item{"Watch", Active}
+}
