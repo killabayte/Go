@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-type Member struct {
+type Member_v1 struct {
 	name string
 }
 type Book struct {
@@ -14,16 +14,16 @@ type Book struct {
 	checkIn  string
 }
 type Library struct {
-	members []Member
+	members []Member_v1
 	books   []Book
 }
 
-func checkOut(b *Book, l *Library, m Member) {
+func checkOut(b *Book, l *Library, m Member_v1) {
 	b.checkOut = time.Now().Format(time.RFC3339)
 	fmt.Println(m.name, "Is Checking Out next book:", b.name, "at the time:", b.checkOut)
 }
 
-func checkIn(b *Book, l *Library, m Member) {
+func checkIn(b *Book, l *Library, m Member_v1) {
 	b.checkIn = time.Now().Format(time.RFC3339)
 	fmt.Println(m.name, "Is Checking In next book:", b.name, "at the time:", b.checkIn)
 }
@@ -50,7 +50,7 @@ func main_v1() {
 
 	newLibrary.books = append(newLibrary.books, book1, book2, book3, book4, book5, book6, book7)
 	fmt.Println(newLibrary.books)
-	newLibrary.members = append(newLibrary.members, Member{"Harry"}, Member{"Ron"}, Member{"Hermione"})
+	newLibrary.members = append(newLibrary.members, Member_v1{"Harry"}, Member_v1{"Ron"}, Member_v1{"Hermione"})
 	checkOut(&newLibrary.books[1], &newLibrary, newLibrary.members[0])
 	checkIn(&newLibrary.books[0], &newLibrary, newLibrary.members[1])
 	printLibraryInfo(&newLibrary)
