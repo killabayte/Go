@@ -111,4 +111,8 @@ func main() {
 		total:  1,
 		lended: 0,
 	}
+
+	library.members["Bob"] = Member{"Bob", make(map[Title]LendAudit)}
+	library.members["John"] = Member{"John", make(map[Title]LendAudit)}
+	library.members["Erik"] = Member{"Erik", make(map[Title]LendAudit)}
 }
