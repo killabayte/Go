@@ -14,3 +14,6 @@ type Item struct {
 func activate(tag *SecurityTag) {
 	*tag = Active
 }
+func deactivate(tag *SecurityTag) {
+	*tag = Inactive
+}
