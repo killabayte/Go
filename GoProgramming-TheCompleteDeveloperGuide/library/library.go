@@ -64,6 +64,8 @@ func checkoutBook(library *Library, title Title, member *Member) bool {
 		fmt.Println("No more books available to lend")
 		return false
 	}
+	book.lended += 1
+	library.books[title] = book
 }
 
 func main() {
