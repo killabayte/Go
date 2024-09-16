@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 const (
 	Active   = true
 	Inactive = false
@@ -16,4 +18,8 @@ func activate(tag *SecurityTag) {
 }
 func deactivate(tag *SecurityTag) {
 	*tag = Inactive
+}
+
+func checkout(items []Item) {
+	fmt.Println("Checking out")
 }
