@@ -7,3 +7,7 @@ type Space struct {
 type ParkingLot struct {
 	spaces []Space
 }
+
+func occupySpace(lot *ParkingLot, spaceNum int) {
+	lot.spaces[spaceNum-1].occupied = true
+}
