@@ -103,10 +103,10 @@ func main() {
 		total:  3,
 		lended: 0,
 	}
-	// library.books["Let's learn Go"] = BookEntry{
-	// 	total:  2,
-	// 	lended: 0,
-	// }
+	library.books["Let's learn Go"] = BookEntry{
+		total:  2,
+		lended: 0,
+	}
 	// library.books["Go bootcamp"] = BookEntry{
 	// 	total:  1,
 	// 	lended: 0,
