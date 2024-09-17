@@ -113,7 +113,7 @@ func main() {
 	}
 
 	library.members["Bob"] = Member{"Bob", make(map[Title]LendAudit)}
-	// library.members["John"] = Member{"John", make(map[Title]LendAudit)}
+	library.members["John"] = Member{"John", make(map[Title]LendAudit)}
 	// library.members["Erik"] = Member{"Erik", make(map[Title]LendAudit)}
 
 	// fmt.Println("\nInitial:")
