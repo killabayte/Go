@@ -70,24 +70,24 @@ func checkoutBook(library *Library, title Title, member *Member) bool {
 	return true
 }
 
-// func returnBook(library *Library, title Title, member *Member) bool {
-// 	book, found := library.books[title]
-// 	if !found {
-// 		fmt.Println("Book is not part of the library")
-// 		return false
-// 	}
-// 	audit, found := member.books[title]
-// 	if !found {
-// 		fmt.Println("Member did not check out this book")
-// 		return false
-// 	}
-// 	book.lended -= 1
-// 	library.books[title] = book
+func returnBook(library *Library, title Title, member *Member) bool {
+	book, found := library.books[title]
+	if !found {
+		fmt.Println("Book is not part of the library")
+		return false
+	}
+	audit, found := member.books[title]
+	if !found {
+		fmt.Println("Member did not check out this book")
+		return false
+	}
+	book.lended -= 1
+	library.books[title] = book
 
-// 	audit.checkIn = time.Now()
-// 	member.books[title] = audit
-// 	return true
-// }
+	audit.checkIn = time.Now()
+	member.books[title] = audit
+	return true
+}
 
 func main() {
 	myMap := make(map[Title]LendAudit)
