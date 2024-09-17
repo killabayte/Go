@@ -120,17 +120,17 @@ func main() {
 	printLibraryBooks(&library)
 	printMemberAudits(&library)
 
-	// member := library.members["Jayson"]
-	// checkedOut := checkoutBook(&library, "Go Bootcamp", &member)
-	// fmt.Println("\nCheck out a book:")
-	// if checkedOut {
-	// 	printLibraryBooks(&library)
-	// 	printMemberAudits(&library)
-	// }
-	// returned := returnBook(&library, "Go Bootcamp", &member)
-	// fmt.Println("\nCheck ia a book:")
-	// if returned {
-	// 	printLibraryBooks(&library)
-	// 	printMemberAudits(&library)
-	// }
+	member := library.members["Bob"]
+	checkedOut := checkoutBook(&library, "Go bootcamp", &member)
+	fmt.Println("\nCheck out a book:")
+	if checkedOut {
+		printLibraryBooks(&library)
+		printMemberAudits(&library)
+	}
+	returned := returnBook(&library, "Go bootcamp", &member)
+	fmt.Println("\nCheck ia a book:")
+	if returned {
+		printLibraryBooks(&library)
+		printMemberAudits(&library)
+	}
 }
