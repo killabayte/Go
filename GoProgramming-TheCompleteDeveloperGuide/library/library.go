@@ -128,7 +128,7 @@ func main() {
 		printMemberAudits(&library)
 	}
 	returned := returnBook(&library, "Go bootcamp", &member)
-	fmt.Println("\nCheck ia a book:")
+	fmt.Println("\nCheck in a book:")
 	if returned {
 		printLibraryBooks(&library)
 		printMemberAudits(&library)
