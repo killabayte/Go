@@ -90,9 +90,6 @@ func returnBook(library *Library, title Title, member *Member) bool {
 }
 
 func main() {
-	myMap := make(map[Title]LendAudit)
-	myMap["Go Bootcamp"] = LendAudit{checkOut: time.Now(), checkIn: time.Now()}
-	fmt.Println(myMap)
 	// library := Library{
 	// 	books:   make(map[Title]BookEntry),
 	// 	members: make(map[Name]Member),
