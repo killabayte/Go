@@ -90,15 +90,15 @@ func returnBook(library *Library, title Title, member *Member) bool {
 }
 
 func main() {
-	// library := Library{
-	// 	books:   make(map[Title]BookEntry),
-	// 	members: make(map[Name]Member),
-	// }
+	library := Library{
+		books:   make(map[Title]BookEntry),
+		members: make(map[Name]Member),
+	}
 
-	// library.books["Webapps in Go"] = BookEntry{
-	// 	total:  4,
-	// 	lended: 0,
-	// }
+	library.books["Webapps in Go"] = BookEntry{
+		total:  4,
+		lended: 0,
+	}
 	// library.books["The little Go Book"] = BookEntry{
 	// 	total:  3,
 	// 	lended: 0,
