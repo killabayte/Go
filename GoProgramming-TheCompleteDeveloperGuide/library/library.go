@@ -118,7 +118,7 @@ func main() {
 
 	fmt.Println("\nInitial:")
 	printLibraryBooks(&library)
-	// printMemberAudits(&library)
+	printMemberAudits(&library)
 
 	// member := library.members["Jayson"]
 	// checkedOut := checkoutBook(&library, "Go Bootcamp", &member)
