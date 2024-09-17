@@ -117,7 +117,7 @@ func main() {
 	library.members["Erik"] = Member{"Erik", make(map[Title]LendAudit)}
 
 	fmt.Println("\nInitial:")
-	// printLibraryBooks(&library)
+	printLibraryBooks(&library)
 	// printMemberAudits(&library)
 
 	// member := library.members["Jayson"]
