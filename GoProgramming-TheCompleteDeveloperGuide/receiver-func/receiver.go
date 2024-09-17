@@ -28,4 +28,7 @@ func main() {
 	lot.occupySpace(1)
 	occupySpace(&lot, 2)
 	fmt.Println(lot)
+
+	lot.vacateSpace(2)
+	fmt.Println(lot)
 }
