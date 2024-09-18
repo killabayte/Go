@@ -42,4 +42,10 @@ func main() {
 	fmt.Println("Player's maxHealth, after first boss: ", erik.MaxHealth)
 	fmt.Println("Player's maxEnergy, after first boos: ", erik.MaxEnergy)
 
+	//Drick some bottle
+	erik.modifyHealth(0, 2)
+	erik.modifyEnergy(0, 5)
+	fmt.Println("Player's maxHealth, after bottle: ", erik.MaxHealth)
+	fmt.Println("Player's maxEnergy, after bottle: ", erik.MaxEnergy)
+
 }
