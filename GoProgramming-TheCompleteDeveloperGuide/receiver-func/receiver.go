@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type Player struct {
 	name      string
 	MaxHealth int
@@ -11,6 +13,7 @@ type Player struct {
 func NewPlayer() Player {
 	return Player{
 		MaxHealth: 5,
+		MaxEnergy: 10,
 	}
 }
 
@@ -20,4 +23,10 @@ func (p *Player) modifyHealth(modifyValueLow int, modifyValueTop int) {
 	} else if modifyValueTop != 0 {
 		p.MaxHealth = p.MaxHealth + modifyValueTop
 	}
+}
+
+func main() {
+	erik := NewPlayer()
+	fmt.Println("Player's maxHealth: ", erik.MaxHealth)
+	fmt.Println("Player's maxEnergy: ", erik.MaxEnergy)
 }
