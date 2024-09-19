@@ -26,6 +26,10 @@ const (
 // 	}
 // }
 
+func (d Direction) String() string {
+	return []string{"North", "East", "South", "West"}[d]
+}
+
 func main() {
 	north := North
 	fmt.Println(north)
