@@ -2,4 +2,9 @@ package main
 
 type Direction byte
 
-const ()
+const (
+	North Direction = iota
+	East
+	South
+	West
+)
