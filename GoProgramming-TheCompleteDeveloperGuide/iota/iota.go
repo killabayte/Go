@@ -11,6 +11,13 @@ const (
 	West
 )
 
+func (d Direction) String() string {
+	switch d {
+	case North:
+		return fmt.Sprintf("North")
+	}
+}
+
 func main() {
 	north := North
 	fmt.Println(north)
