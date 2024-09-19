@@ -3,7 +3,7 @@ package main
 type Direction byte
 
 const (
-	North Direction = iota
+	North = iota
 	East
 	South
 	West
