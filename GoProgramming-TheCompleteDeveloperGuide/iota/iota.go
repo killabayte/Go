@@ -15,6 +15,14 @@ func (d Direction) String() string {
 	switch d {
 	case North:
 		return fmt.Sprintf("North")
+	case South:
+		return fmt.Sprintf("Soutch")
+	case East:
+		return fmt.Sprintf("East")
+	case West:
+		return fmt.Sprintf("West")
+	default:
+		return "other direction"
 	}
 }
 
