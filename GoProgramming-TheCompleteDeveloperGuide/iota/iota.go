@@ -8,3 +8,6 @@ const (
 	South
 	West
 )
+
+north := North
+fmt.Println(north)
