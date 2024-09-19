@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type Direction byte
 
 const (
@@ -9,5 +11,7 @@ const (
 	West
 )
 
-north := North
-fmt.Println(north)
+func main() {
+	north := North
+	fmt.Println(north)
+}
