@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type Calculator byte
 
 const (
@@ -22,4 +24,10 @@ func (c Calculator) Calculate(n1, n2 int) int {
 	default:
 		return 0
 	}
+}
+
+func main() {
+	addOperation := Add.Calculate(42, 42)
+	fmt.Println(addOperation)
+
 }
