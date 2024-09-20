@@ -29,5 +29,7 @@ func (c Calculator) Calculate(n1, n2 int) int {
 func main() {
 	addOperation := Add.Calculate(42, 42)
 	fmt.Println(addOperation)
+	subOperation := Subtract.Calculate(addOperation, 42)
+	fmt.Println(subOperation)
 
 }
