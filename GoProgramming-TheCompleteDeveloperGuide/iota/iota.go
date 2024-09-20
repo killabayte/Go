@@ -31,5 +31,7 @@ func main() {
 	fmt.Println(addOperation)
 	subOperation := Subtract.Calculate(addOperation, 42)
 	fmt.Println(subOperation)
+	muliOperation := Multiply.Calculate(6, 7)
+	fmt.Println(muliOperation)
 
 }
