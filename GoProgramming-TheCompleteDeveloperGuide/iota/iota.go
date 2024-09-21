@@ -35,4 +35,5 @@ func main() {
 	fmt.Println(muliOperation)
 	divOperation := Divide.Calculate(84, 2)
 	fmt.Println(divOperation)
+
 }
