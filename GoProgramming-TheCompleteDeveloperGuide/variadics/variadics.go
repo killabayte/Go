@@ -17,4 +17,5 @@ func main() {
 
 	answer := sum(all...)
 	fmt.Println(answer)
+	answer = sum(7, 8, 9)
 }
