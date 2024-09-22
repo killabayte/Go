@@ -12,4 +12,7 @@ func main() {
 	a := []int{1, 2, 3}
 	b := []int{4, 5, 6}
 	all := append(a, b...)
+
+	answer := sum(all...)
+	fmt.Prinln(answer)
 }
