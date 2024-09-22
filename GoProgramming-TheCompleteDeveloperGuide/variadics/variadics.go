@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func sum(nums ...int) int {
 	sum := 0
 	for _, n := range nums {
@@ -14,5 +16,5 @@ func main() {
 	all := append(a, b...)
 
 	answer := sum(all...)
-	fmt.Prinln(answer)
+	fmt.Println(answer)
 }
