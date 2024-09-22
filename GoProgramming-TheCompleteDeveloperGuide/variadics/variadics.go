@@ -7,3 +7,7 @@ func sum(nums ...int) int {
 	}
 	return sum
 }
+
+func main() {
+
+}
