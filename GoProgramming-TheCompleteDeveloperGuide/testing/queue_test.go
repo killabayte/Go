@@ -12,4 +12,7 @@ func TestAddQueue(t *testing.T) {
 			t.Errorf("Failed to append item %v to queue", i)
 		}
 	}
+	if q.Append(4) {
+		t.Errorf("Should not be able to add to a full queue")
+	}
 }
