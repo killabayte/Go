@@ -3,5 +3,5 @@ package msg
 import "fmt"
 
 func Exiting(m string) {
-	fmt.Printf("%v!\b", m)
+	fmt.Printf("%v!\n", m)
 }
