@@ -1,9 +1,7 @@
 package msg
 
-import (
-	"/packages/display"
-)
+import "_/Users/ykostiannikov/workspace/Go/GoProgramming-TheCompleteDeveloperGuide/packages/display"
 
 func Hi() {
-	display.Display("Hi!")
+	display.Display("Hi")
 }
