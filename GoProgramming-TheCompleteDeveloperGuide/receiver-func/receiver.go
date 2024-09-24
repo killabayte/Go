@@ -24,10 +24,9 @@ func (p *Player) modifyHealth(modifyValueLow int, modifyValueTop int) {
 			p.Health = 0
 		}
 	} else if modifyValueTop != 0 {
-		defaultMaxHealth := p.MaxHealth
 		p.Health = p.MaxHealth + modifyValueTop
-		if p.Health > defaultMaxHealth {
-			p.Health = defaultMaxHealth
+		if p.Health > p.MaxHealth {
+			p.Health = p.MaxHealth
 		}
 	}
 }
@@ -39,10 +38,9 @@ func (p *Player) modifyEnergy(modifyValueLow int, modifyValueTop int) {
 			p.Energy = 0
 		}
 	} else if modifyValueTop != 0 {
-		defaultMaxEnergy := p.MaxEnergy
 		p.Energy = p.MaxEnergy + modifyValueTop
-		if p.Energy > defaultMaxEnergy {
-			p.Energy = defaultMaxEnergy
+		if p.Energy > p.MaxEnergy {
+			p.Energy = p.MaxEnergy
 		}
 	}
 }
