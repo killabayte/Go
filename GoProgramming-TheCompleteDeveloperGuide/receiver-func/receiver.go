@@ -19,15 +19,15 @@ func NewPlayer() Player {
 
 func (p *Player) modifyHealth(modifyValueLow int, modifyValueTop int) {
 	if modifyValueLow != 0 {
-		p.MaxHealth = p.MaxHealth - modifyValueLow
-		if p.MaxHealth < 0 {
-			p.MaxHealth = 0
+		p.Health = p.MaxHealth - modifyValueLow
+		if p.Health < 0 {
+			p.Health = 0
 		}
 	} else if modifyValueTop != 0 {
 		defaultMaxHealth := p.MaxHealth
-		p.MaxHealth = p.MaxHealth + modifyValueTop
-		if p.MaxHealth > defaultMaxHealth {
-			p.MaxHealth = defaultMaxHealth
+		p.Health = p.MaxHealth + modifyValueTop
+		if p.Health > defaultMaxHealth {
+			p.Health = defaultMaxHealth
 		}
 	}
 }
@@ -42,18 +42,18 @@ func (p *Player) modifyEnergy(modifyValueLow int, modifyValueTop int) {
 
 func main() {
 	erik := NewPlayer()
-	fmt.Println("Player's maxHealth before start: ", erik.MaxHealth)
-	fmt.Println("Player's maxEnergy before start: ", erik.MaxEnergy)
+	fmt.Println("Player's maxHealth before start: ", erik.Health)
+	fmt.Println("Player's maxEnergy before start: ", erik.Energy)
 
 	erik.modifyHealth(3, 0)
 	erik.modifyEnergy(7, 0)
-	fmt.Println("Player's maxHealth, after first boss: ", erik.MaxHealth)
-	fmt.Println("Player's maxEnergy, after first boos: ", erik.MaxEnergy)
+	fmt.Println("Player's maxHealth, after first boss: ", erik.Health)
+	fmt.Println("Player's maxEnergy, after first boos: ", erik.Energy)
 
 	//Drick some bottle
-	erik.modifyHealth(0, 2)
+	erik.modifyHealth(0, 8)
 	erik.modifyEnergy(0, 5)
-	fmt.Println("Player's maxHealth, after bottle: ", erik.MaxHealth)
-	fmt.Println("Player's maxEnergy, after bottle: ", erik.MaxEnergy)
+	fmt.Println("Player's maxHealth, after bottle: ", erik.Health)
+	fmt.Println("Player's maxEnergy, after bottle: ", erik.Energy)
 
 }
