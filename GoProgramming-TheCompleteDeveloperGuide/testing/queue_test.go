@@ -33,7 +33,6 @@ func TestNext(t *testing.T) {
 		}
 	}
 	//Queue is empty at this point
-
 	item, ok := q.Next()
 	if ok {
 		t.Errorf("Should not be any more items in queue, got: %v", item)
