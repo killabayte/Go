@@ -42,8 +42,8 @@ func (p *Player) modifyEnergy(modifyValueLow int, modifyValueTop int) {
 
 func main() {
 	erik := NewPlayer()
-	fmt.Println("Player's maxHealth before start: ", erik.Health)
-	fmt.Println("Player's maxEnergy before start: ", erik.Energy)
+	fmt.Println("Player's maxHealth before start: ", erik.MaxHealth)
+	fmt.Println("Player's maxEnergy before start: ", erik.MaxEnergy)
 
 	erik.modifyHealth(3, 0)
 	erik.modifyEnergy(7, 0)
