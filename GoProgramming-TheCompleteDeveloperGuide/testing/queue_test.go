@@ -32,6 +32,7 @@ func TestNext(t *testing.T) {
 			t.Errorf("Got item in wrong order: %v, want %v", item, i)
 		}
 	}
+
 	//Queue is empty at this point
 	item, ok := q.Next()
 	if ok {
