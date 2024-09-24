@@ -20,10 +20,18 @@ func NewPlayer() Player {
 func (p *Player) modifyHealth(modifyValueLow int, modifyValueTop int) {
 	if modifyValueLow != 0 {
 		p.MaxHealth = p.MaxHealth - modifyValueLow
+		if p.MaxHealth < 0 {
+			p.MaxHealth = 0
+		}
 	} else if modifyValueTop != 0 {
+		defaultMaxHealth := p.MaxHealth
 		p.MaxHealth = p.MaxHealth + modifyValueTop
+		if p.MaxHealth > defaultMaxHealth {
+			p.MaxHealth = defaultMaxHealth
+		}
 	}
 }
+
 func (p *Player) modifyEnergy(modifyValueLow int, modifyValueTop int) {
 	if modifyValueLow != 0 {
 		p.MaxEnergy = p.MaxEnergy - modifyValueLow
