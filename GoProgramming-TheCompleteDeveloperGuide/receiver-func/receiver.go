@@ -32,6 +32,7 @@ func (p *Player) modifyHealth(modifyValueLow int, modifyValueTop int) {
 }
 
 func (p *Player) modifyEnergy(modifyValueLow int, modifyValueTop int) {
+
 	if modifyValueLow != 0 {
 		p.Energy = p.MaxEnergy - modifyValueLow
 		if p.Energy < 0 {
