@@ -60,5 +60,4 @@ func main() {
 	erik.modifyEnergy(0, 5)
 	fmt.Println("Player's maxHealth, after bottle: ", erik.Health)
 	fmt.Println("Player's maxEnergy, after bottle: ", erik.Energy)
-
 }
