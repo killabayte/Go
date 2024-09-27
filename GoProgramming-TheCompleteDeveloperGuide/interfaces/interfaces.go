@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 const (
 	SmallLift = iota
 	StandardLift
@@ -14,6 +16,10 @@ type LiftPicker interface {
 type Motocycle string
 type Car string
 type Truck string
+
+func (m Motocycle) String() string {
+	return fmt.Sprintf("Motorcycle: %v", string(m))
+}
 
 func main() {
 
