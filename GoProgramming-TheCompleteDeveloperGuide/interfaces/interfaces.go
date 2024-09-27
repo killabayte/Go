@@ -49,5 +49,12 @@ func sendToLift(p LiftPicker) {
 }
 
 func main() {
+	car := Car("Sporty")
+	truck := Truck("MountainCrusher")
+	motocycle := Motocycle("Croozer")
+
+	sendToLift(car)
+	sendToLift(truck)
+	sendToLift(motocycle)
 
 }
