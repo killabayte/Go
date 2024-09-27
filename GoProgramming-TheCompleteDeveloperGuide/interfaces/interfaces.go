@@ -5,6 +5,7 @@ type Preparer interface {
 }
 
 type Chicken string
+type Salad string
 
 func main() {
 
