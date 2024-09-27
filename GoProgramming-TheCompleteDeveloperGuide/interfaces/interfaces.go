@@ -24,7 +24,7 @@ func prepareDishes(dishes []Preparer) {
 		fmt.Printf("--Dish: %v--\n", dish)
 		dish.PrepareDish()
 	}
-
+	fmt.Println()
 }
 
 func main() {
