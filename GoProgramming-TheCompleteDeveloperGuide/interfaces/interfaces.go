@@ -56,5 +56,4 @@ func main() {
 	sendToLift(car)
 	sendToLift(truck)
 	sendToLift(motocycle)
-
 }
