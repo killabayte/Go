@@ -30,5 +30,4 @@ func prepareDishes(dishes []Preparer) {
 func main() {
 	dishes := []Preparer{Chicken("Chicken Wings"), Salad("Iceberg salad")}
 	prepareDishes(dishes)
-
 }
