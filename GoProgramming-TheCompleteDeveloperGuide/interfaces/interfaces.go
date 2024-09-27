@@ -40,11 +40,11 @@ func (t Truck) PickLift() Lift {
 func sendToLift(p LiftPicker) {
 	switch p.PickLift() {
 	case SmallLift:
-		fmt.Println("Send %v to small lift\n", p)
+		fmt.Printf("Send %v to small lift\n", p)
 	case StandardLift:
-		fmt.Println("Send %v to standard lift\n", p)
+		fmt.Printf("Send %v to standard lift\n", p)
 	case LargeLift:
-		fmt.Println("Send %v to large lift\n", p)
+		fmt.Printf("Send %v to large lift\n", p)
 	}
 }
 
