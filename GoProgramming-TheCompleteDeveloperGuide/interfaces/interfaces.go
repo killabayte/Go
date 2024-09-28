@@ -30,6 +30,7 @@ func (t Truck) String() string {
 func (m Motocycle) PickLift() Lift {
 	return SmallLift
 }
+
 func (c Car) PickLift() Lift {
 	return StandardLift
 }
