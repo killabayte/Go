@@ -23,6 +23,7 @@ func (m Motocycle) String() string {
 func (c Car) String() string {
 	return fmt.Sprintf("Car: %v", string(c))
 }
+
 func (t Truck) String() string {
 	return fmt.Sprintf("Truck: %v", string(t))
 }
