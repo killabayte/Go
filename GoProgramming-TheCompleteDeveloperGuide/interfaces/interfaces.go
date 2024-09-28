@@ -20,6 +20,7 @@ type Truck string
 func (m Motocycle) String() string {
 	return fmt.Sprintf("Motorcycle: %v", string(m))
 }
+
 func (c Car) String() string {
 	return fmt.Sprintf("Car: %v", string(c))
 }
