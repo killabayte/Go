@@ -9,6 +9,7 @@ const (
 )
 
 type Lift int
+
 type LiftPicker interface {
 	PickLift() Lift
 }
