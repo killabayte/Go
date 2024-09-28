@@ -33,6 +33,7 @@ func (m Motocycle) PickLift() Lift {
 func (c Car) PickLift() Lift {
 	return StandardLift
 }
+
 func (t Truck) PickLift() Lift {
 	return LargeLift
 }
