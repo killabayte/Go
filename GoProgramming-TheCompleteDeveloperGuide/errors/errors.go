@@ -18,5 +18,12 @@ func (s *Stuff) Get(index int) (int, error) {
 }
 
 func main() {
+	stuff := Stuff{}
+	value, err := stuff.Get(1)
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println("Value is", value)
+	}
 
 }
