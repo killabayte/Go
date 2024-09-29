@@ -2,6 +2,7 @@ package timeparse
 
 import (
 	"fmt"
+	"strconv"
 	"strings"
 )
 
@@ -22,5 +23,10 @@ func ParseTime(input string) (Time, error) {
 	components := strings.Split(input, ":")
 	if len(components) != 3 {
 		return Time{}, &TimeParseError{"Invalid number of time components", input}
+	} else {
+		hour, err := strconv.Atoi(components[0])
+		if err := nil{
+			return Time{}, &TimeParseError{"Error parsing hour: %v", err}
+		}
 	}
 }
