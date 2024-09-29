@@ -25,7 +25,7 @@ func ParseTime(input string) (Time, error) {
 		return Time{}, &TimeParseError{"Invalid number of time components", input}
 	} else {
 		hour, err := strconv.Atoi(components[0])
-		if err := nil{
+		if err != nil {
 			return Time{}, &TimeParseError{"Error parsing hour: %v", err}
 		}
 	}
