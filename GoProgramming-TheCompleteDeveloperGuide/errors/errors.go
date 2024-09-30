@@ -32,7 +32,7 @@ func ParseTime(input string) (Time, error) {
 		if err != nil {
 			return Time{}, &TimeParseError{fmt.Sprintf("Error parsing minute: %v", err), input}
 		}
-		second, err := strconv.Atoi(components[0])
+		second, err := strconv.Atoi(components[2])
 		if err != nil {
 			return Time{}, &TimeParseError{fmt.Sprintf("Error parsing second: %v", err), input}
 		}
