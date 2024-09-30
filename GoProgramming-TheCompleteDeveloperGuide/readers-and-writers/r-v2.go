@@ -16,5 +16,5 @@ func main() {
 	if scanner.Err() != nil {
 		fmt.Println(scanner.Err())
 	}
-
+	fmt.Println("Line count: %v\n", len(lines))
 }
