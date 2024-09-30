@@ -26,7 +26,15 @@ func ParseTime(input string) (Time, error) {
 	} else {
 		hour, err := strconv.Atoi(components[0])
 		if err != nil {
-			return Time{}, &TimeParseError{"Error parsing hour: %v", err}
+			return Time{}, &TimeParseError{fmt.Sprintf("Error parsing hour: %v", err), input}
+		}
+		minute, err := strconv.Atoi(components[0])
+		if err != nil {
+			return Time{}, &TimeParseError{fmt.Sprintf("Error parsing minute: %v", err), input}
+		}
+		second, err := strconv.Atoi(components[0])
+		if err != nil {
+			return Time{}, &TimeParseError{fmt.Sprintf("Error parsing second: %v", err), input}
 		}
 	}
 }
