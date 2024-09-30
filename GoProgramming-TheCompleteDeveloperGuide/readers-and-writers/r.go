@@ -1,4 +1,20 @@
 package main
 
-source := strings.NewReader("SAMPLE")
-buffered := bufio.NewReader(source)
+import (
+	"bufio"
+	"fmt"
+	"io"
+	"strings"
+)
+
+func main() {
+	source := strings.NewReader("SAMPLE")
+	buffered := bufio.NewReader(source)
+
+	newString, err := buffered.ReadString('\n')
+	if err == io.EOF {
+		fmt.Println(newString)
+	} else {
+		fmt.Println("Something went wrong")
+	}
+}
