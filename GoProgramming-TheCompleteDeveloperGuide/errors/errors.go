@@ -43,7 +43,7 @@ func ParseTime(input string) (Time, error) {
 			return Time{}, &TimeParseError{"Minute out of range: 0 <= minute <= 59", fmt.Sprintf("%v", minute)}
 		}
 		if second > 59 || second < 0 {
-			return Time{}, &TimeParseError{"Second out of range: 0 <= second <= 60", fmt.Sprintf("%v", second)}
+			return Time{}, &TimeParseError{"Second out of range: 0 <= second <= 59", fmt.Sprintf("%v", second)}
 		}
 	}
 }
