@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"fmt"
 	"os"
 )
 
@@ -11,6 +12,9 @@ func main() {
 
 	for scanner.Scan() {
 		lines = append(lines, scanner.Text())
+	}
+	if scanner.Err() != nil {
+		fmt.Println(scanner.Err())
 	}
 
 }
