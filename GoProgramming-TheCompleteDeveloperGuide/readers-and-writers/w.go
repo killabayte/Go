@@ -12,6 +12,6 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 	} else {
-		fmt.Println("Wrote %v bytes: %c\n", numBytes, buffer)
+		fmt.Printf("Wrote %v bytes: %c\n", numBytes, buffer)
 	}
 }
