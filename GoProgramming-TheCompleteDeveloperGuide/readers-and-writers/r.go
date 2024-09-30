@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-func main() {
+func main_old() {
 	source := strings.NewReader("SAMPLE")
 	buffered := bufio.NewReader(source)
 
