@@ -8,6 +8,7 @@ import (
 func main() {
 	buffer := bytes.NewBufferString("")
 	numBytes, err := buffer.WriteString("SAMPLE")
+
 	if err != nil {
 		fmt.Println(err)
 	} else {
