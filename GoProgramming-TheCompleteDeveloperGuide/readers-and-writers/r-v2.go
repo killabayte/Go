@@ -7,6 +7,7 @@ import (
 )
 
 func main_old_v2() {
+
 	scanner := bufio.NewScanner(os.Stdin)
 	lines := make([]string, 0, 5)
 	for scanner.Scan() {
