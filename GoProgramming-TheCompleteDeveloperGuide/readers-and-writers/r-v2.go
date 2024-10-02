@@ -14,6 +14,7 @@ func main_old_v2() {
 	for scanner.Scan() {
 		lines = append(lines, scanner.Text())
 	}
+
 	if scanner.Err() != nil {
 		fmt.Println(scanner.Err())
 	}
