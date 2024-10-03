@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"io"
 	"os"
 	"strconv"
 	"strings"
@@ -24,6 +25,9 @@ func main() {
 			fmt.Println(convErr)
 		} else {
 			sum += num
+		}
+		if inputErr == io.EOF {
+			break
 		}
 	}
 }
