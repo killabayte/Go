@@ -15,7 +15,7 @@ func main() {
 	sum := 0
 
 	for {
-		input, inputErr := r.ReadString('\n')
+		input, inputErr := r.ReadString(' ')
 		n := strings.TrimSpace(input)
 		if n == "" {
 			continue
