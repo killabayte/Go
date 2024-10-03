@@ -24,10 +24,10 @@ func main() {
 			non_blanck_count++
 		}
 		switch l {
-		case l == "hello":
+		case "hello":
 			command_count++
 			fmt.Println("Hi User, nice to meet you!")
-		case l == "bye":
+		case "bye":
 			command_count++
 			fmt.Println("Have a good day!And come back soon")
 		}
