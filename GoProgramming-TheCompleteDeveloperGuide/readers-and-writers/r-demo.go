@@ -29,5 +29,8 @@ func main() {
 		if inputErr == io.EOF {
 			break
 		}
+		if inputErr != nil {
+			fmt.Println("Error reading Stdin:", inputErr)
+		}
 	}
 }
