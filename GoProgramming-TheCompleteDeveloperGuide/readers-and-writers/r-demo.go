@@ -22,6 +22,8 @@ func main() {
 		num, convErr := strconv.Atoi(n)
 		if convErr != nil {
 			fmt.Println(convErr)
+		} else {
+			sum += num
 		}
 	}
 }
