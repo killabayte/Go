@@ -15,7 +15,7 @@ func main() {
 	sum := 0
 
 	for {
-		input, inputErr := r.ReadString(' ')
+		input, inputErr := r.ReadString('\n')
 		n := strings.TrimSpace(input)
 		if n == "" {
 			continue
@@ -33,5 +33,5 @@ func main() {
 			fmt.Println("Error reading Stdin:", inputErr)
 		}
 	}
-	fmt.Println("sum: %v\n", sum)
+	fmt.Printf("sum: %v\n", sum)
 }

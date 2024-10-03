@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-func main() {
+func main_old_v4() {
 	buffer := bytes.NewBufferString("")
 	numBytes, err := buffer.WriteString("SAMPLE")
 
