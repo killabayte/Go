@@ -14,5 +14,8 @@ func main() {
 	for {
 		input, inputErr := r.ReadString(' ')
 		n := strings.TrimSpace(input)
+		if n == "" {
+			continue
+		}
 	}
 }
