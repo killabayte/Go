@@ -30,6 +30,10 @@ func main() {
 		case "bye":
 			command_count++
 			fmt.Println("Have a good day!And come back soon")
+		case "Q":
+			os.Exit(1)
+		case "q":
+			os.Exit(1)
 		}
 	}
 	fmt.Println("The number of commands entered:", command_count)
