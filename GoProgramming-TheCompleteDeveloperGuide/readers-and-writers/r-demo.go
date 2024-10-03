@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"os"
+	"strings"
 )
 
 func main() {
@@ -12,5 +13,6 @@ func main() {
 
 	for {
 		input, inputErr := r.ReadString(' ')
+		n := strings.TrimSpace(input)
 	}
 }
