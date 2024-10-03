@@ -33,4 +33,5 @@ func main() {
 			fmt.Println("Error reading Stdin:", inputErr)
 		}
 	}
+	fmt.Println("sum: %v\n", sum)
 }
