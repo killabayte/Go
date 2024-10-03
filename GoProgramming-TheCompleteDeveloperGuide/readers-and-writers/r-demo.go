@@ -2,7 +2,9 @@ package main
 
 import (
 	"bufio"
+	"fmt"
 	"os"
+	"strconv"
 	"strings"
 )
 
@@ -16,6 +18,10 @@ func main() {
 		n := strings.TrimSpace(input)
 		if n == "" {
 			continue
+		}
+		num, convErr := strconv.Atoi(n)
+		if convErr != nil {
+			fmt.Println(convErr)
 		}
 	}
 }
