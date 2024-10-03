@@ -9,7 +9,7 @@ import (
 	"strings"
 )
 
-func main() {
+func main_old_v5() {
 	r := bufio.NewReader(os.Stdin)
 
 	sum := 0
