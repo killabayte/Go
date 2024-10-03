@@ -31,11 +31,13 @@ func main() {
 			command_count++
 			fmt.Println("Have a good day!And come back soon")
 		case "Q":
-			os.Exit(1)
+			fmt.Println("Gracefully shutting down...")
+			fmt.Printf("Number of non-blank lines: %d\n", non_blanck_count)
+			fmt.Println("The number of commands entered:", command_count)
 		case "q":
-			os.Exit(1)
+			fmt.Println("Gracefully shutting down...")
+			fmt.Printf("Number of non-blank lines: %d\n", non_blanck_count)
+			fmt.Println("The number of commands entered:", command_count)
 		}
 	}
-	fmt.Println("The number of commands entered:", command_count)
-	fmt.Println("The number of non-blank lines:", non_blanck_count)
 }
