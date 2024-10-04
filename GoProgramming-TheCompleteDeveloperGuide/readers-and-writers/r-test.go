@@ -20,6 +20,7 @@ func main() {
 	non_blanck_count := 0
 
 	r := bufio.NewReader(os.Stdin)
+
 	for {
 		input, inputErr := r.ReadString('\n')
 		l := strings.TrimSpace(input)
