@@ -15,7 +15,6 @@ func quit(nbc, cc int) {
 }
 
 func main() {
-
 	command_count := 0
 	non_blanck_count := 0
 	r := bufio.NewReader(os.Stdin)
