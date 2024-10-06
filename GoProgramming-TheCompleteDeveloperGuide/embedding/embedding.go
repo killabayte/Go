@@ -7,3 +7,8 @@ type Whisperer interface {
 type Yeller interface {
 	Yell() string
 }
+
+type Talker interface {
+	Whisperer
+	Yeller
+}
