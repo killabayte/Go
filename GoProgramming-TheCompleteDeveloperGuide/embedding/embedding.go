@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type Whisperer interface {
 	Whisper() string
 }
@@ -11,4 +13,9 @@ type Yeller interface {
 type Talker interface {
 	Whisperer
 	Yeller
+}
+
+func talk(t Talker) {
+	fmt.Println(t.Yell())
+
 }
