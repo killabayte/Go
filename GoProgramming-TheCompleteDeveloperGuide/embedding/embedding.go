@@ -1,5 +1,9 @@
 package main
 
-type Whisper interface {
+type Whisperer interface {
 	Whisper() string
+}
+
+type Yelling interface {
+	Yell() string
 }
