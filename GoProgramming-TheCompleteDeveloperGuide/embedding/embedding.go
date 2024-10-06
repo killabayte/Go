@@ -4,6 +4,6 @@ type Whisperer interface {
 	Whisper() string
 }
 
-type Yelling interface {
+type Yeller interface {
 	Yell() string
 }
