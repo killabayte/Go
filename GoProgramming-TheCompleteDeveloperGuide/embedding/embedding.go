@@ -20,5 +20,4 @@ func talk(t Talker) {
 	fmt.Println(t.Yell())
 
 	fmt.Println(t.Whisper())
-
 }
