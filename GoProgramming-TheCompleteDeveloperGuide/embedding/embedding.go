@@ -18,6 +18,5 @@ type Talker interface {
 func talk(t Talker) {
 
 	fmt.Println(t.Yell())
-
 	fmt.Println(t.Whisper())
 }
