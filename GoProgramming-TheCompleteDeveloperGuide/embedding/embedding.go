@@ -29,6 +29,11 @@ type Shipper interface {
 	Ship() Shipper
 }
 
+type WarehouseAutomator interface {
+	Conveyor
+	Shipper
+}
+
 func main() {
 
 }
