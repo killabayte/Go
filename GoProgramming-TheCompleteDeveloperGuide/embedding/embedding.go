@@ -50,7 +50,7 @@ func (s *SpamMail) Convey() BeltSize {
 
 func automate(item WarehouseAutomator) {
 	fmt.Printf("Convey %v on %v conveyor\n", item, item.Convey())
-
+	fmt.Printf("Ship %v via %v\n", item, item.Ship())
 }
 
 func main() {
