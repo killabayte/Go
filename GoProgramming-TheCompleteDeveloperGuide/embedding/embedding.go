@@ -17,6 +17,9 @@ type Shipping int
 func (b BeltSize) String() string {
 	return []string{"Small", "Medium", "Large"}[b]
 }
+func (s Shipping) String() string {
+	return []string{"Groud", "Air"}[s]
+}
 
 func main() {
 
