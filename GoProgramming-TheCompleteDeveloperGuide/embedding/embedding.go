@@ -27,7 +27,7 @@ type Conveyor interface {
 	Convey() BeltSize
 }
 type Shipper interface {
-	Ship() Shipper
+	Ship() Shipping
 }
 type WarehouseAutomator interface {
 	Conveyor
@@ -62,5 +62,6 @@ func (t *ToxixWaste) Ship() Shipping {
 }
 
 func main() {
-
+	mail := SpamMail{40000}
+	automate(&mail)
 }
