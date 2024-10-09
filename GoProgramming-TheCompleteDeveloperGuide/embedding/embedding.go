@@ -24,11 +24,9 @@ func (s Shipping) String() string {
 type Conveyor interface {
 	Convey() BeltSize
 }
-
 type Shipper interface {
 	Ship() Shipper
 }
-
 type WarehouseAutomator interface {
 	Conveyor
 	Shipper
