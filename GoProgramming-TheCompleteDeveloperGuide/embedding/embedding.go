@@ -25,6 +25,10 @@ type Conveyor interface {
 	Convey() BeltSize
 }
 
+type Shipper interface {
+	Ship() Shipper
+}
+
 func main() {
 
 }
