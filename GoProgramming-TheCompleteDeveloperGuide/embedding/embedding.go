@@ -21,6 +21,10 @@ func (s Shipping) String() string {
 	return []string{"Groud", "Air"}[s]
 }
 
+type Conveyor interface {
+	Convey() BeltSize
+}
+
 func main() {
 
 }
