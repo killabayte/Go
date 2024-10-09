@@ -6,6 +6,11 @@ const (
 	Large
 )
 
+const (
+	Ground = iota
+	Air
+)
+
 func main() {
 
 }
