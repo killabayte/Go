@@ -5,3 +5,7 @@ const (
 	Medium
 	Large
 )
+
+func main() {
+
+}
