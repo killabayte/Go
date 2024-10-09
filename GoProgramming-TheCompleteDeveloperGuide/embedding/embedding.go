@@ -11,6 +11,9 @@ const (
 	Air
 )
 
+type BeltSize int
+type Shipping int
+
 func main() {
 
 }
