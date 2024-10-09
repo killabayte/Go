@@ -53,6 +53,10 @@ func automate(item WarehouseAutomator) {
 	fmt.Printf("Ship %v via %v\n", item, item.Ship())
 }
 
+type ToxixWaste struct {
+	weight int
+}
+
 func main() {
 
 }
