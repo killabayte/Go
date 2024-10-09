@@ -36,6 +36,10 @@ type SpamMail struct {
 	amount int
 }
 
+func (s SpamMail) String() string {
+	return "Spam mail"
+}
+
 func main() {
 
 }
