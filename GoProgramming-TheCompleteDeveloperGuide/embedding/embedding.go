@@ -32,6 +32,10 @@ type WarehouseAutomator interface {
 	Shipper
 }
 
+type SpamMail struct {
+	amount int
+}
+
 func main() {
 
 }
