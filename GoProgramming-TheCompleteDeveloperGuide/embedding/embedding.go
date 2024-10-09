@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 const (
 	Small = iota
 	Medium
@@ -44,6 +46,11 @@ func (s *SpamMail) Ship() Shipping {
 }
 func (s *SpamMail) Convey() BeltSize {
 	return Small
+}
+
+func automate(item WarehouseAutomator) {
+	fmt.Printf("Convey %v on %v conveyor\n", item, item.Convey())
+
 }
 
 func main() {
