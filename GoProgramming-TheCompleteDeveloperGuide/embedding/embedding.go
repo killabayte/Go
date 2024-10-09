@@ -64,4 +64,7 @@ func (t *ToxixWaste) Ship() Shipping {
 func main() {
 	mail := SpamMail{40000}
 	automate(&mail)
+
+	// waste := ToxixWaste{150}
+	// automate(&waste)
 }
