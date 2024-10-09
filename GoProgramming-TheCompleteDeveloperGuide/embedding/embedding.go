@@ -39,6 +39,12 @@ type SpamMail struct {
 func (s SpamMail) String() string {
 	return "Spam mail"
 }
+func (s *SpamMail) Ship() Shipping {
+	return Air
+}
+func (s *SpamMail) Convey() BeltSize {
+	return Small
+}
 
 func main() {
 
