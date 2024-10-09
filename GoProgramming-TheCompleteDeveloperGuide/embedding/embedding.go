@@ -57,6 +57,10 @@ type ToxixWaste struct {
 	weight int
 }
 
+func (t *ToxixWaste) Ship() Shipping {
+	return Ground
+}
+
 func main() {
 
 }
