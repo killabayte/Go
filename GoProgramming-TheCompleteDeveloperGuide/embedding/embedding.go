@@ -14,6 +14,10 @@ const (
 type BeltSize int
 type Shipping int
 
+func (b BeltSize) String() string {
+	return []string{"Small", "Medium", "Large"}[b]
+}
+
 func main() {
 
 }
