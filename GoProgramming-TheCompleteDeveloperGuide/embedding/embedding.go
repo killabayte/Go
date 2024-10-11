@@ -67,4 +67,5 @@ func main() {
 
 	// waste := ToxixWaste{150}
 	// automate(&waste)
+
 }
