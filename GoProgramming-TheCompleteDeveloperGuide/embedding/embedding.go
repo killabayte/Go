@@ -15,4 +15,5 @@ type MemoryUsage struct {
 
 func main() {
 	bandwidth := BandwidthUsage{[]Bytes{50000, 100000, 130000, 80000, 90000}}
+	temp := CpuTemp{[]Celcius{50, 51, 53, 51, 52}}
 }
