@@ -9,3 +9,6 @@ type BandwidthUsage struct {
 type CpuTemp struct {
 	temp []Celcius
 }
+type MemoryUsage struct {
+	amount []Bytes
+}
