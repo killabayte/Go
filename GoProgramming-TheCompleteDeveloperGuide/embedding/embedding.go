@@ -12,3 +12,7 @@ type CpuTemp struct {
 type MemoryUsage struct {
 	amount []Bytes
 }
+
+func main() {
+
+}
