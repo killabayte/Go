@@ -14,5 +14,5 @@ type MemoryUsage struct {
 }
 
 func main() {
-
+	bandwidth := BandwidthUsage{[]Bytes{50000, 100000, 130000, 80000, 90000}}
 }
