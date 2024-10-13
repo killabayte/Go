@@ -66,6 +66,5 @@ func main() {
 	automate(&mail)
 
 	// waste := ToxixWaste{150}
-
 	// automate(&waste)
 }
