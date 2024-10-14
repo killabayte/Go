@@ -20,6 +20,13 @@ func (b *BandwidthUsage) AverageBandwidth() int {
 	}
 	return sum / len(b.amount)
 }
+func (c *CpuTemp) AverageCpuTemp() int {
+	sum := 0
+	for i := 0; i < len(c.temp); i++ {
+		sum += int(c.temp[i])
+	}
+	return sum / len(b.amount)
+}
 
 func main() {
 	bandwidth := BandwidthUsage{[]Bytes{50000, 100000, 130000, 80000, 90000}}
