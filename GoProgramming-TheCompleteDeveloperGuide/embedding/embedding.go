@@ -25,7 +25,14 @@ func (c *CpuTemp) AverageCpuTemp() int {
 	for i := 0; i < len(c.temp); i++ {
 		sum += int(c.temp[i])
 	}
-	return sum / len(b.amount)
+	return sum / len(c.temp)
+}
+func (m *MemoryUsage) AverageMemUsage() int {
+	sum := 0
+	for i := 0; i < len(m.amount); i++ {
+		sum += int(m.amount[i])
+	}
+	return sum / len(m.amount)
 }
 
 func main() {
