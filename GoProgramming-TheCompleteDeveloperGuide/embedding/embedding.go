@@ -14,7 +14,11 @@ type MemoryUsage struct {
 }
 
 func (b *BandwidthUsage) AverageBandwidth() int {
-
+	sum := 0
+	for i := 0; i < len(b.amount); i++ {
+		sum += int(b.amount[i])
+	}
+	return sum / len(b.amount)
 }
 
 func main() {
