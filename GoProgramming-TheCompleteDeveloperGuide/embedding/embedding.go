@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type Bytes int
 type Celcius float32
 
@@ -51,4 +53,7 @@ func main() {
 		CpuTemp:        temp,
 		MemoryUsage:    memory,
 	}
+
+	fmt.Printf("Average bandwidth usage: %v\n", dash.AverageBandwidth())
+
 }
