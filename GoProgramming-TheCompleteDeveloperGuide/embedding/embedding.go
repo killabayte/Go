@@ -45,4 +45,8 @@ func main() {
 	bandwidth := BandwidthUsage{[]Bytes{50000, 100000, 130000, 80000, 90000}}
 	temp := CpuTemp{[]Celcius{50, 51, 53, 51, 52}}
 	memory := MemoryUsage{[]Bytes{800000, 800000, 810000, 820000, 800000}}
+
+	dash := Dashboard{
+		BandwidthUsage: bandwidth,
+	}
 }
