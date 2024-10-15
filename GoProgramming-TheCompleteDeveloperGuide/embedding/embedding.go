@@ -48,5 +48,6 @@ func main() {
 
 	dash := Dashboard{
 		BandwidthUsage: bandwidth,
+		CpuTemp:        temp,
 	}
 }
