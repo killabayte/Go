@@ -55,8 +55,6 @@ func main() {
 	}
 
 	fmt.Printf("Average bandwidth usage: %v\n", dash.AverageBandwidth())
-
 	fmt.Printf("Average temp: %v\n", dash.AverageCpuTemp())
-
 	fmt.Printf("Avarage memory usage: %v\n", dash.AverageMemUsage())
 }
