@@ -25,6 +25,8 @@ func (pq *PriorityQueue[P, V]) Next() (V, bool) {
 			return next, true
 		}
 	}
+	var empty V
+	return empty, false
 }
 
 func NewPriorityQueue[P comparable, V any](priorities []P) PriorityQueue[P, V] {
