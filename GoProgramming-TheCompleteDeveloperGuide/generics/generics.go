@@ -45,4 +45,6 @@ func main() {
 	queue.Add(Medium, "M-1")
 	queue.Add(High, "H-2")
 	queue.Add(High, "H-3")
+
+	fmt.Println(queue.Next())
 }
