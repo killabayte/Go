@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 const (
 	Low = iota
 	Medium
@@ -38,4 +40,5 @@ func main() {
 	queue.Add(Low, "L-1")
 	queue.Add(High, "H-1")
 
+	fmt.Println(Medium, "M-1")
 }
