@@ -35,5 +35,7 @@ func NewPriorityQueue[P comparable, V any](priorities []P) PriorityQueue[P, V] {
 
 func main() {
 	queue := NewPriorityQueue[int, string]([]int{High, Medium, Low})
+	queue.Add(Low, "L-1")
+	queue.Add(High, "H-1")
 
 }
