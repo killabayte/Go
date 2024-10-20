@@ -43,6 +43,6 @@ func main() {
 	fmt.Println(queue.Next)
 
 	queue.Add(Medium, "M-1")
-	queue.Add(Medium, "M-1")
-	queue.Add(Medium, "M-1")
+	queue.Add(High, "H-2")
+	queue.Add(High, "H-3")
 }
