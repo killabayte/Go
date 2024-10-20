@@ -34,5 +34,6 @@ func NewPriorityQueue[P comparable, V any](priorities []P) PriorityQueue[P, V] {
 }
 
 func main() {
+	queue := NewPriorityQueue[int, string]()
 
 }
