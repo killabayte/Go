@@ -47,4 +47,5 @@ func main() {
 	queue.Add(High, "H-3")
 
 	fmt.Println(queue.Next())
+	fmt.Println(queue.Next())
 }
